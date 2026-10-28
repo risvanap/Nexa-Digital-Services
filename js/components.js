@@ -1,13 +1,24 @@
 /**
- * Nexa Digital Services - Reusable Web Components
- * Desktop & Mobile Header, Bottom Navigation, Footers, Modals & Floating WhatsApp
+ * Nexa Digital Services - Premium Reusable Web Components
+ * Desktop & Mobile Header, Bottom Navigation, Footers, Modals, Scroll Reveal & Floating WhatsApp
  */
 
 const LOGO_SVG = `
-<svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
-  <rect width="48" height="48" rx="10" fill="#01284B"/>
-  <path d="M12 34V14L24 26L36 14V34" stroke="#8FF4E3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="24" cy="20" r="3" fill="#356EE7"/>
+<svg width="38" height="38" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+  <defs>
+    <linearGradient id="nexaGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#021c35"/>
+      <stop offset="100%" stop-color="#0453cd"/>
+    </linearGradient>
+    <linearGradient id="nexaAccent" x1="0" y1="0" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00a884"/>
+      <stop offset="100%" stop-color="#8ff4e3"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#nexaGrad)"/>
+  <rect x="1.5" y="1.5" width="45" height="45" rx="10.5" stroke="#dae2ff" stroke-opacity="0.25" stroke-width="1.5"/>
+  <path d="M13 35V13L24 26L35 13V35" stroke="url(#nexaAccent)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="24" cy="18" r="3.2" fill="#356ee7" stroke="#ffffff" stroke-width="1.5"/>
 </svg>
 `;
 
@@ -20,7 +31,7 @@ function renderHeader(activePage = 'home') {
   const container = document.getElementById('app-header');
   if (!container) return;
 
-  const currentLang = window.i18n ? window.i18n.getLang() : 'ml';
+  const currentLang = window.i18n ? window.i18n.getLang() : (localStorage.getItem('nexa_lang') || 'ml');
   const isMl = currentLang === 'ml';
 
   const navLinks = [
@@ -33,10 +44,15 @@ function renderHeader(activePage = 'home') {
 
   container.innerHTML = `
     <!-- Top Statutory Citizen Strip -->
-    <div class="bg-surface-container-high px-4 py-1.5 text-center flex items-center justify-center gap-2 border-b border-outline-variant/30">
-      <span class="material-symbols-outlined text-secondary text-[15px]">verified</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">
-        ${isMl ? 'സ്വതന്ത്ര പൗര ഡിജിറ്റൽ സേവന കേന്ദ്രം • Kerala Citizen Facilitation Center' : 'An independent citizen digital services center • Kerala'}
+    <div class="bg-gradient-to-r from-[#01284b] via-[#0453cd] to-[#01284b] text-white px-4 py-1.5 text-center flex items-center justify-center gap-2 text-xs font-medium border-b border-white/10 shadow-sm">
+      <span class="inline-flex items-center gap-1.5 font-medium tracking-wide">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="material-symbols-outlined text-emerald-300 text-[15px]">verified</span>
+        <span>${isMl ? 'സ്വതന്ത്ര പൗര ഡിജിറ്റൽ സേവന കേന്ദ്രം • Kerala Citizen Facilitation Desk' : 'Authorized Independent Citizen Digital Services Center • Kerala'}</span>
+      </span>
+      <span class="hidden sm:inline-block text-white/40">•</span>
+      <span class="hidden sm:inline-block text-white/80 text-[11px] font-normal">
+        ${isMl ? 'ഔദ്യോഗിക ചലാൻ രസീത് സഹിതം' : 'Direct Government Portal Filing'}
       </span>
     </div>
 
@@ -44,29 +60,30 @@ function renderHeader(activePage = 'home') {
     <div class="h-20 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-4">
       <!-- Brand Logo & Title -->
       <a href="index.html" class="flex items-center gap-3 min-w-0 flex-shrink-0 group">
-        <div class="flex items-center justify-center rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform">
-          <img src="${LOGO_IMG_URL}" alt="Nexa Digital Services Logo" class="h-9 w-auto object-contain hidden sm:block" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="flex items-center justify-center rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <img src="${LOGO_IMG_URL}" alt="Nexa Digital Services Logo" class="h-10 w-auto object-contain hidden sm:block" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           <div class="hidden">${LOGO_SVG}</div>
           <div class="sm:hidden">${LOGO_SVG}</div>
         </div>
         <div class="flex flex-col min-w-0">
-          <span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight truncate leading-tight group-hover:text-secondary transition-colors">
+          <span class="font-headline-sm text-headline-sm text-primary font-extrabold tracking-tight truncate leading-tight group-hover:text-secondary transition-colors">
             Nexa Services
           </span>
-          <span class="font-label-sm text-label-sm text-secondary font-semibold tracking-tight truncate leading-tight">
-            ${isMl ? 'നെക്സ ഡിജിറ്റൽ സർവീസസ്' : 'Citizen Digital Facilitation'}
+          <span class="font-label-sm text-label-sm text-secondary font-semibold tracking-tight truncate leading-tight flex items-center gap-1">
+            <span>${isMl ? 'നെക്സ ഡിജിറ്റൽ സർവീസസ്' : 'Citizen Digital Facilitation'}</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
           </span>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+      <nav class="hidden md:flex items-center gap-1 lg:gap-1.5">
         ${navLinks.map(link => {
           const isActive = activePage === link.id;
           return `
-            <a href="${link.href}" class="px-3.5 py-2 rounded-lg font-label-md text-label-md font-semibold transition-all ${
+            <a href="${link.href}" class="px-3.5 py-2 rounded-xl font-label-md text-label-md font-bold transition-all duration-200 ${
               isActive 
-                ? 'bg-primary text-on-primary shadow-sm' 
+                ? 'bg-primary text-white shadow-sm ring-1 ring-primary/20' 
                 : 'text-on-surface hover:text-secondary hover:bg-surface-container-low'
             }">
               <span>${isMl ? link.labelMl : link.labelEn}</span>
@@ -80,20 +97,20 @@ function renderHeader(activePage = 'home') {
         <!-- Language Switcher Button -->
         <button 
           type="button" 
-          onclick="window.i18n && window.i18n.toggleLang()" 
+          onclick="if(window.i18n){window.i18n.toggleLang();}else if(window.toggleLanguage){window.toggleLanguage();}" 
           title="Switch Language / ഭാഷ മാറ്റുക" 
-          class="lang-toggle-btn h-10 px-3 rounded-full bg-surface-container-low border border-outline-variant/50 flex items-center justify-center font-label-sm text-label-sm text-on-surface font-semibold hover:bg-surface-container transition-all"
+          class="lang-toggle-btn h-10 px-3 rounded-full bg-surface-container-low border border-outline-variant/50 flex items-center justify-center font-label-sm text-label-sm text-on-surface font-semibold hover:bg-surface-container hover:border-secondary transition-all shadow-xs"
         >
           ${isMl 
-            ? '<span class="text-secondary font-bold">മല</span><span class="text-outline-variant px-0.5">|</span><span class="text-on-surface-variant">ENG</span>' 
-            : '<span class="text-on-surface-variant">മല</span><span class="text-outline-variant px-0.5">|</span><span class="text-secondary font-bold">ENG</span>'}
+            ? '<span class="text-secondary font-bold">മല</span><span class="text-outline-variant px-0.5">|</span><span class="text-on-surface-variant font-medium">ENG</span>' 
+            : '<span class="text-on-surface-variant font-medium">മല</span><span class="text-outline-variant px-0.5">|</span><span class="text-secondary font-bold">ENG</span>'}
         </button>
 
         <!-- Phone Button -->
         <a 
           href="tel:${getNexaContact().phoneCalling}" 
           aria-label="Direct Desk Call" 
-          class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all shadow-sm"
+          class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container hover:text-secondary active:scale-95 transition-all shadow-xs border border-outline-variant/30"
           title="Direct Phone Call: ${getNexaContact().phoneDisplay}"
         >
           <span class="material-symbols-outlined text-[20px]">call</span>
@@ -103,21 +120,21 @@ function renderHeader(activePage = 'home') {
         <a 
           href="${getWhatsAppUrl('Hello Nexa Services, I need assistance with citizen services')}" 
           target="_blank" 
-          rel="noopener noreferrer"
+          rel="noopener noreferrer" 
           aria-label="WhatsApp Assistance" 
-          class="relative w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center hover:bg-tertiary-container active:scale-95 transition-all shadow-sm"
+          class="relative w-10 h-10 rounded-full bg-gradient-to-tr from-[#002d27] to-[#0453cd] text-white flex items-center justify-center hover:opacity-95 active:scale-95 transition-all shadow-xs"
           title="WhatsApp Enquiry Desk (${getNexaContact().whatsappDisplay})"
         >
           <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
-          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container ring-2 ring-surface animate-pulse"></span>
+          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#25d366] ring-2 ring-surface animate-pulse"></span>
         </a>
 
         <!-- Desktop Quick Apply CTA -->
         <a 
           href="${getWhatsAppUrl('Hello Nexa, I want to apply for a citizen service')}" 
           target="_blank" 
-          rel="noopener noreferrer"
-          class="hidden lg:flex items-center gap-1.5 h-10 px-4 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-bold shadow-sm hover:bg-primary active:scale-95 transition-all"
+          rel="noopener noreferrer" 
+          class="hidden lg:flex items-center gap-1.5 h-10 px-4 rounded-xl bg-gradient-to-r from-secondary to-[#0040a2] text-white font-label-md text-label-md font-bold shadow-sm hover:shadow-md hover:brightness-105 active:scale-95 transition-all"
         >
           <span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
           <span>${isMl ? 'വാട്സാപ്പിൽ അപേക്ഷിക്കാം' : 'Apply via WhatsApp'}</span>
@@ -125,12 +142,12 @@ function renderHeader(activePage = 'home') {
 
         <!-- Operator / Staff Console Icon -->
         <a 
-          href="track.html" 
+          href="login.html" 
           aria-label="Track / Admin Console" 
-          class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container active:scale-95 transition-all shadow-sm"
+          class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary active:scale-95 transition-all shadow-xs"
           title="Track Status & Operator Desk"
         >
-          <span class="material-symbols-outlined text-[18px]">verified_user</span>
+          <span class="material-symbols-outlined text-[18px]">person</span>
         </a>
       </div>
     </div>
@@ -138,13 +155,13 @@ function renderHeader(activePage = 'home') {
 }
 
 /**
- * Render Mobile Bottom Navigation Bar (Matching Stitch design mobile shell)
+ * Render Mobile Bottom Navigation Bar (Matching Stitch design mobile dock)
  */
 function renderMobileBottomNav(activePage = 'home') {
   const container = document.getElementById('app-bottom-nav');
   if (!container) return;
 
-  const currentLang = window.i18n ? window.i18n.getLang() : 'ml';
+  const currentLang = window.i18n ? window.i18n.getLang() : (localStorage.getItem('nexa_lang') || 'ml');
   const isMl = currentLang === 'ml';
 
   const items = [
@@ -156,21 +173,24 @@ function renderMobileBottomNav(activePage = 'home') {
   ];
 
   container.innerHTML = `
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_14px_rgba(1,40,75,0.08)] border-t border-outline-variant/40">
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(1,40,75,0.08)] border-t border-outline-variant/40">
       <div class="h-16 px-2 flex items-center justify-around">
         ${items.map(item => {
           const isActive = activePage === item.id;
           return `
             <a 
               href="${item.href}" 
-              class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors ${
+              class="relative flex flex-col items-center justify-center min-w-[56px] min-h-[48px] py-1 transition-all duration-200 ${
                 isActive 
                   ? 'text-secondary font-bold' 
-                  : 'text-on-surface-variant hover:text-on-surface'
+                  : 'text-on-surface-variant hover:text-primary font-medium'
               }"
             >
-              <span class="material-symbols-outlined text-[22px]">${item.icon}</span>
-              <span class="font-label-sm text-label-sm mt-0.5 text-[11px] leading-tight">
+              <div class="relative flex items-center justify-center">
+                <span class="material-symbols-outlined text-[24px] ${isActive ? 'scale-110 text-secondary' : ''} transition-transform duration-200">${item.icon}</span>
+                ${isActive ? '<span class="absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-secondary"></span>' : ''}
+              </div>
+              <span class="font-label-sm text-label-sm mt-0.5 text-[11px] leading-tight tracking-tight">
                 ${isMl ? item.labelMl : item.labelEn}
               </span>
             </a>
@@ -188,20 +208,23 @@ function renderFooter() {
   const container = document.getElementById('app-footer');
   if (!container) return;
 
-  const currentLang = window.i18n ? window.i18n.getLang() : 'ml';
+  const currentLang = window.i18n ? window.i18n.getLang() : (localStorage.getItem('nexa_lang') || 'ml');
   const isMl = currentLang === 'ml';
 
   container.innerHTML = `
-    <footer class="bg-primary text-on-primary mt-12 pt-12 pb-24 md:pb-12 border-t border-primary-container">
-      <div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col gap-10">
+    <footer class="bg-gradient-to-b from-[#01284b] to-[#011a33] text-on-primary mt-12 pt-14 pb-24 md:pb-12 border-t border-primary-container relative overflow-hidden">
+      <!-- Ambient subtle background glow -->
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-secondary/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col gap-10 relative z-10">
         <!-- Main Footer Columns -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Col 1: Identity -->
-          <div class="flex flex-col gap-3">
-            <div class="flex items-center gap-2">
+          <div class="flex flex-col gap-3.5">
+            <div class="flex items-center gap-3">
               ${LOGO_SVG}
               <div class="flex flex-col">
-                <span class="font-headline-sm text-headline-sm font-bold text-white leading-tight">Nexa Services</span>
+                <span class="font-headline-sm text-headline-sm font-extrabold text-white leading-tight">Nexa Services</span>
                 <span class="font-label-sm text-label-sm text-primary-fixed">നെക്സ ഡിജിറ്റൽ സർവീസസ്</span>
               </div>
             </div>
@@ -211,8 +234,8 @@ function renderFooter() {
                 : 'Providing Kerala citizens with trusted, prompt, and transparent digital application facilitation since 2018.'}
             </p>
             <div class="flex items-center gap-2 pt-2">
-              <span class="px-2.5 py-1 rounded-full bg-primary-container text-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+              <span class="px-3 py-1.5 rounded-full bg-primary-container/80 border border-primary-fixed/20 text-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 ${isMl ? 'സഹായ ഡെസ്ക് ഓൺലൈൻ' : 'Citizen Helpdesk Online'}
               </span>
             </div>
@@ -220,41 +243,43 @@ function renderFooter() {
 
           <!-- Col 2: Popular Services -->
           <div class="flex flex-col gap-3">
-            <h4 class="font-label-lg text-label-lg font-bold text-white uppercase tracking-wider">
-              ${isMl ? 'പ്രധാന സേവനങ്ങൾ' : 'Top Services'}
+            <h4 class="font-label-lg text-label-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span class="w-1.5 h-3.5 rounded bg-secondary"></span>
+              <span>${isMl ? 'പ്രധാന സേവനങ്ങൾ' : 'Top Services'}</span>
             </h4>
             <ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-primary-container">
-              <li><a href="service-details.html?id=income-certificate" class="hover:text-white transition-colors">വരുമാന സർട്ടിഫിക്കറ്റ് (Income Certificate)</a></li>
-              <li><a href="service-details.html?id=pan-new" class="hover:text-white transition-colors">പുതിയ പാൻ കാർഡ് (New PAN Card)</a></li>
-              <li><a href="service-details.html?id=passport-fresh" class="hover:text-white transition-colors">പാസ്‌പോർട്ട് സേവനങ്ങൾ (Passport Seva)</a></li>
-              <li><a href="service-details.html?id=ration-card-service" class="hover:text-white transition-colors">റേഷൻ കാർഡ് തിരുത്തൽ (Ration Card)</a></li>
-              <li><a href="service-details.html?id=psc-registration" class="hover:text-white transition-colors">PSC ഒറ്റത്തവണ രജിസ്ട്രേഷൻ (PSC OTR)</a></li>
-              <li><a href="service-details.html?id=jeevan-pramaan" class="hover:text-white transition-colors">ജീവൻ പ്രമാൺ (Digital Life Certificate)</a></li>
+              <li><a href="service-details.html?id=income-certificate" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">വരുമാന സർട്ടിഫിക്കറ്റ് (Income Certificate)</a></li>
+              <li><a href="service-details.html?id=pan-new" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">പുതിയ പാൻ കാർഡ് (New PAN Card)</a></li>
+              <li><a href="service-details.html?id=passport-fresh" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">പാസ്‌പോർട്ട് സേവനങ്ങൾ (Passport Seva)</a></li>
+              <li><a href="service-details.html?id=ration-card-service" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">റേഷൻ കാർഡ് തിരുത്തൽ (Ration Card)</a></li>
+              <li><a href="service-details.html?id=psc-registration" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">PSC ഒറ്റത്തവണ രജിസ്ട്രേഷൻ (PSC OTR)</a></li>
+              <li><a href="service-details.html?id=jeevan-pramaan" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">ജീവൻ പ്രമാൺ (Digital Life Certificate)</a></li>
             </ul>
           </div>
 
           <!-- Col 3: Facilitation Centers -->
           <div class="flex flex-col gap-3">
-            <h4 class="font-label-lg text-label-lg font-bold text-white uppercase tracking-wider">
-              ${isMl ? 'ഞങ്ങളുടെ കേന്ദ്രങ്ങൾ' : 'Facilitation Centers'}
+            <h4 class="font-label-lg text-label-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span class="w-1.5 h-3.5 rounded bg-emerald-400"></span>
+              <span>${isMl ? 'ഞങ്ങളുടെ കേന്ദ്രങ്ങൾ' : 'Facilitation Centers'}</span>
             </h4>
             <div class="flex flex-col gap-3 font-body-sm text-body-sm text-on-primary-container">
-              <div class="flex items-start gap-2">
+              <div class="flex items-start gap-2.5 bg-primary-container/40 p-2.5 rounded-xl border border-white/5">
                 <span class="material-symbols-outlined text-secondary-fixed text-[18px] mt-0.5">location_on</span>
                 <div>
-                  <strong class="text-white">Kakkanad HQ (Ernakulam):</strong><br>
+                  <strong class="text-white block font-medium">Kakkanad HQ (Ernakulam):</strong>
                   Near Civil Station Road, Kakkanad, Ernakulam - 682030
                 </div>
               </div>
-              <div class="flex items-start gap-2">
+              <div class="flex items-start gap-2.5 bg-primary-container/40 p-2.5 rounded-xl border border-white/5">
                 <span class="material-symbols-outlined text-secondary-fixed text-[18px] mt-0.5">location_on</span>
                 <div>
-                  <strong class="text-white">Palakkad Branch:</strong><br>
+                  <strong class="text-white block font-medium">Palakkad Branch:</strong>
                   Stadium Junction, Near Municipal Bus Stand - 678001
                 </div>
               </div>
-              <div class="flex items-start gap-2">
-                <span class="material-symbols-outlined text-secondary-fixed text-[18px] mt-0.5">schedule</span>
+              <div class="flex items-start gap-2.5 text-xs">
+                <span class="material-symbols-outlined text-emerald-300 text-[18px] mt-0.5">schedule</span>
                 <div>
                   <span class="text-white font-semibold">തിങ്കൾ – ശനി:</span> 8:30 AM – 7:30 PM<br>
                   <span class="text-white font-semibold">ഞായർ:</span> 10:00 AM – 2:00 PM (WhatsApp)
@@ -265,25 +290,26 @@ function renderFooter() {
 
           <!-- Col 4: Direct Help Desks -->
           <div class="flex flex-col gap-3">
-            <h4 class="font-label-lg text-label-lg font-bold text-white uppercase tracking-wider">
-              ${isMl ? 'നേരിട്ട് വിളിക്കാം' : 'Direct Support'}
+            <h4 class="font-label-lg text-label-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span class="w-1.5 h-3.5 rounded bg-tertiary-fixed"></span>
+              <span>${isMl ? 'നേരിട്ട് വിളിക്കാം' : 'Direct Support'}</span>
             </h4>
             <div class="flex flex-col gap-2.5">
-              <a href="https://wa.me/919447012345" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-tertiary hover:bg-tertiary-container text-on-tertiary flex items-center gap-3 transition-colors">
-                <span class="material-symbols-outlined text-tertiary-fixed text-[24px]">chat</span>
+              <a href="https://wa.me/919447012345" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-gradient-to-r from-[#00453d] to-[#002d27] hover:brightness-110 text-white flex items-center gap-3 transition-all border border-emerald-500/20 shadow-xs">
+                <span class="material-symbols-outlined text-emerald-400 text-[24px]">chat</span>
                 <div class="flex flex-col leading-tight">
                   <span class="font-label-lg text-label-lg font-bold">+91 94470 12345</span>
-                  <span class="font-label-sm text-label-sm text-tertiary-fixed">WhatsApp Helpdesk</span>
+                  <span class="font-label-sm text-label-sm text-emerald-200">WhatsApp Helpdesk</span>
                 </div>
               </a>
-              <a href="tel:+914842987654" class="p-3 rounded-xl bg-primary-container hover:bg-primary-container/80 text-white flex items-center gap-3 transition-colors">
+              <a href="tel:+914842987654" class="p-3 rounded-xl bg-primary-container/80 hover:bg-primary-container text-white flex items-center gap-3 transition-colors border border-white/5">
                 <span class="material-symbols-outlined text-secondary-fixed text-[24px]">call</span>
                 <div class="flex flex-col leading-tight">
                   <span class="font-label-lg text-label-lg font-bold">0484 2987654</span>
                   <span class="font-label-sm text-label-sm text-primary-fixed">Kakkanad Landline</span>
                 </div>
               </a>
-              <a href="mailto:help@nexadigital.in" class="p-3 rounded-xl bg-primary-container hover:bg-primary-container/80 text-white flex items-center gap-3 transition-colors">
+              <a href="mailto:help@nexadigital.in" class="p-3 rounded-xl bg-primary-container/80 hover:bg-primary-container text-white flex items-center gap-3 transition-colors border border-white/5">
                 <span class="material-symbols-outlined text-secondary-fixed text-[24px]">mail</span>
                 <div class="flex flex-col leading-tight">
                   <span class="font-label-lg text-label-lg font-bold truncate">help@nexadigital.in</span>
@@ -295,9 +321,9 @@ function renderFooter() {
         </div>
 
         <!-- Statutory Citizen Notice Box (Required by Stitch Design System) -->
-        <div class="bg-primary-container/90 rounded-2xl p-5 border border-primary-fixed/20 flex flex-col gap-3">
+        <div class="bg-primary-container/80 rounded-2xl p-5 border border-primary-fixed/20 flex flex-col gap-3 shadow-inner">
           <div class="flex items-center gap-2 text-primary-fixed font-bold font-label-lg text-label-lg">
-            <span class="material-symbols-outlined text-[20px]">policy</span>
+            <span class="material-symbols-outlined text-[20px] text-emerald-300">policy</span>
             <span>Statutory Citizen Notice & Independence Declaration • നിയമപരമായ നിരാകരണ പ്രസ്താവന</span>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-on-primary-container font-body-sm text-body-sm leading-relaxed">
@@ -311,7 +337,7 @@ function renderFooter() {
         </div>
 
         <!-- Bottom Copyright & Badges -->
-        <div class="pt-4 border-t border-primary-container flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-on-primary-container font-body-sm text-[13px]">
+        <div class="pt-4 border-t border-primary-container/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-on-primary-container font-body-sm text-[13px]">
           <div>
             © 2026 Nexa Digital Services. All rights reserved. Independent Citizen Service Kiosk.
           </div>
@@ -340,14 +366,14 @@ function renderFloatingWhatsApp() {
   btn.target = '_blank';
   btn.rel = 'noopener noreferrer';
   btn.setAttribute('aria-label', 'Chat with Nexa WhatsApp Desk');
-  btn.className = 'fixed right-4 bottom-20 md:bottom-8 z-40 bg-[#128C7E] hover:bg-[#075E54] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all duration-300 active:scale-95 group whatsapp-pulse';
+  btn.className = 'fixed right-4 bottom-20 md:bottom-8 z-40 bg-[#128C7E] hover:bg-[#075E54] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all duration-300 active:scale-95 group whatsapp-pulse hover:shadow-[0_8px_25px_rgba(37,211,102,0.4)]';
 
   btn.innerHTML = `
     <div class="relative flex items-center justify-center">
       <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
         <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/>
       </svg>
-      <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#25D366] border-2 border-white"></span>
+      <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#25D366] border-2 border-white animate-ping"></span>
     </div>
     <span class="hidden md:inline-block font-label-md text-label-md font-bold pr-1">
       WhatsApp Desk
@@ -365,33 +391,56 @@ function showToast(message, type = 'success') {
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'nexa-toast';
-    toast.className = 'fixed top-24 right-4 z-50 max-w-sm px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all transform duration-300 pointer-events-none translate-y-[-20px] opacity-0';
+    toast.className = 'fixed top-24 right-4 z-50 max-w-sm px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition-all transform duration-300 pointer-events-none translate-y-[-20px] opacity-0 backdrop-blur-md';
     document.body.appendChild(toast);
   }
 
   const isSuccess = type === 'success';
-  toast.className = `fixed top-24 right-4 z-50 max-w-sm px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all transform duration-300 pointer-events-auto ${
-    isSuccess ? 'bg-primary text-on-primary' : 'bg-secondary text-on-secondary'
+  toast.className = `fixed top-24 right-4 z-50 max-w-sm px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition-all transform duration-300 pointer-events-auto backdrop-blur-md ${
+    isSuccess ? 'bg-[#01284b]/95 text-white border border-emerald-500/30' : 'bg-[#0453cd]/95 text-white border border-white/20'
   }`;
 
   toast.innerHTML = `
-    <span class="material-symbols-outlined text-[20px] ${isSuccess ? 'text-tertiary-fixed' : 'text-white'}">
+    <span class="material-symbols-outlined text-[22px] ${isSuccess ? 'text-emerald-400' : 'text-white'}">
       ${isSuccess ? 'check_circle' : 'info'}
     </span>
-    <span class="font-body-sm text-body-sm font-medium">${message}</span>
+    <span class="font-body-sm text-body-sm font-medium leading-snug">${message}</span>
   `;
 
-  // Show
   requestAnimationFrame(() => {
     toast.classList.remove('translate-y-[-20px]', 'opacity-0');
     toast.classList.add('translate-y-0', 'opacity-100');
   });
 
-  // Auto-hide after 3.5s
   setTimeout(() => {
     toast.classList.remove('translate-y-0', 'opacity-100');
     toast.classList.add('translate-y-[-20px]', 'opacity-0');
   }, 3500);
+}
+
+/**
+ * Native Scroll Reveal Animation Initializer
+ * Uses IntersectionObserver - Zero external libraries required
+ */
+function initScrollReveal() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
 // Helper to get contact config
@@ -412,6 +461,25 @@ function getWhatsAppUrl(msg = "Hello Nexa Services, I need assistance with citiz
   return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(msg)}`;
 }
 
+// Automatically initialize components on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  renderFloatingWhatsApp();
+  initScrollReveal();
+
+  const activePage = document.body.getAttribute('data-page') || 'home';
+  if (document.getElementById('app-header')) renderHeader(activePage);
+  if (document.getElementById('app-bottom-nav')) renderMobileBottomNav(activePage);
+  if (document.getElementById('app-footer')) renderFooter();
+});
+
+// React to language switch events across pages
+window.addEventListener('languageChanged', (e) => {
+  const activePage = document.body.getAttribute('data-page') || 'home';
+  if (document.getElementById('app-header')) renderHeader(activePage);
+  if (document.getElementById('app-bottom-nav')) renderMobileBottomNav(activePage);
+  if (document.getElementById('app-footer')) renderFooter();
+});
+
 // Register PWA Service Worker
 if ('serviceWorker' in navigator && (window.location.protocol === 'http:' || window.location.protocol === 'https:')) {
   window.addEventListener('load', () => {
@@ -422,11 +490,3 @@ if ('serviceWorker' in navigator && (window.location.protocol === 'http:' || win
     });
   });
 }
-
-// React to language switch events across pages
-window.addEventListener('languageChanged', (e) => {
-  const activePage = document.body.getAttribute('data-page') || 'home';
-  renderHeader(activePage);
-  renderMobileBottomNav(activePage);
-  renderFooter();
-});

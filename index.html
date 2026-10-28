@@ -20,26 +20,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 
-  <style>
-    @layer base {
-      html, body { width: 100%; margin: 0; padding: 0; }
-      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; }
-      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
-      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
-      main > :first-child { margin-top: 0 !important; }
-      main > :last-child { margin-bottom: 0 !important; }
-    }
-    ::-webkit-scrollbar { display: none; }
-    body { font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif; min-height: max(884px, 100dvh); }
-    
-    @keyframes whatsappPulse {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
-    .whatsapp-pulse { animation: whatsappPulse 2s infinite; }
-  </style>
-
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
@@ -96,7 +76,7 @@
             "surface-container-lowest": "#ffffff",
             "surface-container-highest": "#d6e3fe"
           },
-          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
           spacing: { "gutter-desktop": "1.5rem", "margin": "1rem", "margin-desktop": "3rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-tablet": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-tablet": "1.25rem", "gutter": "1rem" },
           fontFamily: {
             "body-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
@@ -111,81 +91,130 @@
             "headline-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
             "headline-xl-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
             "headline-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"]
-          },
-          fontSize: {
-            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
-            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
-            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
-            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
-            "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "800"}],
-            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
-            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
-            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
-            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-            "headline-xl-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "800"}],
-            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
           }
         }
       }
     };
   </script>
-</head>
-<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
 
-  <!-- Sticky Top Header (Matching Google Stitch screen) -->
-  <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
-    <div class="bg-surface-container-high px-margin py-1 text-center flex items-center justify-center gap-space-xs">
-      <span class="material-symbols-outlined text-secondary text-[14px]">verified</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">
-        An independent citizen digital services center • Kerala
+  <!-- Modern Elevated Nexa Design Tokens & Styles -->
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body data-page="home" class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+  <!-- Sticky Top Header (Pre-rendered with Glassmorphism) -->
+  <header class="fixed top-0 w-full z-50 glass-nav pt-safe">
+    <!-- Top Statutory Citizen Strip -->
+    <div class="bg-gradient-to-r from-[#01284b] via-[#0453cd] to-[#01284b] text-white px-4 py-1.5 text-center flex items-center justify-center gap-2 text-xs font-medium border-b border-white/10 shadow-sm">
+      <span class="inline-flex items-center gap-1.5 font-medium tracking-wide">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 live-dot-pulse"></span>
+        <span class="material-symbols-outlined text-emerald-300 text-[15px]">verified</span>
+        <span>സ്വതന്ത്ര പൗര ഡിജിറ്റൽ സേവന കേന്ദ്രം • Kerala Citizen Facilitation Desk</span>
+      </span>
+      <span class="hidden sm:inline-block text-white/40">•</span>
+      <span class="hidden sm:inline-block text-white/80 text-[11px] font-normal">
+        ഔദ്യോഗിക ചലാൻ രസീത് സഹിതം • Direct Treasury Chalan
       </span>
     </div>
     
-    <div class="h-20 px-margin max-w-5xl mx-auto flex items-center justify-between gap-space-sm">
+    <div class="h-20 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-4">
       <!-- Logo & Title -->
-      <a href="index.html" class="flex items-center gap-space-sm min-w-0 flex-1">
-        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary flex-shrink-0 shadow-xs">
-          <span class="material-symbols-outlined text-[24px]">account_balance</span>
+      <a href="index.html" class="flex items-center gap-3 min-w-0 flex-shrink-0 group">
+        <div class="flex items-center justify-center rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg width="38" height="38" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
+            <defs>
+              <linearGradient id="navNexaGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#021c35"/>
+                <stop offset="100%" stop-color="#0453cd"/>
+              </linearGradient>
+              <linearGradient id="navNexaAccent" x1="0" y1="0" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00a884"/>
+                <stop offset="100%" stop-color="#8ff4e3"/>
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="12" fill="url(#navNexaGrad)"/>
+            <rect x="1.5" y="1.5" width="45" height="45" rx="10.5" stroke="#dae2ff" stroke-opacity="0.25" stroke-width="1.5"/>
+            <path d="M13 35V13L24 26L35 13V35" stroke="url(#navNexaAccent)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="24" cy="18" r="3.2" fill="#356ee7" stroke="#ffffff" stroke-width="1.5"/>
+          </svg>
         </div>
         <div class="flex flex-col min-w-0">
-          <span class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Nexa Services</span>
-          <span class="font-label-sm text-label-sm text-secondary font-medium tracking-tight truncate leading-tight">ഹോം • Home</span>
+          <span class="font-headline-sm text-headline-sm text-primary font-extrabold tracking-tight truncate leading-tight group-hover:text-secondary transition-colors">
+            Nexa Services
+          </span>
+          <span class="font-label-sm text-label-sm text-secondary font-semibold tracking-tight truncate leading-tight flex items-center gap-1">
+            <span>നെക്സ ഡിജിറ്റൽ സർവീസസ്</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          </span>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-2 mr-4">
-        <a href="index.html" class="px-3 py-1.5 rounded-lg font-bold text-xs bg-primary text-on-primary">Home</a>
-        <a href="services.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">സേവനങ്ങൾ (Services)</a>
-        <a href="about.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">About</a>
-        <a href="contact.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Contact</a>
-        <a href="track.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Status</a>
+      <nav class="hidden md:flex items-center gap-1 lg:gap-1.5">
+        <a href="index.html" class="px-3.5 py-2 rounded-xl font-label-md text-label-md font-bold bg-primary text-white shadow-sm ring-1 ring-primary/20">ഹോം (Home)</a>
+        <a href="services.html" class="px-3.5 py-2 rounded-xl font-label-md text-label-md font-bold text-on-surface hover:text-secondary hover:bg-surface-container-low transition-colors">സേവനങ്ങൾ (Services)</a>
+        <a href="about.html" class="px-3.5 py-2 rounded-xl font-label-md text-label-md font-bold text-on-surface hover:text-secondary hover:bg-surface-container-low transition-colors">ഞങ്ങളെക്കുറിച്ച് (About)</a>
+        <a href="contact.html" class="px-3.5 py-2 rounded-xl font-label-md text-label-md font-bold text-on-surface hover:text-secondary hover:bg-surface-container-low transition-colors">ബന്ധപ്പെടുക (Contact)</a>
+        <a href="track.html" class="px-3.5 py-2 rounded-xl font-label-md text-label-md font-bold text-on-surface hover:text-secondary hover:bg-surface-container-low transition-colors">സ്റ്റാറ്റസ് (Track)</a>
       </nav>
 
       <!-- Action Buttons -->
-      <div class="flex items-center gap-space-xs flex-shrink-0">
-        <!-- Language Switcher -->
-        <button id="lang-toggle-btn" class="h-11 px-3 rounded-full bg-surface-container-low flex items-center justify-center font-label-sm text-label-sm text-on-surface font-semibold hover:bg-surface-container transition-all" onclick="toggleLanguage()">
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <!-- Language Switcher Button -->
+        <button 
+          id="lang-toggle-btn" 
+          type="button"
+          onclick="toggleLanguage()"
+          title="Switch Language / ഭാഷ മാറ്റുക" 
+          class="lang-toggle-btn h-10 px-3 rounded-full bg-surface-container-low border border-outline-variant/50 flex items-center justify-center font-label-sm text-label-sm text-on-surface font-semibold hover:bg-surface-container hover:border-secondary transition-all shadow-xs"
+        >
           <span class="text-secondary font-bold" id="lang-curr">മല</span>
           <span class="text-outline-variant px-0.5">|</span>
-          <span class="text-on-surface-variant" id="lang-alt">ENG</span>
+          <span class="text-on-surface-variant font-medium" id="lang-alt">ENG</span>
         </button>
 
-        <!-- Quick Call -->
-        <a aria-label="Quick Call" class="w-11 h-11 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-colors" href="tel:+919447012345" title="Call Us: +91 94470 12345">
+        <!-- Direct Desk Call -->
+        <a 
+          href="tel:+919447012345" 
+          aria-label="Direct Desk Call" 
+          class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container hover:text-secondary active:scale-95 transition-all shadow-xs border border-outline-variant/30"
+          title="Direct Call Desk: +91 94470 12345"
+        >
           <span class="material-symbols-outlined text-[20px]">call</span>
         </a>
 
         <!-- WhatsApp Enquiry -->
-        <a aria-label="WhatsApp Enquiry" class="relative w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center hover:bg-tertiary-container transition-colors" href="https://wa.me/919447012345?text=Hello%20Nexa%20Services,%20I%20need%20assistance" target="_blank" rel="noopener noreferrer" title="WhatsApp Enquiry (+91 94470 12345)">
-          <span class="material-symbols-outlined text-[20px]">chat</span>
-          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container ring-2 ring-surface animate-pulse"></span>
+        <a 
+          href="https://wa.me/919447012345?text=Hello%20Nexa%20Services,%20I%20need%20assistance" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="WhatsApp Assistance" 
+          class="relative w-10 h-10 rounded-full bg-gradient-to-tr from-[#002d27] to-[#0453cd] text-white flex items-center justify-center hover:opacity-95 active:scale-95 transition-all shadow-xs"
+          title="WhatsApp Enquiry Desk (+91 94470 12345)"
+        >
+          <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#25d366] ring-2 ring-surface animate-pulse"></span>
         </a>
 
-        <!-- Admin / Staff Icon -->
-        <a href="login.html" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-on-primary hover:bg-primary-container" title="Staff & Operator Login">
-          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        <!-- Desktop Quick Apply CTA -->
+        <a 
+          href="https://wa.me/919447012345?text=Hello%20Nexa,%20I%20want%20to%20apply%20for%20a%20service" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="hidden lg:flex items-center gap-1.5 h-10 px-4 rounded-xl bg-gradient-to-r from-secondary to-[#0040a2] text-white font-label-md text-label-md font-bold shadow-sm hover:shadow-md hover:brightness-105 active:scale-95 transition-all"
+        >
+          <span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
+          <span>വാട്സാപ്പിൽ അപേക്ഷിക്കാം</span>
+        </a>
+
+        <!-- Staff / Operator Login -->
+        <a 
+          href="login.html" 
+          aria-label="Staff Login" 
+          class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary active:scale-95 transition-all shadow-xs"
+          title="Staff & Operator Login"
+        >
+          <span class="material-symbols-outlined text-[18px]">person</span>
         </a>
       </div>
     </div>
@@ -196,29 +225,31 @@
     <div class="flex flex-col w-full pb-8">
 
       <!-- Citizen Facilitation Hero & Live Counter Banner -->
-      <section class="px-margin pt-2 pb-4">
-        <div class="bg-surface-container-low rounded-2xl p-space-md md:p-space-lg shadow-sm flex flex-col gap-space-sm relative overflow-hidden border border-outline-variant/40">
+      <section class="px-margin pt-2 pb-4 reveal">
+        <div class="hero-ambient-mesh rounded-3xl p- space-md md:p-8 shadow-md flex flex-col gap-4 relative overflow-hidden border border-outline-variant/40">
           
           <!-- Live Operational Strip -->
           <div class="flex items-center justify-between flex-wrap gap-2">
-            <div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1 rounded-full border border-outline-variant/30 w-fit">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            <div class="badge-kiosk-live">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 live-dot-pulse"></span>
               <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide">
                 സേവന കൗണ്ടർ സജീവം • Kakkanad HQ &amp; Palakkad Hub
               </span>
             </div>
-            <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">
-              പ്രവൃത്തി സമയം: തിങ്കൾ – ശനി (8:30 AM – 7:30 PM)
-            </span>
+            <div class="flex items-center gap-1.5 text-xs text-on-surface-variant font-medium bg-surface/80 backdrop-blur-sm px-3 py-1 rounded-full border border-outline-variant/30">
+              <span class="material-symbols-outlined text-secondary text-[16px]">schedule</span>
+              <span>പ്രവൃത്തി സമയം: തിങ്കൾ – ശനി (8:30 AM – 7:30 PM)</span>
+            </div>
           </div>
 
           <!-- Main Hero Headline -->
-          <div class="flex flex-col gap-1.5 pt-1">
-            <h1 class="font-headline-lg-mobile md:font-headline-lg text-primary font-extrabold leading-tight">
-              സർക്കാർ പോർട്ടൽ സേവനങ്ങൾ വേഗത്തിലും കൃത്യതയോടെയും
+          <div class="flex flex-col gap-2 pt-1">
+            <h1 class="font-headline-lg-mobile md:font-headline-xl text-primary font-extrabold leading-tight tracking-tight">
+              സർക്കാർ പോർട്ടൽ സേവനങ്ങൾ <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-[#00a884]">വേഗത്തിലും കൃത്യതയോടെയും</span>
             </h1>
-            <p class="font-headline-sm text-secondary font-bold">
-              Independent Kerala Citizen Digital Facilitation Desk
+            <p class="font-headline-sm text-secondary font-bold flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span>
+              <span>Independent Kerala Citizen Digital Facilitation Desk</span>
             </p>
             <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-3xl mt-1">
               ഇ-ഡിസ്ട്രിക്ട് റവന്യൂ സർട്ടിഫിക്കറ്റുകൾ, തൽസമയ പാൻ കാർഡ്, പാസ്‌പോർട്ട് സ്ലോട്ട് ബുക്കിംഗ്, റേഷൻ കാർഡ് മാറ്റങ്ങൾ, PSC അപേക്ഷകൾ സുതാര്യമായ ഔദ്യോഗിക ചലാൻ നിരക്കുകളിൽ സമർപ്പിക്കാം. ക്യൂ നിൽക്കാതെ വാട്സാപ്പിലൂടെയും അപേക്ഷിക്കാം.
@@ -227,18 +258,18 @@
 
           <!-- Direct Citizen Action Buttons -->
           <div class="flex flex-col sm:flex-row gap-3 mt-2">
-            <a class="h-12 px-6 bg-secondary hover:bg-primary text-on-secondary rounded-xl flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold shadow-xs transition-all active:scale-[0.99]" href="services.html">
+            <a class="btn-primary-gradient h-12 px-6 rounded-xl flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold" href="services.html">
               <span class="material-symbols-outlined text-[20px]">apps</span>
               <span>സേവനങ്ങളുടെ പട്ടിക കാണുക (All Services)</span>
             </a>
-            <a class="h-12 px-6 bg-tertiary text-on-tertiary hover:bg-tertiary-container rounded-xl flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold shadow-xs transition-all active:scale-[0.99]" href="https://wa.me/919447012345?text=Hello%20Nexa%20Services,%20I%20would%20like%20to%20apply%20for%20a%20service" rel="noopener noreferrer" target="_blank">
-              <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+            <a class="btn-whatsapp-pill h-12 px-6 rounded-xl flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold" href="https://wa.me/919447012345?text=Hello%20Nexa%20Services,%20I%20would%20like%20to%20apply%20for%20a%20service" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[20px]">chat</span>
               <span>വാട്സാപ്പിൽ അപേക്ഷ ആരംഭിക്കാം</span>
             </a>
           </div>
 
           <!-- Citizen Assurance Seal -->
-          <div class="flex items-center gap-2 pt-2 border-t border-outline-variant/30 text-xs text-on-surface-variant">
+          <div class="flex items-center gap-2 pt-3 border-t border-outline-variant/30 text-xs text-on-surface-variant">
             <span class="material-symbols-outlined text-emerald-700 text-[18px]">verified</span>
             <span class="font-medium">
               ഔദ്യോഗിക ട്രഷറി ചലാൻ രസീത് നൽകുന്നു • സമർപ്പിക്കുന്നതിന് മുൻപ് ഡബിൾ-വെരിഫിക്കേഷൻ
@@ -248,44 +279,52 @@
       </section>
 
       <!-- Interactive Search & Filter Chips -->
-      <section class="px-margin py-2">
-        <div class="relative flex items-center">
-          <span class="material-symbols-outlined absolute left-3.5 text-outline text-[22px] pointer-events-none">search</span>
-          <input class="w-full h-12 pl-11 pr-10 bg-surface-container-lowest text-on-surface rounded-xl shadow-sm font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors border border-outline-variant/30" id="service-search" placeholder="സേവനം തിരയുക (e.g., വരുമാനം, PAN, Ration, Passport, PSC)..." type="search"/>
-          <button class="absolute right-3 text-outline hover:text-on-surface hidden p-1" id="search-clear">
+      <section class="px-margin py-2 reveal">
+        <div class="relative flex items-center search-glow-container rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-xs">
+          <span class="material-symbols-outlined absolute left-4 text-secondary text-[22px] pointer-events-none">search</span>
+          <input 
+            class="w-full h-13 pl-12 pr-11 bg-transparent text-on-surface rounded-2xl font-body-sm text-body-sm placeholder:text-outline focus:outline-none transition-colors" 
+            id="service-search" 
+            placeholder="സേവനം തിരയുക (e.g., വരുമാനം, PAN, Ration, Passport, PSC)..." 
+            type="search"
+          />
+          <button class="absolute right-3.5 text-outline hover:text-on-surface hidden p-1 rounded-full hover:bg-surface-container" id="search-clear" aria-label="Clear Search">
             <span class="material-symbols-outlined text-[18px]">close</span>
           </button>
         </div>
 
         <!-- Filter Chips -->
-        <div class="flex items-center gap-2 overflow-x-auto py-2.5 no-scrollbar">
-          <button class="filter-chip active-filter flex-shrink-0 px-3.5 py-1.5 rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-semibold transition-colors" data-category="all">
+        <div class="flex items-center gap-2 overflow-x-auto py-3 no-scrollbar">
+          <button class="filter-chip active-filter flex-shrink-0 px-4 py-2 rounded-full bg-secondary text-white font-label-md text-label-md font-bold shadow-xs transition-all active:scale-95" data-category="all">
             എല്ലാം (All)
           </button>
-          <button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors" data-category="certificates">
+          <button class="filter-chip flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-all active:scale-95" data-category="certificates">
             സർട്ടിഫിക്കറ്റുകൾ
           </button>
-          <button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors" data-category="id-cards">
+          <button class="filter-chip flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-all active:scale-95" data-category="id-cards">
             തിരിച്ചറിയൽ രേഖകൾ
           </button>
-          <button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors" data-category="jobs">
+          <button class="filter-chip flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-all active:scale-95" data-category="jobs">
             PSC &amp; പരീക്ഷകൾ
           </button>
-          <button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors" data-category="print">
+          <button class="filter-chip flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-all active:scale-95" data-category="print">
             പ്രിന്റിംഗ് &amp; PDF
           </button>
         </div>
       </section>
 
       <!-- Popular Services Grid -->
-      <section class="px-margin py-3 flex flex-col gap-3" id="services-grid">
+      <section class="px-margin py-3 flex flex-col gap-3 reveal" id="services-grid">
         <div class="flex items-center justify-between">
           <div>
-            <h2 class="font-headline-sm text-headline-sm text-primary font-bold">പ്രധാന സേവനങ്ങൾ</h2>
+            <h2 class="font-headline-sm text-headline-sm text-primary font-extrabold flex items-center gap-2">
+              <span class="w-1.5 h-4 rounded bg-secondary"></span>
+              <span>പ്രധാന സേവനങ്ങൾ</span>
+            </h2>
             <span class="font-label-sm text-label-sm text-on-surface-variant">Popular Digital Facilitation Services</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="font-label-sm text-label-sm font-semibold bg-surface-container-high text-secondary px-2.5 py-0.5 rounded-full" id="service-count-badge">
+            <span class="font-label-sm text-label-sm font-bold bg-surface-container-high text-secondary px-3 py-1 rounded-full border border-secondary/20" id="service-count-badge">
               6 സേവനങ്ങൾ
             </span>
             <a href="services.html" class="hidden sm:inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-bold hover:underline">
@@ -295,178 +334,238 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3" id="services-container">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="services-container">
           
           <!-- Card 1: Revenue Certificates -->
-          <article class="service-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer" data-category="certificates" data-keywords="income caste nativity residency e-district varumanam വരുമാനം ജാതി സർട്ടിഫിക്കറ്റ്" onclick="window.location.href='service-details.html?id=income-certificate'">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
-                <span class="material-symbols-outlined text-[24px]">description</span>
+          <article class="service-card service-card-elevated p-4 flex flex-col justify-between cursor-pointer group" data-category="certificates" data-keywords="income caste nativity residency e-district varumanam വരുമാനം ജാതി സർട്ടിഫിക്കറ്റ്" onclick="window.location.href='service-details.html?id=income-certificate'">
+            <div class="flex flex-col gap-2.5">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                  <span class="material-symbols-outlined text-[24px]">description</span>
+                </div>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">
+                  e-District
+                </span>
               </div>
               <div>
-                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight">റവന്യൂ സർട്ടിഫിക്കറ്റുകൾ</h3>
-                <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">e-District Kerala Services</p>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight group-hover:text-secondary transition-colors">റവന്യൂ സർട്ടിഫിക്കറ്റുകൾ</h3>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">e-District Kerala Services</p>
               </div>
               <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
                 വരുമാനം, ജാതി, നാറ്റിവിറ്റി, വൺ &amp; സെയിം സർട്ടിഫിക്കറ്റ് അപേക്ഷകൾ.
               </p>
             </div>
-            <div class="mt-3 pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-1">
-              <div class="flex items-center justify-between text-[11px] font-label-sm text-primary font-semibold">
-                <span>ഫീസ് (Fee):</span>
-                <span>Govt ₹25 + ₹30 ചാർജ്</span>
+            
+            <div class="mt-4 pt-3 bg-surface-container-low/70 rounded-xl p-2.5 flex flex-col gap-1.5 border border-outline-variant/30">
+              <div class="flex items-center justify-between text-[11px] font-semibold">
+                <span class="fee-tag-govt">Govt ₹25</span>
+                <span class="fee-tag-center">+ ₹30 ചാർജ്</span>
+                <span class="fee-tag-total">ആകെ ₹55</span>
               </div>
-              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium">
+              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium pt-1 border-t border-outline-variant/20">
                 <span class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[13px]">schedule</span>
+                  <span class="material-symbols-outlined text-[13px] text-secondary">schedule</span>
                   <span>3-5 പ്രവൃത്തിദിനങ്ങൾ</span>
                 </span>
-                <span class="text-secondary font-bold">വിശദാംശങ്ങൾ കാണുക</span>
+                <span class="text-secondary font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+                  <span>വിശദാംശങ്ങൾ</span>
+                  <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                </span>
               </div>
             </div>
           </article>
 
           <!-- Card 2: Passport Assistance -->
-          <article class="service-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer" data-category="id-cards" data-keywords="passport renewal appointment psk tatkaal തത്കാൽ പാസ്പോർട്ട് റിന്യൂവൽ" onclick="window.location.href='service-details.html?id=passport-fresh'">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
-                <span class="material-symbols-outlined text-[24px]">flight_takeoff</span>
+          <article class="service-card service-card-elevated p-4 flex flex-col justify-between cursor-pointer group" data-category="id-cards" data-keywords="passport renewal appointment psk tatkaal തത്കാൽ പാസ്പോർട്ട് റിന്യൂവൽ" onclick="window.location.href='service-details.html?id=passport-fresh'">
+            <div class="flex flex-col gap-2.5">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                  <span class="material-symbols-outlined text-[24px]">flight_takeoff</span>
+                </div>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">
+                  Passport Seva
+                </span>
               </div>
               <div>
-                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight">പാസ്‌പോർട്ട് സഹായം</h3>
-                <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">New &amp; Renewal Support</p>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight group-hover:text-secondary transition-colors">പാസ്‌പോർട്ട് സഹായം</h3>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">New &amp; Renewal Support</p>
               </div>
               <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
                 ഓൺലൈൻ അപ്പോയിന്റ്മെന്റ് ബുക്കിംഗ്, രേഖ പരിശോധന, തത്കാൽ സപ്പോർട്ട്.
               </p>
             </div>
-            <div class="mt-3 pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-1">
-              <div class="flex items-center justify-between text-[11px] font-label-sm text-primary font-semibold">
-                <span>ഫീസ് (Fee):</span>
-                <span>Govt ₹1500 + ₹150</span>
+            
+            <div class="mt-4 pt-3 bg-surface-container-low/70 rounded-xl p-2.5 flex flex-col gap-1.5 border border-outline-variant/30">
+              <div class="flex items-center justify-between text-[11px] font-semibold">
+                <span class="fee-tag-govt">Govt ₹1500</span>
+                <span class="fee-tag-center">+ ₹150 ചാർജ്</span>
+                <span class="fee-tag-total">ആകെ ₹1650</span>
               </div>
-              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium">
+              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium pt-1 border-t border-outline-variant/20">
                 <span class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[13px]">schedule</span>
+                  <span class="material-symbols-outlined text-[13px] text-secondary">schedule</span>
                   <span>തൽസമയ സ്ലോട്ട്</span>
                 </span>
-                <span class="text-secondary font-bold">സ്ലോട്ട് പരിശോധിക്കാം</span>
+                <span class="text-secondary font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+                  <span>സ്ലോട്ട് കാണാം</span>
+                  <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                </span>
               </div>
             </div>
           </article>
 
           <!-- Card 3: PAN Card -->
-          <article class="service-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer" data-category="id-cards" data-keywords="pan card uti nsdl correction minor e-pan പാൻ കാർഡ് തിരുത്തൽ" onclick="window.location.href='service-details.html?id=pan-new'">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
-                <span class="material-symbols-outlined text-[24px]">badge</span>
+          <article class="service-card service-card-elevated p-4 flex flex-col justify-between cursor-pointer group" data-category="id-cards" data-keywords="pan card uti nsdl correction minor e-pan പാൻ കാർഡ് തിരുത്തൽ" onclick="window.location.href='service-details.html?id=pan-new'">
+            <div class="flex flex-col gap-2.5">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                  <span class="material-symbols-outlined text-[24px]">badge</span>
+                </div>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">
+                  UTI / NSDL
+                </span>
               </div>
               <div>
-                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight">പാൻ കാർഡ് സേവനങ്ങൾ</h3>
-                <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">New PAN &amp; Corrections</p>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight group-hover:text-secondary transition-colors">പാൻ കാർഡ് സേവനങ്ങൾ</h3>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">New PAN &amp; Corrections</p>
               </div>
               <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
                 പുതിയ പാൻ കാർഡ്, പേര്/ജനനത്തീയതി മാറ്റം, ഫിസിക്കൽ കാർഡ് ഓർഡർ.
               </p>
             </div>
-            <div class="mt-3 pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-1">
-              <div class="flex items-center justify-between text-[11px] font-label-sm text-primary font-semibold">
-                <span>ഫീസ് (Fee):</span>
-                <span>Govt ₹107 + ₹60 ചാർജ്</span>
+            
+            <div class="mt-4 pt-3 bg-surface-container-low/70 rounded-xl p-2.5 flex flex-col gap-1.5 border border-outline-variant/30">
+              <div class="flex items-center justify-between text-[11px] font-semibold">
+                <span class="fee-tag-govt">Govt ₹107</span>
+                <span class="fee-tag-center">+ ₹60 ചാർജ്</span>
+                <span class="fee-tag-total">ആകെ ₹167</span>
               </div>
-              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium">
+              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium pt-1 border-t border-outline-variant/20">
                 <span class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[13px]">schedule</span>
+                  <span class="material-symbols-outlined text-[13px] text-secondary">schedule</span>
                   <span>e-PAN: 48 മണിക്കൂർ</span>
                 </span>
-                <span class="text-secondary font-bold">പാൻ അപേക്ഷിക്കാം</span>
+                <span class="text-secondary font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+                  <span>പാൻ അപേക്ഷിക്കാം</span>
+                  <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                </span>
               </div>
             </div>
           </article>
 
           <!-- Card 4: Ration Card -->
-          <article class="service-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer" data-category="certificates" data-keywords="ration card civil supplies member surrender റേഷൻ കാർഡ് അംഗങ്ങളെ ചേർക്കൽ" onclick="window.location.href='service-details.html?id=ration-card-service'">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
-                <span class="material-symbols-outlined text-[24px]">family_restroom</span>
+          <article class="service-card service-card-elevated p-4 flex flex-col justify-between cursor-pointer group" data-category="certificates" data-keywords="ration card civil supplies member surrender റേഷൻ കാർഡ് അംഗങ്ങളെ ചേർക്കൽ" onclick="window.location.href='service-details.html?id=ration-card-service'">
+            <div class="flex flex-col gap-2.5">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                  <span class="material-symbols-outlined text-[24px]">family_restroom</span>
+                </div>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">
+                  Civil Supplies
+                </span>
               </div>
               <div>
-                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight">റേഷൻ കാർഡ് സേവനം</h3>
-                <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Civil Supplies Kerala</p>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight group-hover:text-secondary transition-colors">റേഷൻ കാർഡ് സേവനം</h3>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">Civil Supplies Kerala</p>
               </div>
               <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
                 പുതിയ കാർഡ്, പേര് ചേർക്കൽ, കാർഡ് മാറ്റം, ഒഴിവാക്കൽ സർട്ടിഫിക്കറ്റ്.
               </p>
             </div>
-            <div class="mt-3 pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-1">
-              <div class="flex items-center justify-between text-[11px] font-label-sm text-primary font-semibold">
-                <span>ഫീസ് (Fee):</span>
-                <span>₹50 ചാർജ്</span>
+            
+            <div class="mt-4 pt-3 bg-surface-container-low/70 rounded-xl p-2.5 flex flex-col gap-1.5 border border-outline-variant/30">
+              <div class="flex items-center justify-between text-[11px] font-semibold">
+                <span class="fee-tag-govt">Govt ₹0</span>
+                <span class="fee-tag-center">+ ₹50 ചാർജ്</span>
+                <span class="fee-tag-total">ആകെ ₹50</span>
               </div>
-              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium">
+              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium pt-1 border-t border-outline-variant/20">
                 <span class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[13px]">schedule</span>
+                  <span class="material-symbols-outlined text-[13px] text-secondary">schedule</span>
                   <span>5-7 പ്രവൃത്തിദിനം</span>
                 </span>
-                <span class="text-secondary font-bold">അംഗങ്ങളെ ചേർക്കാം</span>
+                <span class="text-secondary font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+                  <span>അംഗങ്ങളെ ചേർക്കാം</span>
+                  <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                </span>
               </div>
             </div>
           </article>
 
           <!-- Card 5: Kerala PSC & Job Forms -->
-          <article class="service-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer" data-category="jobs" data-keywords="psc thulasi ssc railway sbi upsc പരീക്ഷ അപേക്ഷ ഹാൾടിക്കറ്റ്" onclick="window.location.href='service-details.html?id=psc-registration'">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
-                <span class="material-symbols-outlined text-[24px]">school</span>
+          <article class="service-card service-card-elevated p-4 flex flex-col justify-between cursor-pointer group" data-category="jobs" data-keywords="psc thulasi ssc railway sbi upsc പരീക്ഷ അപേക്ഷ ഹാൾടിക്കറ്റ്" onclick="window.location.href='service-details.html?id=psc-registration'">
+            <div class="flex flex-col gap-2.5">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                  <span class="material-symbols-outlined text-[24px]">school</span>
+                </div>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">
+                  Kerala PSC
+                </span>
               </div>
               <div>
-                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight">PSC / ജോലി അപേക്ഷ</h3>
-                <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Thulasi &amp; SSC Support</p>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight group-hover:text-secondary transition-colors">PSC / ജോലി അപേക്ഷ</h3>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">Thulasi &amp; SSC Support</p>
               </div>
               <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
                 ഒറ്റത്തവണ രജിസ്ട്രേഷൻ, അപേക്ഷകൾ, ഹാൾടിക്കറ്റ് പ്രിന്റിംഗ്.
               </p>
             </div>
-            <div class="mt-3 pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-1">
-              <div class="flex items-center justify-between text-[11px] font-label-sm text-primary font-semibold">
-                <span>ഫീസ് (Fee):</span>
-                <span>₹40 ഫീസ്</span>
+            
+            <div class="mt-4 pt-3 bg-surface-container-low/70 rounded-xl p-2.5 flex flex-col gap-1.5 border border-outline-variant/30">
+              <div class="flex items-center justify-between text-[11px] font-semibold">
+                <span class="fee-tag-govt">Govt ₹0</span>
+                <span class="fee-tag-center">+ ₹40 ചാർജ്</span>
+                <span class="fee-tag-total">ആകെ ₹40</span>
               </div>
-              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium">
+              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium pt-1 border-t border-outline-variant/20">
                 <span class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[13px]">schedule</span>
+                  <span class="material-symbols-outlined text-[13px] text-secondary">schedule</span>
                   <span>തൽസമയ കൺഫർമേഷൻ</span>
                 </span>
-                <span class="text-secondary font-bold">പ്രൊഫൈൽ തുടങ്ങാം</span>
+                <span class="text-secondary font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+                  <span>പ്രൊഫൈൽ തുടങ്ങാം</span>
+                  <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                </span>
               </div>
             </div>
           </article>
 
           <!-- Card 6: Printing & Scanning -->
-          <article class="service-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer" data-category="print" data-keywords="print color scanning lamination pdf resize photo പ്രിന്റിംഗ് ലാമിനേഷൻ ഫോട്ടോ" onclick="window.location.href='service-details.html?id=printing-scanning'">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
-                <span class="material-symbols-outlined text-[24px]">print</span>
+          <article class="service-card service-card-elevated p-4 flex flex-col justify-between cursor-pointer group" data-category="print" data-keywords="print color scanning lamination pdf resize photo പ്രിന്റിംഗ് ലാമിനേഷൻ ഫോട്ടോ" onclick="window.location.href='service-details.html?id=printing-scanning'">
+            <div class="flex flex-col gap-2.5">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                  <span class="material-symbols-outlined text-[24px]">print</span>
+                </div>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">
+                  Laser Desk
+                </span>
               </div>
               <div>
-                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight">പ്രിന്റിംഗ് &amp; സ്കാനിംഗ്</h3>
-                <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Color Print &amp; Lamination</p>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface leading-tight group-hover:text-secondary transition-colors">പ്രിന്റിംഗ് &amp; സ്കാനിംഗ്</h3>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">Color Print &amp; Lamination</p>
               </div>
               <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
                 ഹൈ-ക്വാളിറ്റി ലേസർ പ്രിന്റ്, ഫോട്ടോ ലാമിനേഷൻ, സൈസ് മാറ്റിയ PDF.
               </p>
             </div>
-            <div class="mt-3 pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-1">
-              <div class="flex items-center justify-between text-[11px] font-label-sm text-primary font-semibold">
-                <span>ഫീസ് (Fee):</span>
-                <span>₹10 മുതൽ</span>
+            
+            <div class="mt-4 pt-3 bg-surface-container-low/70 rounded-xl p-2.5 flex flex-col gap-1.5 border border-outline-variant/30">
+              <div class="flex items-center justify-between text-[11px] font-semibold">
+                <span class="fee-tag-govt">Govt ₹0</span>
+                <span class="fee-tag-center">₹10 മുതൽ</span>
+                <span class="fee-tag-total">തൽസമയം</span>
               </div>
-              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium">
+              <div class="flex items-center justify-between text-[11px] text-tertiary font-medium pt-1 border-t border-outline-variant/20">
                 <span class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[13px]">schedule</span>
+                  <span class="material-symbols-outlined text-[13px] text-secondary">schedule</span>
                   <span>തൽസമയം കൈപ്പറ്റാം</span>
                 </span>
-                <span class="text-secondary font-bold">നിരക്കുകൾ പരിശോധിക്കാം</span>
+                <span class="text-secondary font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+                  <span>നിരക്കുകൾ</span>
+                  <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                </span>
               </div>
             </div>
           </article>
@@ -474,13 +573,15 @@
         </div>
 
         <!-- Empty Search State -->
-        <div class="hidden bg-surface-container-lowest rounded-xl p-6 text-center flex-col items-center gap-2 border border-outline-variant/30" id="no-services-found">
-          <span class="material-symbols-outlined text-outline text-[40px]">manage_search</span>
-          <p class="font-headline-sm text-headline-sm text-primary font-semibold">സേവനം കണ്ടെത്താനായില്ല</p>
-          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+        <div class="hidden bg-surface-container-lowest rounded-2xl p-8 text-center flex-col items-center gap-3 border border-outline-variant/30 shadow-sm" id="no-services-found">
+          <div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-outline">
+            <span class="material-symbols-outlined text-[36px]">manage_search</span>
+          </div>
+          <p class="font-headline-sm text-headline-sm text-primary font-bold">സേവനം കണ്ടെത്താനായില്ല</p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
             നിങ്ങൾ തിരഞ്ഞ സേവനം ലിസ്റ്റിലില്ലെങ്കിൽ ഞങ്ങളുടെ വാട്സാപ്പിൽ അയക്കുക, ഞങ്ങൾ ഉടൻ സഹായിക്കാം.
           </p>
-          <a class="mt-2 px-4 py-2 bg-tertiary text-on-tertiary rounded-lg font-label-md text-label-md flex items-center gap-1.5 shadow-sm" href="https://wa.me/919447012345?text=Hello%20Nexa,%20I%20need%20assistance%20with%20a%20service" target="_blank">
+          <a class="mt-2 px-5 py-2.5 bg-tertiary text-on-tertiary rounded-xl font-label-md text-label-md font-bold flex items-center gap-2 shadow-sm hover:brightness-110 active:scale-95 transition-all" href="https://wa.me/919447012345?text=Hello%20Nexa,%20I%20need%20assistance%20with%20a%20service" target="_blank">
             <span class="material-symbols-outlined text-[18px]">chat</span>
             <span>വാട്സാപ്പിൽ ചോദിക്കുക</span>
           </a>
@@ -488,48 +589,51 @@
       </section>
 
       <!-- How It Works (3 Steps) -->
-      <section class="px-margin py-4">
-        <div class="bg-surface-container rounded-xl p-space-md shadow-sm border border-outline-variant/30">
-          <div class="mb-3">
-            <h2 class="font-headline-sm text-headline-sm text-primary font-bold">എങ്ങനെ പ്രവർത്തിക്കുന്നു?</h2>
+      <section class="px-margin py-4 reveal">
+        <div class="bg-surface-container-low rounded-3xl p- space-md md:p-6 shadow-sm border border-outline-variant/40">
+          <div class="mb-4">
+            <h2 class="font-headline-sm text-headline-sm text-primary font-extrabold flex items-center gap-2">
+              <span class="w-1.5 h-4 rounded bg-secondary"></span>
+              <span>എങ്ങനെ പ്രവർത്തിക്കുന്നു?</span>
+            </h2>
             <span class="font-label-sm text-label-sm text-on-surface-variant">Simple 3-Step Hassle Free Process</span>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
             <!-- Step 1 -->
-            <div class="flex items-start gap-3 bg-surface-container-lowest p-3 rounded-lg shadow-sm border border-outline-variant/20">
-              <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary font-bold font-label-lg flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-3 bg-surface-container-lowest p-4 rounded-2xl shadow-xs border border-outline-variant/20 hover:shadow-md transition-shadow">
+              <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-secondary to-[#0040a2] text-white font-extrabold font-label-lg flex items-center justify-center flex-shrink-0 shadow-xs">
                 1
               </div>
               <div class="flex flex-col">
                 <h3 class="font-label-lg text-label-lg text-primary font-bold">സേവനം തിരഞ്ഞെടുക്കുക</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
+                <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug mt-1">
                   നിങ്ങൾക്ക് ആവശ്യമുള്ള സർട്ടിഫിക്കറ്റ് അല്ലെങ്കിൽ അപേക്ഷ ലിസ്റ്റിൽ നിന്നോ വാട്സാപ്പിലൂടെയോ അറിയിക്കുക.
                 </p>
               </div>
             </div>
 
             <!-- Step 2 -->
-            <div class="flex items-start gap-3 bg-surface-container-lowest p-3 rounded-lg shadow-sm border border-outline-variant/20">
-              <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary font-bold font-label-lg flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-3 bg-surface-container-lowest p-4 rounded-2xl shadow-xs border border-outline-variant/20 hover:shadow-md transition-shadow">
+              <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-secondary to-[#0040a2] text-white font-extrabold font-label-lg flex items-center justify-center flex-shrink-0 shadow-xs">
                 2
               </div>
               <div class="flex flex-col">
                 <h3 class="font-label-lg text-label-lg text-primary font-bold">രേഖകൾ അയക്കുക / എത്തിക്കുക</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
+                <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug mt-1">
                   ആവശ്യമായ ഫോട്ടോയും ആധാർ ഉൾപ്പെടെയുള്ള രേഖകളും വാട്സാപ്പിൽ അയക്കുക അല്ലെങ്കിൽ സെന്ററിൽ നേരിട്ട് നൽകുക.
                 </p>
               </div>
             </div>
 
             <!-- Step 3 -->
-            <div class="flex items-start gap-3 bg-surface-container-lowest p-3 rounded-lg shadow-sm border border-outline-variant/20">
-              <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary font-bold font-label-lg flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-3 bg-surface-container-lowest p-4 rounded-2xl shadow-xs border border-outline-variant/20 hover:shadow-md transition-shadow">
+              <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-secondary to-[#0040a2] text-white font-extrabold font-label-lg flex items-center justify-center flex-shrink-0 shadow-xs">
                 3
               </div>
               <div class="flex flex-col">
                 <h3 class="font-label-lg text-label-lg text-primary font-bold">അക്നോളജ്മെന്റും സർട്ടിഫിക്കറ്റും</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
+                <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug mt-1">
                   അപേക്ഷ കൃത്യമായി സമർപ്പിച്ച് ട്രാക്കിംഗ് വിവരങ്ങളും അന്തിമ സർട്ടിഫിക്കറ്റും നിങ്ങളുടെ ഫോണിൽ ലഭ്യമാക്കുന്നു.
                 </p>
               </div>
@@ -539,42 +643,58 @@
       </section>
 
       <!-- Why Choose Nexa Banner / Value Props -->
-      <section class="px-margin py-2">
-        <div class="bg-primary text-on-primary rounded-xl p-space-md shadow-md flex flex-col gap-3">
+      <section class="px-margin py-2 reveal">
+        <div class="bg-gradient-to-br from-[#01284b] to-[#011a33] text-white rounded-3xl p- space-md md:p-6 shadow-lg flex flex-col gap-4 border border-white/10 relative overflow-hidden">
+          <div class="absolute -right-16 -top-16 w-64 h-64 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
+
           <div>
-            <span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-semibold">വിശ്വാസ്യതയും കൃത്യതയും</span>
-            <h2 class="font-headline-sm text-headline-sm font-bold text-white leading-tight">എന്തുകൊണ്ട് നെക്സ സർവീസസ്?</h2>
+            <span class="font-label-sm text-label-sm text-emerald-300 uppercase tracking-wider font-bold">വിശ്വാസ്യതയും കൃത്യതയും</span>
+            <h2 class="font-headline-sm text-headline-sm font-extrabold text-white leading-tight">എന്തുകൊണ്ട് നെക്സ സർവീസസ്?</h2>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5">
-            <div class="bg-primary-container p-2.5 rounded-lg flex flex-col gap-1">
-              <span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div class="bg-white/5 backdrop-blur-sm p-3.5 rounded-2xl flex flex-col gap-1.5 border border-white/10 hover:bg-white/10 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">check_circle</span>
+              </div>
               <span class="font-label-md text-label-md font-bold text-white">തെറ്റുകളില്ലാത്ത അപേക്ഷ</span>
-              <p class="font-body-sm text-body-sm text-[11px] text-on-primary-container leading-tight">റിജക്ഷൻ സാധ്യത ഒഴിവാക്കാൻ ഡബിൾ വെരിഫിക്കേഷൻ.</p>
+              <p class="font-body-sm text-body-sm text-[11px] text-primary-fixed leading-tight">റിജക്ഷൻ സാധ്യത ഒഴിവാക്കാൻ ഡബിൾ വെരിഫിക്കേഷൻ.</p>
             </div>
-            <div class="bg-primary-container p-2.5 rounded-lg flex flex-col gap-1">
-              <span class="material-symbols-outlined text-tertiary-fixed text-[20px]">currency_rupee</span>
+            
+            <div class="bg-white/5 backdrop-blur-sm p-3.5 rounded-2xl flex flex-col gap-1.5 border border-white/10 hover:bg-white/10 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">currency_rupee</span>
+              </div>
               <span class="font-label-md text-label-md font-bold text-white">സുതാര്യമായ ഫീസ്</span>
-              <p class="font-body-sm text-body-sm text-[11px] text-on-primary-container leading-tight">മറഞ്ഞിരിക്കുന്ന മറ്റ് അധിക ചാർജുകളൊന്നുമില്ല.</p>
+              <p class="font-body-sm text-body-sm text-[11px] text-primary-fixed leading-tight">മറഞ്ഞിരിക്കുന്ന മറ്റ് അധിക ചാർജുകളൊന്നുമില്ല.</p>
             </div>
-            <div class="bg-primary-container p-2.5 rounded-lg flex flex-col gap-1">
-              <span class="material-symbols-outlined text-tertiary-fixed text-[20px]">sms</span>
+            
+            <div class="bg-white/5 backdrop-blur-sm p-3.5 rounded-2xl flex flex-col gap-1.5 border border-white/10 hover:bg-white/10 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">sms</span>
+              </div>
               <span class="font-label-md text-label-md font-bold text-white">SMS / വാട്സാപ്പ് അപ്‌ഡേറ്റ്</span>
-              <p class="font-body-sm text-body-sm text-[11px] text-on-primary-container leading-tight">ഓരോ ഘട്ടത്തിലും തൽസമയ മെസ്സേജുകൾ ലഭിക്കും.</p>
+              <p class="font-body-sm text-body-sm text-[11px] text-primary-fixed leading-tight">ഓരോ ഘട്ടത്തിലും തൽസമയ മെസ്സേജുകൾ ലഭിക്കും.</p>
             </div>
-            <div class="bg-primary-container p-2.5 rounded-lg flex flex-col gap-1">
-              <span class="material-symbols-outlined text-tertiary-fixed text-[20px]">local_shipping</span>
+            
+            <div class="bg-white/5 backdrop-blur-sm p-3.5 rounded-2xl flex flex-col gap-1.5 border border-white/10 hover:bg-white/10 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">local_shipping</span>
+              </div>
               <span class="font-label-md text-label-md font-bold text-white">പഞ്ചായത്ത് പരിധിയിൽ പിക്കപ്പ്</span>
-              <p class="font-body-sm text-body-sm text-[11px] text-on-primary-container leading-tight">പ്രായമായവർക്കും കിടപ്പുരോഗികൾക്കും പ്രത്യേക പിന്തുണ.</p>
+              <p class="font-body-sm text-body-sm text-[11px] text-primary-fixed leading-tight">പ്രായമായവർക്കും കിടപ്പുരോഗികൾക്കും പ്രത്യേക പിന്തുണ.</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Interactive Document Checklist Mini-Helper -->
-      <section class="px-margin py-3">
-        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-2">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-secondary text-[22px]">fact_check</span>
+      <section class="px-margin py-3 reveal">
+        <div class="bg-surface-container-lowest rounded-3xl p- space-md md:p-6 shadow-sm border border-outline-variant/40 flex flex-col gap-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[22px]">fact_check</span>
+            </div>
             <div>
               <h2 class="font-headline-sm text-headline-sm text-primary font-bold">രേഖകളുടെ ചെക്ക്‌ലിസ്റ്റ്</h2>
               <span class="font-label-sm text-label-sm text-on-surface-variant">Check Documents Before Applying</span>
@@ -583,26 +703,26 @@
           <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">
             സാധാരണയായി ആവശ്യമായി വരുന്ന രേഖകൾ തയ്യാറാണോ എന്ന് ഉറപ്പുവരുത്തുക:
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-1">
-            <label class="flex items-center gap-2 text-[13px] text-on-surface cursor-pointer select-none">
-              <input checked class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 mt-1">
+            <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low text-[13px] text-on-surface cursor-pointer select-none hover:bg-surface-container transition-colors">
+              <input checked class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer accent-secondary" type="checkbox"/>
               <span>ആധാർ കാർഡ് (മൊബൈൽ നമ്പർ ലിങ്ക് ചെയ്തത്)</span>
             </label>
-            <label class="flex items-center gap-2 text-[13px] text-on-surface cursor-pointer select-none">
-              <input class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+            <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low text-[13px] text-on-surface cursor-pointer select-none hover:bg-surface-container transition-colors">
+              <input class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer accent-secondary" type="checkbox"/>
               <span>റേഷൻ കാർഡ് കോപ്പി (കുടുംബ വിവരങ്ങൾക്ക്)</span>
             </label>
-            <label class="flex items-center gap-2 text-[13px] text-on-surface cursor-pointer select-none">
-              <input class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+            <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low text-[13px] text-on-surface cursor-pointer select-none hover:bg-surface-container transition-colors">
+              <input class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer accent-secondary" type="checkbox"/>
               <span>പാസ്‌പോർട്ട് സൈസ് ഫോട്ടോ &amp; വെള്ള പേപ്പറിൽ ഒപ്പ്</span>
             </label>
-            <label class="flex items-center gap-2 text-[13px] text-on-surface cursor-pointer select-none">
-              <input class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+            <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low text-[13px] text-on-surface cursor-pointer select-none hover:bg-surface-container transition-colors">
+              <input class="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer accent-secondary" type="checkbox"/>
               <span>SSLC ബുക്ക് / ജനന സർട്ടിഫിക്കറ്റ് കോപ്പി</span>
             </label>
           </div>
-          <div class="bg-surface-container-low p-2 rounded-lg mt-2 flex items-center justify-between">
-            <span class="font-label-sm text-label-sm text-on-surface-variant">സംശയങ്ങൾ ഉണ്ടോ?</span>
+          <div class="bg-surface-container-low p-3 rounded-xl mt-1 flex items-center justify-between border border-outline-variant/30">
+            <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">സംശയങ്ങൾ ഉണ്ടോ? രേഖകൾ പരിശോധിക്കാം:</span>
             <a class="font-label-md text-label-md text-secondary font-bold flex items-center gap-1 hover:underline" href="https://wa.me/919447012345?text=Document%20Verification%20Query" target="_blank">
               <span>നേരിട്ട് ചോദിക്കാം (WhatsApp)</span>
               <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -612,61 +732,64 @@
       </section>
 
       <!-- FAQ Accordion -->
-      <section class="px-margin py-3">
-        <div class="flex flex-col gap-2">
+      <section class="px-margin py-3 reveal">
+        <div class="flex flex-col gap-2.5">
           <div class="mb-1">
-            <h2 class="font-headline-sm text-headline-sm text-primary font-bold">പതിവ് ചോദ്യങ്ങൾ (FAQ)</h2>
+            <h2 class="font-headline-sm text-headline-sm text-primary font-bold flex items-center gap-2">
+              <span class="w-1.5 h-4 rounded bg-secondary"></span>
+              <span>പതിവ് ചോദ്യങ്ങൾ (FAQ)</span>
+            </h2>
             <span class="font-label-sm text-label-sm text-on-surface-variant">Frequently Asked Questions</span>
           </div>
 
           <!-- FAQ 1 -->
-          <div class="faq-item bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
-            <button class="faq-toggle w-full p-3.5 text-left flex items-center justify-between gap-2 focus:outline-none">
+          <div class="faq-item bg-surface-container-lowest rounded-2xl shadow-xs border border-outline-variant/30 overflow-hidden">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2 focus:outline-none hover:bg-surface-container-low/50 transition-colors">
               <span class="font-label-lg text-label-lg font-bold text-on-surface text-[14px]">
                 സെന്ററിൽ നേരിട്ട് വരാതെ സർട്ടിഫിക്കറ്റുകൾ എടുക്കാൻ സാധിക്കുമോ?
               </span>
               <span class="material-symbols-outlined text-outline faq-icon transition-transform">expand_more</span>
             </button>
-            <div class="faq-content hidden px-3.5 pb-3 text-on-surface-variant font-body-sm text-body-sm text-[13px] leading-relaxed">
+            <div class="faq-content hidden px-4 pb-3.5 text-on-surface-variant font-body-sm text-body-sm text-[13px] leading-relaxed border-t border-outline-variant/10 pt-2.5">
               തീർച്ചയായും! ആവശ്യമായ രേഖകൾ ഞങ്ങളുടെ ഔദ്യോഗിക വാട്സാപ്പ് നമ്പറിലേക്ക് (+91 94470 12345) അയച്ചു തന്നാൽ മതിയാകും. അപേക്ഷ സമർപ്പിച്ച ശേഷം ലഭിക്കുന്ന അക്നോളജ്മെന്റും സർട്ടിഫിക്കറ്റും വാട്സാപ്പിൽ അയച്ചുതരുന്നതാണ്.
             </div>
           </div>
 
           <!-- FAQ 2 -->
-          <div class="faq-item bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
-            <button class="faq-toggle w-full p-3.5 text-left flex items-center justify-between gap-2 focus:outline-none">
+          <div class="faq-item bg-surface-container-lowest rounded-2xl shadow-xs border border-outline-variant/30 overflow-hidden">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2 focus:outline-none hover:bg-surface-container-low/50 transition-colors">
               <span class="font-label-lg text-label-lg font-bold text-on-surface text-[14px]">
                 സർക്കാർ ഫീസും സേവന നിരക്കും എങ്ങനെയാണ് കണക്കാക്കുന്നത്?
               </span>
               <span class="material-symbols-outlined text-outline faq-icon transition-transform">expand_more</span>
             </button>
-            <div class="faq-content hidden px-3.5 pb-3 text-on-surface-variant font-body-sm text-body-sm text-[13px] leading-relaxed">
+            <div class="faq-content hidden px-4 pb-3.5 text-on-surface-variant font-body-sm text-body-sm text-[13px] leading-relaxed border-t border-outline-variant/10 pt-2.5">
               ഓരോ സേവനത്തിനും സർക്കാർ നിശ്ചയിച്ചിട്ടുള്ള യഥാർത്ഥ പോർട്ടൽ ഫീസും (ഉദാ: e-District ₹15, PAN ₹107) നെക്സ സർവീസസിന്റെ നോമിനൽ കൺസൾട്ടേഷൻ ചാർജും ബില്ലിൽ പ്രത്യേകം രേഖപ്പെടുത്തും.
             </div>
           </div>
 
           <!-- FAQ 3 -->
-          <div class="faq-item bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
-            <button class="faq-toggle w-full p-3.5 text-left flex items-center justify-between gap-2 focus:outline-none">
+          <div class="faq-item bg-surface-container-lowest rounded-2xl shadow-xs border border-outline-variant/30 overflow-hidden">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2 focus:outline-none hover:bg-surface-container-low/50 transition-colors">
               <span class="font-label-lg text-label-lg font-bold text-on-surface text-[14px]">
                 അപേക്ഷ നൽകി കഴിഞ്ഞാൽ സ്റ്റാറ്റസ് എങ്ങനെ അറിയാം?
               </span>
               <span class="material-symbols-outlined text-outline faq-icon transition-transform">expand_more</span>
             </button>
-            <div class="faq-content hidden px-3.5 pb-3 text-on-surface-variant font-body-sm text-body-sm text-[13px] leading-relaxed">
+            <div class="faq-content hidden px-4 pb-3.5 text-on-surface-variant font-body-sm text-body-sm text-[13px] leading-relaxed border-t border-outline-variant/10 pt-2.5">
               ആപ്ലിക്കേഷൻ സബ്മിറ്റ് ചെയ്യുമ്പോൾ തന്നെ ആപ്ലിക്കേഷൻ നമ്പറും ട്രാക്കിംഗ് ലിങ്കും നിങ്ങളുടെ ഫോണിലേക്ക് SMS ആയി ലഭിക്കും. കൂടാതെ ഈ ആപ്പിലെ 'Status' മെനുവിലൂടെയും പരിശോധിക്കാം.
             </div>
           </div>
 
           <!-- FAQ 4 -->
-          <div class="faq-item bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
-            <button class="faq-toggle w-full p-3.5 text-left flex items-center justify-between gap-2 focus:outline-none">
+          <div class="faq-item bg-surface-container-lowest rounded-2xl shadow-xs border border-outline-variant/30 overflow-hidden">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2 focus:outline-none hover:bg-surface-container-low/50 transition-colors">
               <span class="font-label-lg text-label-lg font-bold text-on-surface text-[14px]">
                 അപേക്ഷ നിരസിക്കപ്പെട്ടാൽ (Rejected) എന്തുചെയ്യും?
               </span>
               <span class="material-symbols-outlined text-outline faq-icon transition-transform">expand_more</span>
             </button>
-            <div class="faq-content hidden px-3.5 pb-3 text-on-surface-variant font-body-sm text-body-sm text-[13px] leading-relaxed">
+            <div class="faq-content hidden px-4 pb-3.5 text-on-surface-variant font-body-sm text-body-sm text-[13px] leading-relaxed border-t border-outline-variant/10 pt-2.5">
               റവന്യൂ വകുപ്പിൽ നിന്നോ അതത് ഓഫീസുകളിൽ നിന്നോ എന്തെങ്കിലും തിരുത്തലുകൾ ആവശ്യപ്പെട്ടാൽ സൗജന്യമായി രേഖകൾ വീണ്ടും സമർപ്പിക്കാൻ ഞങ്ങളുടെ ഹെൽപ്പ് ഡെസ്ക് സഹായിക്കും.
             </div>
           </div>
@@ -674,11 +797,11 @@
       </section>
 
       <!-- Office Timing, Branches & Emergency Card -->
-      <section class="px-margin pt-2 pb-4">
-        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-3">
-          <div class="flex items-center gap-2">
-            <div class="w-9 h-9 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center">
-              <span class="material-symbols-outlined text-[20px]">storefront</span>
+      <section class="px-margin pt-2 pb-4 reveal">
+        <div class="bg-surface-container-lowest rounded-3xl p- space-md md:p-6 shadow-sm border border-outline-variant/40 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-surface-container-high text-secondary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[22px]">storefront</span>
             </div>
             <div>
               <h2 class="font-headline-sm text-headline-sm text-primary font-bold">പ്രവർത്തന സമയവും കേന്ദ്രങ്ങളും</h2>
@@ -686,35 +809,35 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-body-sm text-body-sm text-[13px]">
-            <div class="flex items-center justify-between bg-surface-container-low p-2 rounded-lg">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 font-body-sm text-body-sm text-[13px]">
+            <div class="flex items-center justify-between bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
               <span class="font-semibold text-primary">തിങ്കൾ - ശനി (Mon - Sat):</span>
               <span class="text-secondary font-bold">8:30 AM - 7:30 PM</span>
             </div>
-            <div class="flex items-center justify-between bg-surface-container-low p-2 rounded-lg">
+            <div class="flex items-center justify-between bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
               <span class="font-semibold text-primary">ഞായറാഴ്ച (Sunday):</span>
               <span class="text-on-surface-variant">10:00 AM - 2:00 PM (WhatsApp Only)</span>
             </div>
           </div>
 
-          <div class="pt-1 flex flex-col gap-2">
-            <div class="flex items-start gap-2 text-[12px] text-on-surface-variant">
-              <span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">location_on</span>
+          <div class="pt-2 flex flex-col gap-2">
+            <div class="flex items-start gap-2.5 text-[12px] text-on-surface-variant bg-surface-container-low/50 p-2.5 rounded-xl border border-outline-variant/20">
+              <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">location_on</span>
               <span><strong>Kakkanad HQ (Ernakulam):</strong> Near Civil Station Road, Kakkanad - 682030</span>
             </div>
-            <div class="flex items-start gap-2 text-[12px] text-on-surface-variant">
-              <span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">location_on</span>
+            <div class="flex items-start gap-2.5 text-[12px] text-on-surface-variant bg-surface-container-low/50 p-2.5 rounded-xl border border-outline-variant/20">
+              <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">location_on</span>
               <span><strong>Palakkad Desk:</strong> Stadium Junction, Near Municipal Bus Stand - 678001</span>
             </div>
           </div>
 
           <!-- Quick Call Button for Elderly/Assistance -->
           <div class="pt-2 flex gap-2">
-            <a class="flex-1 h-11 bg-surface-container text-primary hover:bg-surface-container-high rounded-lg flex items-center justify-center gap-1.5 font-label-md text-label-md font-bold transition-colors" href="tel:+919447012345">
+            <a class="flex-1 h-11 bg-surface-container text-primary hover:bg-surface-container-high rounded-xl flex items-center justify-center gap-2 font-label-md text-label-md font-bold transition-all active:scale-95" href="tel:+919447012345">
               <span class="material-symbols-outlined text-[18px]">call</span>
               <span>വിളിക്കുക</span>
             </a>
-            <a class="flex-1 h-11 bg-tertiary text-on-tertiary rounded-lg flex items-center justify-center gap-1.5 font-label-md text-label-md font-bold transition-colors" href="https://wa.me/919447012345" target="_blank">
+            <a class="flex-1 h-11 bg-tertiary text-on-tertiary hover:bg-tertiary-container rounded-xl flex items-center justify-center gap-2 font-label-md text-label-md font-bold transition-all active:scale-95" href="https://wa.me/919447012345" target="_blank">
               <span class="material-symbols-outlined text-[18px]">chat</span>
               <span>വാട്സാപ്പ്</span>
             </a>
@@ -723,8 +846,8 @@
       </section>
 
       <!-- Legal Civic Disclaimer Footer -->
-      <section class="px-margin py-2 text-center">
-        <p class="font-label-sm text-label-sm text-outline leading-tight">
+      <section class="px-margin py-2 text-center reveal">
+        <p class="font-label-sm text-label-sm text-outline leading-tight max-w-2xl mx-auto">
           നിരാകരണം: നെക്സ ഡിജിറ്റൽ സർവീസസ് ഒരു സ്വതന്ത്ര പൗര സഹായ കേന്ദ്രമാണ്. സർക്കാർ അപേക്ഷകൾ പൊതുജനങ്ങൾക്ക് എളുപ്പത്തിൽ സമർപ്പിക്കാനുള്ള സാങ്കേതിക സഹായം മാത്രമാണ് നൽകുന്നത്. ഔദ്യോഗിക ഫീസുകൾ സർക്കാർ വകുപ്പുകളിലേക്ക് നേരിട്ട് കൈമാറുന്നതാണ്.
         </p>
       </section>
@@ -732,40 +855,11 @@
     </div>
   </main>
 
-  <!-- Floating WhatsApp Action Button with Live Pulse (Visible on all viewports) -->
-  <a id="floating-whatsapp-btn" href="https://wa.me/919447012345?text=Hello%20Nexa%20Services,%20I%20need%20assistance%20with%20an%20application" target="_blank" rel="noopener noreferrer" aria-label="Chat with Nexa WhatsApp Desk" class="fixed right-4 bottom-20 md:bottom-8 z-40 bg-[#128C7E] hover:bg-[#075E54] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all duration-300 active:scale-95 group whatsapp-pulse">
-    <div class="relative flex items-center justify-center">
-      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"></path>
-      </svg>
-      <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[#25D366] border-2 border-white"></span>
-    </div>
-    <span class="hidden md:inline-block font-label-md text-label-md font-bold pr-1">
-      WhatsApp Helpdesk
-    </span>
-  </a>
+  <!-- Full Comprehensive Footer injected by components.js -->
+  <div id="app-footer"></div>
 
-  <!-- Mobile Bottom Navigation Bar (Matching Stitch Design shell) -->
-  <nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)] border-t border-outline-variant/30">
-    <div class="h-16 px-space-sm max-w-md mx-auto flex items-center justify-around">
-      <a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors text-secondary font-bold" data-path="home" href="index.html">
-        <span class="material-symbols-outlined text-[22px]">cottage</span>
-        <span class="font-label-sm text-label-sm mt-0.5">Home</span>
-      </a>
-      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="all-services" href="services.html">
-        <span class="material-symbols-outlined text-[22px]">apps</span>
-        <span class="font-label-sm text-label-sm mt-0.5">സേവനങ്ങൾ</span>
-      </a>
-      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-status" href="track.html">
-        <span class="material-symbols-outlined text-[22px]">published_with_changes</span>
-        <span class="font-label-sm text-label-sm mt-0.5">Status</span>
-      </a>
-      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-contact" href="contact.html">
-        <span class="material-symbols-outlined text-[22px]">support_agent</span>
-        <span class="font-label-sm text-label-sm mt-0.5">Help</span>
-      </a>
-    </div>
-  </nav>
+  <!-- Mobile Bottom Navigation Bar injected by components.js -->
+  <div id="app-bottom-nav"></div>
 
   <!-- Interactive JavaScript -->
   <script>
@@ -835,11 +929,11 @@
     filterChips.forEach(chip => {
       chip.addEventListener('click', () => {
         filterChips.forEach(c => {
-          c.classList.remove('bg-secondary', 'text-on-secondary');
+          c.classList.remove('bg-secondary', 'text-white', 'shadow-xs');
           c.classList.add('bg-surface-container', 'text-on-surface-variant');
         });
         chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
-        chip.classList.add('bg-secondary', 'text-on-secondary');
+        chip.classList.add('bg-secondary', 'text-white', 'shadow-xs');
 
         currentCategory = chip.getAttribute('data-category');
         filterServices();
@@ -871,27 +965,28 @@
       currentLang = currentLang === 'ml' ? 'en' : 'ml';
       localStorage.setItem('nexa_lang', currentLang);
       updateLanguageUI();
+      if (window.i18n) window.i18n.setLang(currentLang);
     }
 
     function updateLanguageUI() {
       const curr = document.getElementById('lang-curr');
       const alt = document.getElementById('lang-alt');
-      if (currentLang === 'en') {
-        curr.innerText = 'ENG';
-        curr.className = 'text-secondary font-bold';
-        alt.innerText = 'മല';
-        alt.className = 'text-on-surface-variant';
-      } else {
-        curr.innerText = 'മല';
-        curr.className = 'text-secondary font-bold';
-        alt.innerText = 'ENG';
-        alt.className = 'text-on-surface-variant';
+      if (curr && alt) {
+        if (currentLang === 'en') {
+          curr.innerText = 'ENG';
+          alt.innerText = 'മല';
+        } else {
+          curr.innerText = 'മല';
+          alt.innerText = 'ENG';
+        }
       }
     }
     updateLanguageUI();
   </script>
-  <!-- Central Config & Shared Components -->
+
+  <!-- Central Config, i18n & Shared Components -->
   <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/components.js"></script>
 </body>
 </html>

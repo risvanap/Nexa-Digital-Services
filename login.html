@@ -81,7 +81,7 @@
             "surface-container-lowest": "#ffffff",
             "surface-container-highest": "#d6e3fe"
           },
-          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
           spacing: { "gutter-desktop": "1.5rem", "margin": "1rem", "margin-desktop": "3rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-tablet": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-tablet": "1.25rem", "gutter": "1rem" },
           fontFamily: {
             "body-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
@@ -96,51 +96,59 @@
             "headline-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
             "headline-xl-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
             "headline-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"]
-          },
-          fontSize: {
-            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
-            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
-            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
-            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
-            "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "800"}],
-            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
-            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
-            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
-            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-            "headline-xl-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "800"}],
-            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
           }
         }
       }
     };
   </script>
-</head>
-<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen pt-safe pb-safe items-center justify-center p-4">
 
-  <main class="w-full max-w-md mx-auto space-y-5">
+  <!-- Modern Elevated Nexa Design Tokens & Styles -->
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen pt-safe pb-safe items-center justify-center p-4 relative overflow-x-hidden">
+
+  <!-- Ambient background glow elements -->
+  <div class="absolute -top-32 -left-32 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <main class="w-full max-w-md mx-auto space-y-5 relative z-10">
     
     <!-- Top Identity Branding -->
     <div class="flex flex-col items-center text-center space-y-2">
-      <div class="h-14 flex items-center justify-center">
-        <a href="index.html" class="flex items-center gap-2">
-          <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
-            <span class="material-symbols-outlined text-[24px]">account_balance</span>
+      <div class="h-16 flex items-center justify-center">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="flex items-center justify-center rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-300">
+            <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
+              <defs>
+                <linearGradient id="loginNexaGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#021c35"/>
+                  <stop offset="100%" stop-color="#0453cd"/>
+                </linearGradient>
+                <linearGradient id="loginNexaAccent" x1="0" y1="0" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#00a884"/>
+                  <stop offset="100%" stop-color="#8ff4e3"/>
+                </linearGradient>
+              </defs>
+              <rect width="48" height="48" rx="12" fill="url(#loginNexaGrad)"/>
+              <rect x="1.5" y="1.5" width="45" height="45" rx="10.5" stroke="#dae2ff" stroke-opacity="0.25" stroke-width="1.5"/>
+              <path d="M13 35V13L24 26L35 13V35" stroke="url(#loginNexaAccent)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="24" cy="18" r="3.2" fill="#356ee7" stroke="#ffffff" stroke-width="1.5"/>
+            </svg>
           </div>
-          <span class="text-xl font-extrabold text-primary">Nexa Services</span>
+          <span class="text-2xl font-extrabold text-primary group-hover:text-secondary transition-colors">Nexa Services</span>
         </a>
       </div>
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary">
-        <span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
-        <span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Staff &amp; Operator Portal</span>
-        <span class="font-label-sm text-label-sm text-on-surface-variant font-normal tracking-normal">• അഡ്മിൻ പ്രവേശനം</span>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high text-primary border border-secondary/20 shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 live-dot-pulse"></span>
+        <span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">Staff &amp; Operator Portal</span>
+        <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">• അഡ്മിൻ പ്രവേശനം</span>
       </div>
     </div>
 
-    <!-- Administrative Login Card (From Stitch Design) -->
-    <div class="bg-surface-container-lowest rounded-2xl shadow-md p-6 space-y-5 border border-outline-variant/40">
+    <!-- Administrative Login Card -->
+    <div class="bg-surface-container-lowest rounded-3xl shadow-md p-6 sm:p-8 space-y-5 border border-outline-variant/40">
       <div class="space-y-1">
-        <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Operator Sign In</h2>
+        <h2 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Operator Sign In</h2>
         <p class="font-body-sm text-body-sm text-on-surface-variant">
           Enter credentials to access citizen token queue and certificate uploads.
         </p>
@@ -149,12 +157,12 @@
       <form class="space-y-4" id="adminLoginForm" onsubmit="event.preventDefault(); handleLoginSubmit();">
         <!-- Branch Selection Dropdown -->
         <div class="space-y-1.5">
-          <label class="block font-label-md text-label-md text-on-surface font-semibold" for="branchSelect">
+          <label class="block font-label-md text-label-md text-on-surface font-bold" for="branchSelect">
             Assigned Branch <span class="font-normal text-on-surface-variant">(ശാഖ തിരഞ്ഞെടുക്കുക)</span>
           </label>
           <div class="relative flex items-center">
-            <span class="material-symbols-outlined absolute left-3 text-secondary pointer-events-none text-[20px]">store</span>
-            <select class="w-full bg-surface-container-low text-on-surface rounded-xl pl-10 pr-10 py-3 font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none appearance-none cursor-pointer border border-outline-variant/30" id="branchSelect" required>
+            <span class="material-symbols-outlined absolute left-3.5 text-secondary pointer-events-none text-[20px]">store</span>
+            <select class="w-full bg-surface-container-low text-on-surface rounded-xl pl-11 pr-10 py-3 font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none appearance-none cursor-pointer border border-outline-variant/40 focus:border-secondary transition-colors shadow-xs" id="branchSelect" required>
               <option value="kakkanad">Kakkanad HQ - Ernakulam (മെയിൻ ബ്രാഞ്ച്)</option>
               <option value="palakkad">Palakkad Fort Road Branch (പാലക്കാട്)</option>
               <option value="kozhikode">Kozhikode Mavoor Road Branch (കോഴിക്കോട്)</option>
@@ -165,25 +173,25 @@
 
         <!-- Operator ID / Email -->
         <div class="space-y-1.5">
-          <label class="block font-label-md text-label-md text-on-surface font-semibold" for="operatorId">
+          <label class="block font-label-md text-label-md text-on-surface font-bold" for="operatorId">
             Operator ID or Email <span class="font-normal text-on-surface-variant">(ഓപ്പറേറ്റർ ഐഡി)</span>
           </label>
           <div class="relative flex items-center">
-            <span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">badge</span>
-            <input class="w-full bg-surface-container-low text-on-surface rounded-xl pl-10 pr-3 py-3 font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none border border-outline-variant/30" id="operatorId" value="op-kakkanad@nexadigital.in" required type="text"/>
+            <span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">badge</span>
+            <input class="w-full bg-surface-container-low text-on-surface rounded-xl pl-11 pr-3 py-3 font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none border border-outline-variant/40 focus:border-secondary transition-colors shadow-xs" id="operatorId" value="op-kakkanad@nexadigital.in" required type="text"/>
           </div>
         </div>
 
         <!-- Password Input -->
         <div class="space-y-1.5">
           <div class="flex items-center justify-between">
-            <label class="font-label-md text-label-md text-on-surface font-semibold" for="operatorPassword">
+            <label class="font-label-md text-label-md text-on-surface font-bold" for="operatorPassword">
               Master Password <span class="font-normal text-on-surface-variant">(രഹസ്യവാക്ക്)</span>
             </label>
           </div>
           <div class="relative flex items-center">
-            <span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">lock</span>
-            <input class="w-full bg-surface-container-low text-on-surface rounded-xl pl-10 pr-11 py-3 font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none border border-outline-variant/30" id="operatorPassword" value="password123" required type="password"/>
+            <span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">lock</span>
+            <input class="w-full bg-surface-container-low text-on-surface rounded-xl pl-11 pr-11 py-3 font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none border border-outline-variant/40 focus:border-secondary transition-colors shadow-xs" id="operatorPassword" value="password123" required type="password"/>
             <button aria-label="Toggle password visibility" class="absolute right-3 text-outline hover:text-on-surface flex items-center justify-center p-1 focus:outline-none" onclick="togglePasswordVisibility()" type="button">
               <span class="material-symbols-outlined text-[20px]" id="eyeIcon">visibility</span>
             </button>
@@ -193,7 +201,7 @@
         <!-- Remember Terminal & Help Link -->
         <div class="flex items-center justify-between pt-1">
           <label class="inline-flex items-center gap-2 cursor-pointer">
-            <input checked id="rememberTerminal" type="checkbox" class="w-4 h-4 rounded text-secondary focus:ring-0"/>
+            <input checked id="rememberTerminal" type="checkbox" class="w-4 h-4 rounded text-secondary focus:ring-0 accent-secondary cursor-pointer"/>
             <span class="font-body-sm text-body-sm text-on-surface-variant select-none">Remember terminal</span>
           </label>
           <a class="font-label-md text-label-md text-secondary hover:underline font-bold" href="https://wa.me/919447012345?text=Forgot%20Operator%20Password%20Help" target="_blank">
@@ -202,7 +210,7 @@
         </div>
 
         <!-- Primary Action Submit Button -->
-        <button class="w-full mt-2 h-12 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.99]" id="submitBtn" type="submit">
+        <button class="btn-primary-gradient w-full mt-2 h-12 rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2" id="submitBtn" type="submit">
           <span class="material-symbols-outlined text-[20px]">vpn_key</span>
           <span>Sign In to Admin Console</span>
         </button>
@@ -210,23 +218,23 @@
         <!-- Divider with Text -->
         <div class="relative flex items-center py-2">
           <div class="w-full bg-surface-container-high h-[1px]"></div>
-          <span class="px-2 font-label-sm text-label-sm text-outline uppercase tracking-wider whitespace-nowrap bg-surface-container-lowest">അല്ലെങ്കിൽ</span>
+          <span class="px-2 font-label-sm text-label-sm text-outline uppercase tracking-wider whitespace-nowrap bg-surface-container-lowest font-semibold">അല്ലെങ്കിൽ</span>
           <div class="w-full bg-surface-container-high h-[1px]"></div>
         </div>
 
         <!-- WhatsApp Quick OTP Trigger -->
-        <button class="w-full h-12 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center gap-2.5 transition-colors border border-outline-variant/30" onclick="triggerWhatsAppOtp()" type="button">
-          <div class="w-2.5 h-2.5 rounded-full bg-[#128C7E] animate-pulse"></div>
+        <button class="w-full h-12 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center gap-2.5 transition-colors border border-outline-variant/40 font-bold active:scale-[0.99]" onclick="triggerWhatsAppOtp()" type="button">
+          <div class="w-2.5 h-2.5 rounded-full bg-[#128C7E] live-dot-pulse"></div>
           <span class="material-symbols-outlined text-[20px] text-[#128C7E]">chat</span>
-          <span class="font-label-md text-label-md font-semibold">Request OTP via Registered WhatsApp</span>
+          <span class="font-label-md text-label-md">Request OTP via Registered WhatsApp</span>
         </button>
       </form>
 
       <!-- Security Guarantee Ribbon -->
-      <div class="p-3 rounded-xl bg-surface-container-low flex items-start gap-2.5 text-on-surface-variant border border-outline-variant/20">
-        <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">shield</span>
+      <div class="p-3.5 rounded-2xl bg-surface-container-low flex items-start gap-2.5 text-on-surface-variant border border-outline-variant/20">
+        <span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">shield</span>
         <div class="space-y-0.5">
-          <p class="font-label-sm text-label-sm font-semibold text-on-surface">2-Factor Security Enforced</p>
+          <p class="font-label-sm text-label-sm font-bold text-on-surface">2-Factor Security Enforced</p>
           <p class="font-body-sm text-[12px] leading-tight text-on-surface-variant">
             Session activity is encrypted under Kerala IT Guidelines. All citizen records access is watermarked and logged.
           </p>
@@ -273,6 +281,6 @@
     }
   </script>
   <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
 </body>
 </html>
-

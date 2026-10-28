@@ -18,19 +18,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 
-  <style>
-    @layer base {
-      html, body { width: 100%; margin: 0; padding: 0; }
-      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; }
-      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
-      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
-      main > :first-child { margin-top: 0 !important; }
-      main > :last-child { margin-bottom: 0 !important; }
-    }
-    ::-webkit-scrollbar { display: none; }
-    body { font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif; min-height: max(884px, 100dvh); }
-  </style>
-
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
@@ -87,7 +74,7 @@
             "surface-container-lowest": "#ffffff",
             "surface-container-highest": "#d6e3fe"
           },
-          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
           spacing: { "gutter-desktop": "1.5rem", "margin": "1rem", "margin-desktop": "3rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-tablet": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-tablet": "1.25rem", "gutter": "1rem" },
           fontFamily: {
             "body-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
@@ -102,165 +89,163 @@
             "headline-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
             "headline-xl-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
             "headline-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"]
-          },
-          fontSize: {
-            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
-            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
-            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
-            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
-            "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "800"}],
-            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
-            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
-            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
-            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-            "headline-xl-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "800"}],
-            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
           }
         }
       }
     };
   </script>
+
+  <!-- Modern Elevated Nexa Design Tokens & Styles -->
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
-<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+<body data-page="services" class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
 
   <!-- Header -->
-  <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
-    <div class="bg-surface-container-high px-margin py-1 text-center flex items-center justify-center gap-space-xs">
-      <span class="material-symbols-outlined text-secondary text-[14px]">verified</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">
-        An independent citizen digital services center • Kerala
+  <header class="fixed top-0 w-full z-50 glass-nav pt-safe">
+    <div class="bg-gradient-to-r from-[#01284b] via-[#0453cd] to-[#01284b] text-white px-4 py-1.5 text-center flex items-center justify-center gap-2 text-xs font-medium border-b border-white/10 shadow-sm">
+      <span class="inline-flex items-center gap-1.5 font-medium tracking-wide">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 live-dot-pulse"></span>
+        <span class="material-symbols-outlined text-emerald-300 text-[15px]">verified</span>
+        <span>സ്വതന്ത്ര പൗര ഡിജിറ്റൽ സേവന കേന്ദ്രം • Kerala Citizen Facilitation Desk</span>
+      </span>
+      <span class="hidden sm:inline-block text-white/40">•</span>
+      <span class="hidden sm:inline-block text-white/80 text-[11px] font-normal">
+        ഔദ്യോഗിക ചലാൻ രസീത് സഹിതം
       </span>
     </div>
     
-    <div class="h-16 px-margin max-w-5xl mx-auto flex items-center justify-between gap-space-sm">
-      <div class="flex items-center gap-space-sm min-w-0">
-        <button aria-label="Go Back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors" onclick="window.location.href='services.html'">
+    <div class="h-16 px-4 md:px-8 max-w-5xl mx-auto flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+        <button aria-label="Go Back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-all active:scale-95" onclick="window.location.href='services.html'">
           <span class="material-symbols-outlined text-[24px]">arrow_back</span>
         </button>
-        <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary flex-shrink-0">
-          <span class="material-symbols-outlined text-[18px]">account_balance</span>
+        <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-xs">
+          <span class="material-symbols-outlined text-[20px]">account_balance</span>
         </div>
-        <h1 class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Service Detail</h1>
+        <h1 class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Service Details</h1>
       </div>
 
-      <div class="flex items-center gap-space-xs flex-shrink-0">
-        <a aria-label="Quick Call" class="w-11 h-11 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container" href="tel:+919447012345">
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <a aria-label="Quick Call" class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all shadow-xs border border-outline-variant/30" href="tel:+919447012345" title="Call Us: +91 94470 12345">
           <span class="material-symbols-outlined text-[20px]">call</span>
         </a>
-        <a aria-label="WhatsApp Enquiry" class="relative w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center hover:bg-tertiary-container" href="https://wa.me/919447012345" target="_blank">
-          <span class="material-symbols-outlined text-[20px]">chat</span>
-          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container ring-2 ring-surface animate-pulse"></span>
+        <a aria-label="WhatsApp Enquiry" class="relative w-10 h-10 rounded-full bg-gradient-to-tr from-[#002d27] to-[#0453cd] text-white flex items-center justify-center hover:opacity-95 active:scale-95 transition-all shadow-xs" href="https://wa.me/919447012345" target="_blank" title="WhatsApp Enquiry (+91 94470 12345)">
+          <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#25d366] ring-2 ring-surface animate-pulse"></span>
         </a>
-        <a href="login.html" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-on-primary">
-          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        <a href="login.html" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-white hover:bg-secondary active:scale-95 transition-all shadow-xs" title="Staff Login">
+          <span class="material-symbols-outlined text-[18px]">person</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- Main Content (Matching Stitch Screen 54409b7096514405ab8d04acf0d65854) -->
-  <main class="flex flex-col relative w-full pt-24 pb-8 bg-surface min-h-screen max-w-4xl mx-auto">
+  <main class="flex flex-col relative w-full pt-26 pb-12 bg-surface min-h-screen max-w-4xl mx-auto">
     <div class="flex flex-col w-full">
-      <div class="flex flex-col w-full px-margin pb-28 gap-space-lg">
+      <div class="flex flex-col w-full px-margin pb-32 gap-5">
 
         <!-- Top Context & Metadata Badge Section -->
-        <section class="flex flex-col gap-space-sm pt-2">
-          <div class="flex items-center gap-space-xs flex-wrap">
-            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm" id="serv-dept">
-              <span class="material-symbols-outlined text-[13px] text-secondary">account_balance</span>
+        <section class="flex flex-col gap-2 pt-3 reveal">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold border border-secondary/20" id="serv-dept">
+              <span class="material-symbols-outlined text-[14px] text-secondary">account_balance</span>
               Revenue Department • റവന്യൂ വകുപ്പ്
             </span>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm" id="serv-cat">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold" id="serv-cat">
               Certificates
             </span>
           </div>
 
           <div class="flex flex-col mt-1">
-            <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-start justify-between gap-4">
               <div>
-                <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold tracking-tight" id="serv-title-en">
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-primary font-extrabold tracking-tight" id="serv-title-en">
                   Income Certificate
                 </h2>
-                <p class="font-body-md text-body-md text-on-surface-variant font-medium mt-0.5" id="serv-title-ml">
+                <p class="font-body-md text-body-md text-secondary font-bold mt-0.5" id="serv-title-ml">
                   വരുമാന സർട്ടിഫിക്കറ്റ് അപേക്ഷാ സഹായം
                 </p>
               </div>
-              <div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center flex-shrink-0 shadow-sm text-secondary">
-                <span class="material-symbols-outlined text-[26px]" id="serv-icon">payments</span>
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20 flex items-center justify-center flex-shrink-0 shadow-xs text-secondary">
+                <span class="material-symbols-outlined text-[30px]" id="serv-icon">payments</span>
               </div>
             </div>
           </div>
         </section>
 
         <!-- Quick Summary Card / Transparency Overview -->
-        <section class="flex flex-col rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30">
-          <div class="flex items-center justify-between pb-space-sm">
-            <span class="font-label-md text-label-md text-on-surface-variant font-semibold uppercase tracking-wider">
-              Fee &amp; Timeline Summary
+        <section class="flex flex-col rounded-3xl bg-surface-container-lowest p-5 md:p-6 shadow-sm border border-outline-variant/40 reveal">
+          <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+            <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider flex items-center gap-2">
+              <span class="w-1.5 h-3.5 rounded bg-secondary"></span>
+              <span>Fee &amp; Timeline Transparency</span>
             </span>
-            <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded-full font-semibold" id="serv-days">
-              <span class="material-symbols-outlined text-[12px]">schedule</span> 3–5 Days
+            <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full font-bold border border-emerald-300" id="serv-days">
+              <span class="material-symbols-outlined text-[14px]">schedule</span> 3–5 Days
             </span>
           </div>
 
           <!-- Total Fee Prominent Row -->
-          <div class="flex items-baseline justify-between py-space-sm px-space-sm rounded-lg bg-surface-container-low mb-space-sm">
+          <div class="flex items-baseline justify-between py-3 px-4 rounded-2xl bg-surface-container-low/70 my-3 border border-outline-variant/30 flex-wrap gap-2">
             <div>
-              <div class="font-headline-sm text-headline-sm text-primary font-extrabold flex items-center">
-                <span id="serv-total-fee">₹55</span>
-                <span class="font-body-sm text-body-sm text-on-surface-variant font-normal ml-1.5">all-inclusive</span>
+              <div class="font-headline-md md:font-headline-lg text-primary font-extrabold flex items-center">
+                <span id="serv-total-fee" class="text-secondary">₹55</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant font-medium ml-2">all-inclusive</span>
               </div>
               <div class="font-label-sm text-label-sm text-on-surface-variant">
                 ആകെ ചെലവ് (Total Payable)
               </div>
             </div>
             <div class="text-right">
-              <div class="font-label-sm text-label-sm text-primary font-medium" id="serv-fee-breakdown">Govt ₹25 + Nexa ₹30</div>
-              <div class="font-label-sm text-label-sm text-secondary font-semibold">Zero hidden charges</div>
+              <div class="font-label-sm text-label-sm text-primary font-bold" id="serv-fee-breakdown">Govt ₹25 + Nexa ₹30</div>
+              <div class="font-label-sm text-label-sm text-emerald-700 font-semibold flex items-center gap-1 justify-end">
+                <span class="material-symbols-outlined text-[14px]">verified</span>
+                <span>Zero hidden charges</span>
+              </div>
             </div>
           </div>
 
           <!-- Key Fact Grid (2-column uniform) -->
-          <div class="grid grid-cols-2 gap-space-sm">
-            <div class="p-2.5 rounded-lg bg-surface-container">
-              <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mb-1">
-                <span class="material-symbols-outlined text-[15px] text-secondary">verified_user</span>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-3.5 rounded-2xl bg-surface-container border border-outline-variant/30">
+              <div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm mb-1 font-semibold">
+                <span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
                 Issuing Body
               </div>
-              <p class="font-label-md text-label-md text-on-surface font-semibold leading-tight" id="serv-body">
+              <p class="font-label-md text-label-md text-on-surface font-bold leading-tight" id="serv-body">
                 Village Officer / Tahsildar
               </p>
-              <span class="font-label-sm text-label-sm text-on-surface-variant">e-District Kerala</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 block">e-District Kerala</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-surface-container">
-              <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mb-1">
-                <span class="material-symbols-outlined text-[15px] text-secondary">workspace_premium</span>
+            <div class="p-3.5 rounded-2xl bg-surface-container border border-outline-variant/30">
+              <div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm mb-1 font-semibold">
+                <span class="material-symbols-outlined text-[16px] text-secondary">workspace_premium</span>
                 Validity
               </div>
-              <p class="font-label-md text-label-md text-on-surface font-semibold leading-tight" id="serv-validity">
+              <p class="font-label-md text-label-md text-on-surface font-bold leading-tight" id="serv-validity">
                 6 Months
               </p>
-              <span class="font-label-sm text-label-sm text-on-surface-variant">ആറ് മാസത്തെ കാലാവധി</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 block">ആറ് മാസത്തെ കാലാവധി</span>
             </div>
           </div>
         </section>
 
         <!-- Visual Facilitator Card: Verified Service Staff -->
-        <section class="rounded-xl overflow-hidden bg-primary-container text-on-primary shadow-sm flex flex-col border border-primary-fixed/20">
-          <div class="p-space-md flex items-center gap-space-sm">
-            <div class="w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-md">
+        <section class="rounded-3xl overflow-hidden bg-gradient-to-br from-[#01284b] to-[#011a33] text-white shadow-md flex flex-col border border-white/10 reveal">
+          <div class="p-5 flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-secondary text-white flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-md ring-2 ring-emerald-400">
               <span class="material-symbols-outlined text-[28px]">support_agent</span>
             </div>
             <div class="flex flex-col min-w-0">
-              <div class="flex items-center gap-1">
-                <span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Guided by Anjana S.</span>
-                <span class="material-symbols-outlined text-[16px] text-tertiary-fixed">check_circle</span>
+              <div class="flex items-center gap-1.5">
+                <span class="font-label-lg text-label-lg text-white font-extrabold truncate">Guided by Anjana S.</span>
+                <span class="material-symbols-outlined text-[18px] text-emerald-400">check_circle</span>
               </div>
-              <p class="font-body-sm text-body-sm text-surface-container-high leading-snug mt-0.5">
+              <p class="font-body-sm text-body-sm text-primary-fixed leading-snug mt-0.5">
                 Senior Citizen &amp; Revenue Desk In-charge at Nexa Kakkanad Center.
               </p>
-              <p class="font-label-sm text-label-sm text-on-primary-container mt-1">
+              <p class="font-label-sm text-label-sm text-emerald-300 mt-1 font-medium">
                 “അപേക്ഷ നിരസിക്കപ്പെടാതെ പൂർണ്ണ രേഖകളോടെ സമർപ്പിക്കാം”
               </p>
             </div>
@@ -268,29 +253,30 @@
         </section>
 
         <!-- Essential Documents Interactive Checklist -->
-        <section class="flex flex-col gap-space-sm">
+        <section class="flex flex-col gap-3 reveal">
           <div class="flex items-center justify-between">
             <div>
-              <h3 class="font-headline-sm text-headline-sm text-primary font-bold">
-                Required Documents
+              <h3 class="font-headline-sm text-headline-sm text-primary font-bold flex items-center gap-2">
+                <span class="w-1.5 h-4 rounded bg-secondary"></span>
+                <span>Required Documents</span>
               </h3>
               <p class="font-label-sm text-label-sm text-on-surface-variant">
                 ആവശ്യമായ രേഖകൾ (Check all you have ready)
               </p>
             </div>
-            <div class="px-2.5 py-1 rounded-full bg-surface-container-high font-label-sm text-label-sm text-primary font-bold" id="doc-counter">
+            <div class="px-3 py-1 rounded-full bg-surface-container-high font-label-sm text-label-sm text-primary font-bold border border-secondary/20" id="doc-counter">
               1 / 5 Ready
             </div>
           </div>
 
           <!-- Checklist Items Container -->
-          <div class="flex flex-col gap-space-xs" id="checklist-group">
-            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+          <div class="flex flex-col gap-2.5" id="checklist-group">
+            <label class="doc-card flex items-start gap-3 p-4 rounded-2xl bg-surface-container shadow-xs cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
               <input checked class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
               <div class="flex flex-col min-w-0 flex-1">
                 <div class="flex items-center justify-between">
                   <span class="font-label-lg text-label-lg text-on-surface font-bold">Income Proof Document</span>
-                  <span class="font-label-sm text-label-sm text-error font-medium">Mandatory</span>
+                  <span class="font-label-sm text-label-sm text-error font-bold px-2 py-0.5 rounded-full bg-red-100">Mandatory</span>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
                   Salary Certificate / Pension Passbook / Bank Statement (വരുമാനം തെളിയിക്കുന്ന രേഖ)
@@ -301,12 +287,12 @@
               </div>
             </label>
 
-            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+            <label class="doc-card flex items-start gap-3 p-4 rounded-2xl bg-surface-container-lowest shadow-xs cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
               <input class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
               <div class="flex flex-col min-w-0 flex-1">
                 <div class="flex items-center justify-between">
                   <span class="font-label-lg text-label-lg text-on-surface font-bold">Ration Card Copy</span>
-                  <span class="font-label-sm text-label-sm text-error font-medium">Mandatory</span>
+                  <span class="font-label-sm text-label-sm text-error font-bold px-2 py-0.5 rounded-full bg-red-100">Mandatory</span>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
                   First page &amp; family members details page (റേഷൻ കാർഡിന്റെ പകർപ്പ്)
@@ -314,12 +300,12 @@
               </div>
             </label>
 
-            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+            <label class="doc-card flex items-start gap-3 p-4 rounded-2xl bg-surface-container-lowest shadow-xs cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
               <input class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
               <div class="flex flex-col min-w-0 flex-1">
                 <div class="flex items-center justify-between">
                   <span class="font-label-lg text-label-lg text-on-surface font-bold">Applicant Aadhaar Card</span>
-                  <span class="font-label-sm text-label-sm text-error font-medium">Mandatory</span>
+                  <span class="font-label-sm text-label-sm text-error font-bold px-2 py-0.5 rounded-full bg-red-100">Mandatory</span>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
                   With mobile number linked for OTP (മൊബൈൽ നമ്പർ ലിങ്ക് ചെയ്ത ആധാർ)
@@ -327,12 +313,12 @@
               </div>
             </label>
 
-            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+            <label class="doc-card flex items-start gap-3 p-4 rounded-2xl bg-surface-container-lowest shadow-xs cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
               <input class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
               <div class="flex flex-col min-w-0 flex-1">
                 <div class="flex items-center justify-between">
                   <span class="font-label-lg text-label-lg text-on-surface font-bold">Applicant Photograph</span>
-                  <span class="font-label-sm text-label-sm text-error font-medium">Mandatory</span>
+                  <span class="font-label-sm text-label-sm text-error font-bold px-2 py-0.5 rounded-full bg-red-100">Mandatory</span>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
                   Passport size photograph with light background (പാസ്‌പോർട്ട് സൈസ് ഫോട്ടോ)
@@ -340,12 +326,12 @@
               </div>
             </label>
 
-            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+            <label class="doc-card flex items-start gap-3 p-4 rounded-2xl bg-surface-container-lowest shadow-xs cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
               <input class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
               <div class="flex flex-col min-w-0 flex-1">
                 <div class="flex items-center justify-between">
                   <span class="font-label-lg text-label-lg text-on-surface font-bold">Self Declaration Affidavit</span>
-                  <span class="font-label-sm text-label-sm text-tertiary-container bg-tertiary-fixed px-1.5 py-0.5 rounded font-bold">Free Nexa Drafting</span>
+                  <span class="font-label-sm text-label-sm text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full font-bold">Free Nexa Drafting</span>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
                   Prescribed format self declaration. Nexa will prepare and print this for you free of cost.
@@ -356,20 +342,21 @@
         </section>
 
         <!-- Visual Process Tracker Section -->
-        <section class="flex flex-col gap-space-sm">
+        <section class="flex flex-col gap-3 reveal">
           <div>
-            <h3 class="font-headline-sm text-headline-sm text-primary font-bold">
-              How Nexa Facilitates Your Application
+            <h3 class="font-headline-sm text-headline-sm text-primary font-bold flex items-center gap-2">
+              <span class="w-1.5 h-4 rounded bg-secondary"></span>
+              <span>How Nexa Facilitates Your Application</span>
             </h3>
             <p class="font-label-sm text-label-sm text-on-surface-variant">
               ലളിതമായ 4 ഘട്ടങ്ങളിലൂടെ സർട്ടിഫിക്കറ്റ് സ്വന്തമാക്കാം
             </p>
           </div>
 
-          <div class="flex flex-col gap-space-sm rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30">
+          <div class="flex flex-col gap-3 rounded-3xl bg-surface-container-lowest p-5 md:p-6 shadow-sm border border-outline-variant/40">
             <!-- Step 1 -->
-            <div class="flex items-start gap-space-sm">
-              <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0 shadow-sm">
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-secondary to-[#0040a2] text-white flex items-center justify-center font-label-md text-label-md font-extrabold flex-shrink-0 shadow-xs">
                 1
               </div>
               <div class="flex flex-col min-w-0 flex-1 pt-0.5">
@@ -379,11 +366,11 @@
                 </p>
               </div>
             </div>
-            <div class="w-0.5 h-4 bg-surface-container-highest ml-4 -my-2"></div>
+            <div class="w-0.5 h-4 bg-outline-variant/40 ml-4.5 -my-2"></div>
 
             <!-- Step 2 -->
-            <div class="flex items-start gap-space-sm">
-              <div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-extrabold flex-shrink-0">
                 2
               </div>
               <div class="flex flex-col min-w-0 flex-1 pt-0.5">
@@ -393,11 +380,11 @@
                 </p>
               </div>
             </div>
-            <div class="w-0.5 h-4 bg-surface-container-highest ml-4 -my-2"></div>
+            <div class="w-0.5 h-4 bg-outline-variant/40 ml-4.5 -my-2"></div>
 
             <!-- Step 3 -->
-            <div class="flex items-start gap-space-sm">
-              <div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-extrabold flex-shrink-0">
                 3
               </div>
               <div class="flex flex-col min-w-0 flex-1 pt-0.5">
@@ -407,11 +394,11 @@
                 </p>
               </div>
             </div>
-            <div class="w-0.5 h-4 bg-surface-container-highest ml-4 -my-2"></div>
+            <div class="w-0.5 h-4 bg-outline-variant/40 ml-4.5 -my-2"></div>
 
             <!-- Step 4 -->
-            <div class="flex items-start gap-space-sm">
-              <div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-extrabold flex-shrink-0">
                 4
               </div>
               <div class="flex flex-col min-w-0 flex-1 pt-0.5">
@@ -425,9 +412,9 @@
         </section>
 
         <!-- Nexa Physical Verification Center Spotlight -->
-        <section class="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm border border-outline-variant/30">
-          <div class="flex items-center gap-space-sm">
-            <div class="w-12 h-12 rounded-xl bg-surface-container-high text-secondary flex items-center justify-center flex-shrink-0">
+        <section class="rounded-3xl overflow-hidden bg-surface-container-low p-5 flex flex-col gap-3 shadow-xs border border-outline-variant/40 reveal">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-surface-container-high text-secondary flex items-center justify-center flex-shrink-0 shadow-xs">
               <span class="material-symbols-outlined text-[26px]">storefront</span>
             </div>
             <div class="flex flex-col min-w-0">
@@ -439,12 +426,12 @@
         </section>
 
         <!-- Statutory Independence Disclaimer -->
-        <footer class="rounded-xl bg-surface-container p-space-md flex flex-col gap-1.5 text-center border border-outline-variant/30">
-          <div class="flex items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm font-semibold">
-            <span class="material-symbols-outlined text-[15px]">info</span>
+        <footer class="rounded-3xl bg-surface-container p-5 flex flex-col gap-2 text-center border border-outline-variant/30 reveal">
+          <div class="flex items-center justify-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm font-bold">
+            <span class="material-symbols-outlined text-[16px]">info</span>
             Statutory Citizen Information Note
           </div>
-          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed max-w-2xl mx-auto">
             Nexa Digital Services is an independent citizen facilitation center. Final approvals, income assessments, and digital signatures are granted solely by designated Village Officers and Tahsildars under the Revenue Department, Government of Kerala.
           </p>
           <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">
@@ -457,68 +444,68 @@
   </main>
 
   <!-- Persistent Sticky Bottom Civic Action CTA Drawer (Matching Stitch Screen) -->
-  <aside class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-8px_20px_rgba(1,40,75,0.08)] pb-safe pt-3 px-margin border-t border-outline-variant/30">
+  <aside class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-xl shadow-[0_-8px_25px_rgba(1,40,75,0.12)] pb-safe pt-3 px-margin border-t border-outline-variant/40">
     <div class="max-w-md mx-auto flex flex-col gap-2 pb-2">
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2.5">
         <!-- Prominent WhatsApp Trigger -->
-        <a id="btn-wa-apply" class="flex-1 h-12 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center gap-2 px-3 shadow-md hover:bg-tertiary-container active:scale-[0.98] transition-all" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20want%20to%20apply%20for%20an%20Income%20Certificate%20(e-District%20Kerala)" target="_blank">
+        <a id="btn-wa-apply" class="flex-1 h-12 rounded-xl btn-whatsapp-pill flex items-center justify-center gap-2 px-3 transition-all" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20want%20to%20apply%20for%20an%20Income%20Certificate%20(e-District%20Kerala)" target="_blank">
           <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
           <div class="flex flex-col text-left leading-none">
             <span class="font-label-lg text-label-lg font-bold">Apply via WhatsApp</span>
-            <span class="font-label-sm text-label-sm text-tertiary-fixed font-normal">വാട്സാപ്പ് വഴി അപേക്ഷിക്കാം</span>
+            <span class="font-label-sm text-label-sm text-emerald-200 font-normal">വാട്സാപ്പ് വഴി അപേക്ഷിക്കാം</span>
           </div>
         </a>
 
         <!-- Fast Direct Upload Button -->
-        <button class="h-12 px-4 rounded-lg bg-primary text-on-primary flex items-center justify-center gap-1.5 font-label-lg text-label-lg font-bold shadow-md hover:bg-primary-container active:scale-[0.98] transition-all" id="btn-upload-direct">
+        <button class="h-12 px-4 rounded-xl bg-primary text-white flex items-center justify-center gap-1.5 font-label-lg text-label-lg font-bold shadow-sm hover:bg-secondary active:scale-95 transition-all" id="btn-upload-direct">
           <span class="material-symbols-outlined text-[18px]">cloud_upload</span>
           <span>Upload</span>
         </button>
 
         <!-- Direct Tap-to-Call Desk Phone -->
-        <a aria-label="Call Service Desk" class="w-12 h-12 rounded-lg bg-surface-container text-primary flex items-center justify-center hover:bg-surface-container-high active:scale-[0.98] flex-shrink-0 transition-all" href="tel:+919447012345">
+        <a aria-label="Call Service Desk" class="w-12 h-12 rounded-xl bg-surface-container text-primary flex items-center justify-center hover:bg-surface-container-high active:scale-95 flex-shrink-0 transition-all border border-outline-variant/30" href="tel:+919447012345">
           <span class="material-symbols-outlined text-[22px]">call</span>
         </a>
       </div>
 
       <div class="flex items-center justify-center gap-2 text-center text-on-surface-variant font-label-sm text-label-sm py-0.5">
-        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500 live-dot-pulse"></span>
         <span>Online Desk Active • Instant review within 15 mins</span>
       </div>
     </div>
   </aside>
 
   <!-- Upload Modal Drawer (Toggled by Upload Button) -->
-  <div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden flex-col justify-end" id="upload-sheet">
-    <div class="bg-surface-container-lowest rounded-t-2xl p-space-md shadow-2xl max-w-md mx-auto w-full flex flex-col gap-space-md pb-safe border border-outline-variant/30">
+  <div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex-col justify-end" id="upload-sheet">
+    <div class="bg-surface-container-lowest rounded-t-3xl p-5 md:p-6 shadow-2xl max-w-md mx-auto w-full flex flex-col gap-4 pb-safe border border-outline-variant/30 animate-fade-in">
       <div class="flex items-center justify-between">
         <div>
           <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Direct Document Upload</h3>
           <p class="font-label-sm text-label-sm text-on-surface-variant">രേഖകൾ ഇവിടെ സമർപ്പിക്കുക</p>
         </div>
-        <button class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface" id="btn-close-sheet">
+        <button class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95" id="btn-close-sheet">
           <span class="material-symbols-outlined text-[18px]">close</span>
         </button>
       </div>
 
       <!-- Dropzone -->
-      <label for="doc-file-input" class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-center cursor-pointer transition-all hover:bg-surface-container border border-dashed border-outline-variant">
-        <span class="material-symbols-outlined text-secondary text-[40px] mb-2">upload_file</span>
+      <label for="doc-file-input" class="flex flex-col items-center justify-center p-6 rounded-2xl bg-surface-container-low text-center cursor-pointer transition-all hover:bg-surface-container border-2 border-dashed border-secondary/40">
+        <span class="material-symbols-outlined text-secondary text-[44px] mb-2">upload_file</span>
         <span class="font-label-lg text-label-lg text-primary font-bold">Select PDF, JPG or Clear Camera Photos</span>
         <span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Up to 5 documents (Max 15MB total)</span>
         <input type="file" id="doc-file-input" multiple class="hidden"/>
       </label>
 
-      <div id="file-names-display" class="hidden text-xs text-secondary font-medium"></div>
+      <div id="file-names-display" class="hidden text-xs text-secondary font-semibold p-2 bg-secondary/10 rounded-xl"></div>
 
-      <div class="flex flex-col gap-space-xs">
+      <div class="flex flex-col gap-1">
         <div class="flex items-center gap-2 text-on-surface font-label-sm text-label-sm">
           <span class="material-symbols-outlined text-secondary text-[16px]">lock</span>
           Uploaded securely under Nexa Citizen Privacy protocols.
         </div>
       </div>
 
-      <button class="h-12 w-full rounded-xl bg-secondary hover:bg-primary text-on-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm active:scale-98 transition-all" id="btn-submit-docs">
+      <button class="btn-primary-gradient h-12 w-full rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2" id="btn-submit-docs">
         <span>പരിശോധനക്കായി അയക്കുക (Send for Verification)</span>
         <span class="material-symbols-outlined text-[18px]">verified</span>
       </button>
@@ -539,9 +526,9 @@
           document.getElementById('serv-title-en').innerText = s.titleEn;
           document.getElementById('serv-title-ml').innerText = s.titleMl;
           document.getElementById('serv-cat').innerText = s.categoryLabelEn;
-          document.getElementById('serv-dept').innerHTML = `<span class="material-symbols-outlined text-[13px] text-secondary">${s.icon}</span> ${s.portalEn}`;
+          document.getElementById('serv-dept').innerHTML = `<span class="material-symbols-outlined text-[14px] text-secondary">${s.icon}</span> ${s.portalEn}`;
           document.getElementById('serv-icon').innerText = s.icon;
-          document.getElementById('serv-days').innerHTML = `<span class="material-symbols-outlined text-[12px]">schedule</span> ${s.deliveryDaysEn}`;
+          document.getElementById('serv-days').innerHTML = `<span class="material-symbols-outlined text-[14px]">schedule</span> ${s.deliveryDaysEn}`;
           document.getElementById('serv-total-fee').innerText = `₹${s.totalFee}`;
           document.getElementById('serv-fee-breakdown').innerText = s.govtFee > 0 ? `Govt ₹${s.govtFee} + Nexa ₹${s.serviceFee}` : `Nexa ₹${s.serviceFee} (No Govt Fee)`;
           document.getElementById('serv-body').innerText = s.issuingBodyEn;
@@ -564,10 +551,10 @@
         counter.textContent = checkedCount + ' / ' + total + ' Ready';
         if (checkedCount === total) {
           counter.classList.remove('bg-surface-container-high', 'text-primary');
-          counter.classList.add('bg-tertiary-fixed', 'text-tertiary-container');
+          counter.classList.add('bg-emerald-100', 'text-emerald-800');
         } else {
           counter.classList.add('bg-surface-container-high', 'text-primary');
-          counter.classList.remove('bg-tertiary-fixed', 'text-tertiary-container');
+          counter.classList.remove('bg-emerald-100', 'text-emerald-800');
         }
       }
     }
