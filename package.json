@@ -1,0 +1,22 @@
+{
+  "name": "nexa-digital-services",
+  "version": "1.0.0",
+  "description": "Nexa Digital Services - Independent Citizen Facilitation Center (Akshaya / CSC style) built from Google Stitch design",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "akshaya",
+    "csc",
+    "kerala",
+    "citizen-services",
+    "nexa",
+    "stitch"
+  ],
+  "author": "Nexa Digital Services",
+  "license": "ISC"
+}
+

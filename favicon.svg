@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#01284B"/>
+  <!-- Digital Kiosk Pillars & Arch -->
+  <path d="M16 26L32 14L48 26Z" fill="#356EE7"/>
+  <path d="M20 25L32 16L44 25Z" fill="#8FF4E3"/>
+  <rect x="18" y="28" width="5" height="18" rx="2" fill="#DAE2FF"/>
+  <rect x="26" y="28" width="5" height="18" rx="2" fill="#DAE2FF"/>
+  <rect x="33" y="28" width="5" height="18" rx="2" fill="#DAE2FF"/>
+  <rect x="41" y="28" width="5" height="18" rx="2" fill="#DAE2FF"/>
+  <rect x="14" y="47" width="36" height="5" rx="2" fill="#DAE2FF"/>
+  <circle cx="32" cy="36" r="3" fill="#8FF4E3"/>
+</svg>

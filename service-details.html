@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <meta name="shell-type" content="mobile_stack"/>
+  <title id="page-title">Service Details | Nexa Digital Citizen Services</title>
+  <meta name="description" content="Citizen guidance, document checklist, fee transparency, and WhatsApp application submission for Kerala government services."/>
+
+  <!-- PWA & Favicon Meta -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#01284B"/>
+
+  <!-- Fonts & Icons matching Google Stitch Design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    body { font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif; min-height: max(884px, 100dvh); }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#d3e4ff",
+            "secondary-container": "#356ee7",
+            "tertiary-container": "#00453d",
+            "primary": "#01284b",
+            "secondary": "#0453cd",
+            "tertiary-fixed": "#8ff4e3",
+            "tertiary": "#002d27",
+            "secondary-fixed": "#dae2ff",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#50b8a8",
+            "surface": "#f9f9ff",
+            "on-secondary-fixed": "#001848",
+            "outline": "#73777f",
+            "on-tertiary-fixed-variant": "#005047",
+            "background": "#f9f9ff",
+            "surface-tint": "#426086",
+            "on-primary-fixed": "#001c38",
+            "on-primary-container": "#8ba9d3",
+            "surface-container-low": "#f0f3ff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#aac9f4",
+            "secondary-fixed-dim": "#b2c5ff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#29486d",
+            "on-surface-variant": "#43474e",
+            "on-surface": "#0e1c2f",
+            "on-tertiary-fixed": "#00201c",
+            "surface-bright": "#f9f9ff",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#ebf1ff",
+            "primary-container": "#1e3e62",
+            "surface-container-high": "#dee8ff",
+            "tertiary-fixed-dim": "#72d8c8",
+            "surface-dim": "#cddbf5",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#243145",
+            "on-secondary-container": "#fefcff",
+            "inverse-primary": "#aac9f4",
+            "on-background": "#0e1c2f",
+            "surface-container": "#e7eeff",
+            "outline-variant": "#c3c6cf",
+            "on-secondary-fixed-variant": "#0040a2",
+            "surface-variant": "#d6e3fe",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#d6e3fe"
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          spacing: { "gutter-desktop": "1.5rem", "margin": "1rem", "margin-desktop": "3rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-tablet": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-tablet": "1.25rem", "gutter": "1rem" },
+          fontFamily: {
+            "body-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"]
+          },
+          fontSize: {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "800"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "headline-xl-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "800"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+    <div class="bg-surface-container-high px-margin py-1 text-center flex items-center justify-center gap-space-xs">
+      <span class="material-symbols-outlined text-secondary text-[14px]">verified</span>
+      <span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">
+        An independent citizen digital services center • Kerala
+      </span>
+    </div>
+    
+    <div class="h-16 px-margin max-w-5xl mx-auto flex items-center justify-between gap-space-sm">
+      <div class="flex items-center gap-space-sm min-w-0">
+        <button aria-label="Go Back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors" onclick="window.location.href='services.html'">
+          <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+        </button>
+        <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px]">account_balance</span>
+        </div>
+        <h1 class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Service Detail</h1>
+      </div>
+
+      <div class="flex items-center gap-space-xs flex-shrink-0">
+        <a aria-label="Quick Call" class="w-11 h-11 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container" href="tel:+919447012345">
+          <span class="material-symbols-outlined text-[20px]">call</span>
+        </a>
+        <a aria-label="WhatsApp Enquiry" class="relative w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center hover:bg-tertiary-container" href="https://wa.me/919447012345" target="_blank">
+          <span class="material-symbols-outlined text-[20px]">chat</span>
+          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container ring-2 ring-surface animate-pulse"></span>
+        </a>
+        <a href="login.html" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-on-primary">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content (Matching Stitch Screen 54409b7096514405ab8d04acf0d65854) -->
+  <main class="flex flex-col relative w-full pt-24 pb-8 bg-surface min-h-screen max-w-4xl mx-auto">
+    <div class="flex flex-col w-full">
+      <div class="flex flex-col w-full px-margin pb-28 gap-space-lg">
+
+        <!-- Top Context & Metadata Badge Section -->
+        <section class="flex flex-col gap-space-sm pt-2">
+          <div class="flex items-center gap-space-xs flex-wrap">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm" id="serv-dept">
+              <span class="material-symbols-outlined text-[13px] text-secondary">account_balance</span>
+              Revenue Department • റവന്യൂ വകുപ്പ്
+            </span>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm" id="serv-cat">
+              Certificates
+            </span>
+          </div>
+
+          <div class="flex flex-col mt-1">
+            <div class="flex items-start justify-between gap-space-sm">
+              <div>
+                <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold tracking-tight" id="serv-title-en">
+                  Income Certificate
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant font-medium mt-0.5" id="serv-title-ml">
+                  വരുമാന സർട്ടിഫിക്കറ്റ് അപേക്ഷാ സഹായം
+                </p>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center flex-shrink-0 shadow-sm text-secondary">
+                <span class="material-symbols-outlined text-[26px]" id="serv-icon">payments</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Summary Card / Transparency Overview -->
+        <section class="flex flex-col rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30">
+          <div class="flex items-center justify-between pb-space-sm">
+            <span class="font-label-md text-label-md text-on-surface-variant font-semibold uppercase tracking-wider">
+              Fee &amp; Timeline Summary
+            </span>
+            <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded-full font-semibold" id="serv-days">
+              <span class="material-symbols-outlined text-[12px]">schedule</span> 3–5 Days
+            </span>
+          </div>
+
+          <!-- Total Fee Prominent Row -->
+          <div class="flex items-baseline justify-between py-space-sm px-space-sm rounded-lg bg-surface-container-low mb-space-sm">
+            <div>
+              <div class="font-headline-sm text-headline-sm text-primary font-extrabold flex items-center">
+                <span id="serv-total-fee">₹165</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant font-normal ml-1.5">all-inclusive</span>
+              </div>
+              <div class="font-label-sm text-label-sm text-on-surface-variant">
+                ആകെ ചെലവ് (Total Payable)
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="font-label-sm text-label-sm text-primary font-medium" id="serv-fee-breakdown">Govt ₹15 + Nexa ₹150</div>
+              <div class="font-label-sm text-label-sm text-secondary font-semibold">Zero hidden charges</div>
+            </div>
+          </div>
+
+          <!-- Key Fact Grid (2-column uniform) -->
+          <div class="grid grid-cols-2 gap-space-sm">
+            <div class="p-2.5 rounded-lg bg-surface-container">
+              <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mb-1">
+                <span class="material-symbols-outlined text-[15px] text-secondary">verified_user</span>
+                Issuing Body
+              </div>
+              <p class="font-label-md text-label-md text-on-surface font-semibold leading-tight" id="serv-body">
+                Village Officer / Tahsildar
+              </p>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">e-District Kerala</span>
+            </div>
+            <div class="p-2.5 rounded-lg bg-surface-container">
+              <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mb-1">
+                <span class="material-symbols-outlined text-[15px] text-secondary">workspace_premium</span>
+                Validity
+              </div>
+              <p class="font-label-md text-label-md text-on-surface font-semibold leading-tight" id="serv-validity">
+                6 Months
+              </p>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">ആറ് മാസത്തെ കാലാവധി</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Visual Facilitator Card: Verified Service Staff -->
+        <section class="rounded-xl overflow-hidden bg-primary-container text-on-primary shadow-sm flex flex-col border border-primary-fixed/20">
+          <div class="p-space-md flex items-center gap-space-sm">
+            <div class="w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-md">
+              <span class="material-symbols-outlined text-[28px]">support_agent</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-1">
+                <span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Guided by Anjana S.</span>
+                <span class="material-symbols-outlined text-[16px] text-tertiary-fixed">check_circle</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-surface-container-high leading-snug mt-0.5">
+                Senior Citizen &amp; Revenue Desk In-charge at Nexa Kakkanad Center.
+              </p>
+              <p class="font-label-sm text-label-sm text-on-primary-container mt-1">
+                “അപേക്ഷ നിരസിക്കപ്പെടാതെ പൂർണ്ണ രേഖകളോടെ സമർപ്പിക്കാം”
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Essential Documents Interactive Checklist -->
+        <section class="flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+                Required Documents
+              </h3>
+              <p class="font-label-sm text-label-sm text-on-surface-variant">
+                ആവശ്യമായ രേഖകൾ (Check all you have ready)
+              </p>
+            </div>
+            <div class="px-2.5 py-1 rounded-full bg-surface-container-high font-label-sm text-label-sm text-primary font-bold" id="doc-counter">
+              1 / 5 Ready
+            </div>
+          </div>
+
+          <!-- Checklist Items Container -->
+          <div class="flex flex-col gap-space-xs" id="checklist-group">
+            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+              <input checked class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
+              <div class="flex flex-col min-w-0 flex-1">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-lg text-label-lg text-on-surface font-bold">Income Proof Document</span>
+                  <span class="font-label-sm text-label-sm text-error font-medium">Mandatory</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Salary Certificate / Pension Passbook / Bank Statement (വരുമാനം തെളിയിക്കുന്ന രേഖ)
+                </p>
+                <div class="mt-2 inline-flex items-center gap-1 text-secondary font-label-sm text-label-sm font-semibold">
+                  <span class="material-symbols-outlined text-[14px]">info</span> PDF or Mobile Phone photo acceptable
+                </div>
+              </div>
+            </label>
+
+            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+              <input class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
+              <div class="flex flex-col min-w-0 flex-1">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-lg text-label-lg text-on-surface font-bold">Ration Card Copy</span>
+                  <span class="font-label-sm text-label-sm text-error font-medium">Mandatory</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  First page &amp; family members details page (റേഷൻ കാർഡിന്റെ പകർപ്പ്)
+                </p>
+              </div>
+            </label>
+
+            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+              <input class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
+              <div class="flex flex-col min-w-0 flex-1">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-lg text-label-lg text-on-surface font-bold">Applicant Aadhaar Card</span>
+                  <span class="font-label-sm text-label-sm text-error font-medium">Mandatory</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  With mobile number linked for OTP (മൊബൈൽ നമ്പർ ലിങ്ക് ചെയ്ത ആധാർ)
+                </p>
+              </div>
+            </label>
+
+            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+              <input class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
+              <div class="flex flex-col min-w-0 flex-1">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-lg text-label-lg text-on-surface font-bold">Applicant Photograph</span>
+                  <span class="font-label-sm text-label-sm text-error font-medium">Mandatory</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Passport size photograph with light background (പാസ്‌പോർട്ട് സൈസ് ഫോട്ടോ)
+                </p>
+              </div>
+            </label>
+
+            <label class="doc-card flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all active:scale-[0.99] border border-outline-variant/30">
+              <input class="doc-checkbox mt-1 w-5 h-5 rounded accent-secondary cursor-pointer" type="checkbox"/>
+              <div class="flex flex-col min-w-0 flex-1">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-lg text-label-lg text-on-surface font-bold">Self Declaration Affidavit</span>
+                  <span class="font-label-sm text-label-sm text-tertiary-container bg-tertiary-fixed px-1.5 py-0.5 rounded font-bold">Free Nexa Drafting</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Prescribed format self declaration. Nexa will prepare and print this for you free of cost.
+                </p>
+              </div>
+            </label>
+          </div>
+        </section>
+
+        <!-- Visual Process Tracker Section -->
+        <section class="flex flex-col gap-space-sm">
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+              How Nexa Facilitates Your Application
+            </h3>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">
+              ലളിതമായ 4 ഘട്ടങ്ങളിലൂടെ സർട്ടിഫിക്കറ്റ് സ്വന്തമാക്കാം
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-space-sm rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30">
+            <!-- Step 1 -->
+            <div class="flex items-start gap-space-sm">
+              <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0 shadow-sm">
+                1
+              </div>
+              <div class="flex flex-col min-w-0 flex-1 pt-0.5">
+                <div class="font-label-lg text-label-lg text-on-surface font-bold">Document &amp; Eligibility Check</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Our trained operator scrutinizes salary proofs, ration card categories, and address consistency before portal entry.
+                </p>
+              </div>
+            </div>
+            <div class="w-0.5 h-4 bg-surface-container-highest ml-4 -my-2"></div>
+
+            <!-- Step 2 -->
+            <div class="flex items-start gap-space-sm">
+              <div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+                2
+              </div>
+              <div class="flex flex-col min-w-0 flex-1 pt-0.5">
+                <div class="font-label-lg text-label-lg text-on-surface font-bold">e-District Portal Upload &amp; Acknowledgement</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Direct submission to the Kerala Revenue gateway. You get an immediate SMS with the Govt Application Reference Number.
+                </p>
+              </div>
+            </div>
+            <div class="w-0.5 h-4 bg-surface-container-highest ml-4 -my-2"></div>
+
+            <!-- Step 3 -->
+            <div class="flex items-start gap-space-sm">
+              <div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+                3
+              </div>
+              <div class="flex flex-col min-w-0 flex-1 pt-0.5">
+                <div class="font-label-lg text-label-lg text-on-surface font-bold">Village Officer Field Clearance Tracking</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Nexa constantly tracks your file's desk status at the local Village Office to ensure timely report generation.
+                </p>
+              </div>
+            </div>
+            <div class="w-0.5 h-4 bg-surface-container-highest ml-4 -my-2"></div>
+
+            <!-- Step 4 -->
+            <div class="flex items-start gap-space-sm">
+              <div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+                4
+              </div>
+              <div class="flex flex-col min-w-0 flex-1 pt-0.5">
+                <div class="font-label-lg text-label-lg text-on-surface font-bold">Digital Certificate Delivery</div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Receive the QR-coded, digitally signed certificate on WhatsApp, download link via SMS, or collect a high-gsm print from our center.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Nexa Physical Verification Center Spotlight -->
+        <section class="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm border border-outline-variant/30">
+          <div class="flex items-center gap-space-sm">
+            <div class="w-12 h-12 rounded-xl bg-surface-container-high text-secondary flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-[26px]">storefront</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Walk-in Center Available</span>
+              <h4 class="font-label-lg text-label-lg text-primary font-bold truncate">Nexa Facilitation Center • Kakkanad, Ernakulam</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Civil Station Road, Kakkanad. Open Mon–Sat, 8:30 AM to 7:30 PM.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Statutory Independence Disclaimer -->
+        <footer class="rounded-xl bg-surface-container p-space-md flex flex-col gap-1.5 text-center border border-outline-variant/30">
+          <div class="flex items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm font-semibold">
+            <span class="material-symbols-outlined text-[15px]">info</span>
+            Statutory Citizen Information Note
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Nexa Digital Services is an independent citizen facilitation center. Final approvals, income assessments, and digital signatures are granted solely by designated Village Officers and Tahsildars under the Revenue Department, Government of Kerala.
+          </p>
+          <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+            വരുമാന സർട്ടിഫിക്കറ്റ് പരിശോധനയും അനുമതിയും പൂർണ്ണമായും ബന്ധപ്പെട്ട റവന്യൂ അധികാരികളിൽ നിക്ഷിപ്തമാണ്.
+          </p>
+        </footer>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Persistent Sticky Bottom Civic Action CTA Drawer (Matching Stitch Screen) -->
+  <aside class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-8px_20px_rgba(1,40,75,0.08)] pb-safe pt-3 px-margin border-t border-outline-variant/30">
+    <div class="max-w-md mx-auto flex flex-col gap-2 pb-2">
+      <div class="flex items-center gap-2">
+        <!-- Prominent WhatsApp Trigger -->
+        <a id="btn-wa-apply" class="flex-1 h-12 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center gap-2 px-3 shadow-md hover:bg-tertiary-container active:scale-[0.98] transition-all" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20want%20to%20apply%20for%20an%20Income%20Certificate%20(e-District%20Kerala)" target="_blank">
+          <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+          <div class="flex flex-col text-left leading-none">
+            <span class="font-label-lg text-label-lg font-bold">Apply via WhatsApp</span>
+            <span class="font-label-sm text-label-sm text-tertiary-fixed font-normal">വാട്സാപ്പ് വഴി അപേക്ഷിക്കാം</span>
+          </div>
+        </a>
+
+        <!-- Fast Direct Upload Button -->
+        <button class="h-12 px-4 rounded-lg bg-primary text-on-primary flex items-center justify-center gap-1.5 font-label-lg text-label-lg font-bold shadow-md hover:bg-primary-container active:scale-[0.98] transition-all" id="btn-upload-direct">
+          <span class="material-symbols-outlined text-[18px]">cloud_upload</span>
+          <span>Upload</span>
+        </button>
+
+        <!-- Direct Tap-to-Call Desk Phone -->
+        <a aria-label="Call Service Desk" class="w-12 h-12 rounded-lg bg-surface-container text-primary flex items-center justify-center hover:bg-surface-container-high active:scale-[0.98] flex-shrink-0 transition-all" href="tel:+919447012345">
+          <span class="material-symbols-outlined text-[22px]">call</span>
+        </a>
+      </div>
+
+      <div class="flex items-center justify-center gap-2 text-center text-on-surface-variant font-label-sm text-label-sm py-0.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span>Online Desk Active • Instant review within 15 mins</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Upload Modal Drawer (Toggled by Upload Button) -->
+  <div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden flex-col justify-end" id="upload-sheet">
+    <div class="bg-surface-container-lowest rounded-t-2xl p-space-md shadow-2xl max-w-md mx-auto w-full flex flex-col gap-space-md pb-safe border border-outline-variant/30">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Direct Document Upload</h3>
+          <p class="font-label-sm text-label-sm text-on-surface-variant">രേഖകൾ ഇവിടെ സമർപ്പിക്കുക</p>
+        </div>
+        <button class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface" id="btn-close-sheet">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+
+      <!-- Dropzone -->
+      <label for="doc-file-input" class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-center cursor-pointer transition-all hover:bg-surface-container border border-dashed border-outline-variant">
+        <span class="material-symbols-outlined text-secondary text-[40px] mb-2">upload_file</span>
+        <span class="font-label-lg text-label-lg text-primary font-bold">Select PDF, JPG or Clear Camera Photos</span>
+        <span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Up to 5 documents (Max 15MB total)</span>
+        <input type="file" id="doc-file-input" multiple class="hidden"/>
+      </label>
+
+      <div id="file-names-display" class="hidden text-xs text-secondary font-medium"></div>
+
+      <div class="flex flex-col gap-space-xs">
+        <div class="flex items-center gap-2 text-on-surface font-label-sm text-label-sm">
+          <span class="material-symbols-outlined text-secondary text-[16px]">lock</span>
+          Uploaded securely under Nexa Citizen Privacy protocols.
+        </div>
+      </div>
+
+      <button class="h-12 w-full rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md active:scale-98 transition-all" id="btn-submit-docs">
+        <span>Proceed to Verification</span>
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive Logic -->
+  <script src="js/services-data.js"></script>
+  <script>
+    // 1. Dynamic Service Loading if ID present
+    (function initDynamicService() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const serviceId = urlParams.get('id');
+      if (serviceId && typeof getServiceById === 'function') {
+        const s = getServiceById(serviceId);
+        if (s) {
+          document.getElementById('page-title').innerText = `${s.titleEn} | Nexa Services`;
+          document.getElementById('serv-title-en').innerText = s.titleEn;
+          document.getElementById('serv-title-ml').innerText = s.titleMl;
+          document.getElementById('serv-cat').innerText = s.categoryLabelEn;
+          document.getElementById('serv-dept').innerHTML = `<span class="material-symbols-outlined text-[13px] text-secondary">${s.icon}</span> ${s.portalEn}`;
+          document.getElementById('serv-icon').innerText = s.icon;
+          document.getElementById('serv-days').innerHTML = `<span class="material-symbols-outlined text-[12px]">schedule</span> ${s.deliveryDaysEn}`;
+          document.getElementById('serv-total-fee').innerText = `₹${s.totalFee}`;
+          document.getElementById('serv-fee-breakdown').innerText = s.govtFee > 0 ? `Govt ₹${s.govtFee} + Nexa ₹${s.serviceFee}` : `Nexa ₹${s.serviceFee} (No Govt Fee)`;
+          document.getElementById('serv-body').innerText = s.issuingBodyEn;
+          document.getElementById('serv-validity').innerText = s.validityEn;
+
+          const waUrl = `https://wa.me/919447012345?text=Hello%20Nexa,%20I%20want%20to%20apply%20for%20${encodeURIComponent(s.titleEn)}%20(${encodeURIComponent(s.titleMl)})%20Total%20Fee:%20₹${s.totalFee}`;
+          document.getElementById('btn-wa-apply').href = waUrl;
+        }
+      }
+    })();
+
+    // 2. Interactive Checklist Tracking
+    const checkboxes = document.querySelectorAll('.doc-checkbox');
+    const counter = document.getElementById('doc-counter');
+    const total = checkboxes.length;
+
+    function updateCounter() {
+      const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+      if (counter) {
+        counter.textContent = checkedCount + ' / ' + total + ' Ready';
+        if (checkedCount === total) {
+          counter.classList.remove('bg-surface-container-high', 'text-primary');
+          counter.classList.add('bg-tertiary-fixed', 'text-tertiary-container');
+        } else {
+          counter.classList.add('bg-surface-container-high', 'text-primary');
+          counter.classList.remove('bg-tertiary-fixed', 'text-tertiary-container');
+        }
+      }
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', (e) => {
+        const parentCard = e.target.closest('.doc-card');
+        if (e.target.checked && parentCard) {
+          parentCard.classList.add('bg-surface-container');
+        } else if (parentCard) {
+          parentCard.classList.remove('bg-surface-container');
+        }
+        updateCounter();
+      });
+    });
+    updateCounter();
+
+    // 3. Upload Drawer Sheet Interactions
+    const uploadBtn = document.getElementById('btn-upload-direct');
+    const closeBtn = document.getElementById('btn-close-sheet');
+    const uploadSheet = document.getElementById('upload-sheet');
+    const submitBtn = document.getElementById('btn-submit-docs');
+    const fileInput = document.getElementById('doc-file-input');
+    const fileNames = document.getElementById('file-names-display');
+
+    if (uploadBtn && uploadSheet) {
+      uploadBtn.addEventListener('click', () => {
+        uploadSheet.classList.remove('hidden');
+        uploadSheet.classList.add('flex');
+      });
+    }
+
+    if (closeBtn && uploadSheet) {
+      closeBtn.addEventListener('click', () => {
+        uploadSheet.classList.add('hidden');
+        uploadSheet.classList.remove('flex');
+      });
+    }
+
+    if (fileInput) {
+      fileInput.addEventListener('change', (e) => {
+        const files = Array.from(e.target.files);
+        if (files.length > 0) {
+          fileNames.classList.remove('hidden');
+          fileNames.innerText = `Selected ${files.length} document(s): ` + files.map(f => f.name).join(', ');
+        }
+      });
+    }
+
+    if (submitBtn && uploadSheet) {
+      submitBtn.addEventListener('click', () => {
+        const sTitle = document.getElementById('serv-title-en').innerText;
+        const phone = (window.NEXA_CONFIG && window.NEXA_CONFIG.contact) ? window.NEXA_CONFIG.contact.whatsappNumber : '919447012345';
+        window.open(`https://wa.me/${phone}?text=Hello%20Nexa,%20I%20have%20uploaded%20my%20documents%20for:%20${encodeURIComponent(sTitle)}. Please review.`, '_blank');
+        uploadSheet.classList.add('hidden');
+        uploadSheet.classList.remove('flex');
+      });
+    }
+  </script>
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>

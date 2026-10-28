@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <meta name="shell-type" content="mobile_tab"/>
+  <title>All Services | Nexa Digital Citizen Services Hub</title>
+  <meta name="description" content="Explore full directory of Akshaya and CSC citizen facilitation services in Kerala - Revenue certificates, PAN, Passport, Ration Card, and Kerala PSC."/>
+
+  <!-- PWA & Favicon Meta -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#01284B"/>
+
+  <!-- Fonts & Icons matching Google Stitch Design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    body { font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif; min-height: max(884px, 100dvh); }
+    @keyframes whatsappPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .whatsapp-pulse { animation: whatsappPulse 2s infinite; }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#d3e4ff",
+            "secondary-container": "#356ee7",
+            "tertiary-container": "#00453d",
+            "primary": "#01284b",
+            "secondary": "#0453cd",
+            "tertiary-fixed": "#8ff4e3",
+            "tertiary": "#002d27",
+            "secondary-fixed": "#dae2ff",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#50b8a8",
+            "surface": "#f9f9ff",
+            "on-secondary-fixed": "#001848",
+            "outline": "#73777f",
+            "on-tertiary-fixed-variant": "#005047",
+            "background": "#f9f9ff",
+            "surface-tint": "#426086",
+            "on-primary-fixed": "#001c38",
+            "on-primary-container": "#8ba9d3",
+            "surface-container-low": "#f0f3ff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#aac9f4",
+            "secondary-fixed-dim": "#b2c5ff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#29486d",
+            "on-surface-variant": "#43474e",
+            "on-surface": "#0e1c2f",
+            "on-tertiary-fixed": "#00201c",
+            "surface-bright": "#f9f9ff",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#ebf1ff",
+            "primary-container": "#1e3e62",
+            "surface-container-high": "#dee8ff",
+            "tertiary-fixed-dim": "#72d8c8",
+            "surface-dim": "#cddbf5",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#243145",
+            "on-secondary-container": "#fefcff",
+            "inverse-primary": "#aac9f4",
+            "on-background": "#0e1c2f",
+            "surface-container": "#e7eeff",
+            "outline-variant": "#c3c6cf",
+            "on-secondary-fixed-variant": "#0040a2",
+            "surface-variant": "#d6e3fe",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#d6e3fe"
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          spacing: { "gutter-desktop": "1.5rem", "margin": "1rem", "margin-desktop": "3rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-tablet": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-tablet": "1.25rem", "gutter": "1rem" },
+          fontFamily: {
+            "body-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"]
+          },
+          fontSize: {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "800"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "headline-xl-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "800"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+    <div class="bg-surface-container-high px-margin py-1 text-center flex items-center justify-center gap-space-xs">
+      <span class="material-symbols-outlined text-secondary text-[14px]">verified</span>
+      <span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">
+        An independent citizen digital services center • Kerala
+      </span>
+    </div>
+
+    <div class="h-20 px-margin max-w-5xl mx-auto flex items-center justify-between gap-space-sm">
+      <a href="index.html" class="flex items-center gap-space-sm min-w-0 flex-1">
+        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary flex-shrink-0 shadow-xs">
+          <span class="material-symbols-outlined text-[24px]">account_balance</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Nexa Services</span>
+          <span class="font-label-sm text-label-sm text-secondary font-medium tracking-tight truncate leading-tight">സേവനങ്ങൾ • All Services</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-2 mr-4">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Home</a>
+        <a href="services.html" class="px-3 py-1.5 rounded-lg font-bold text-xs bg-primary text-on-primary">സേവനങ്ങൾ</a>
+        <a href="about.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">About</a>
+        <a href="contact.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Contact</a>
+        <a href="track.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Status</a>
+      </nav>
+
+      <div class="flex items-center gap-space-xs flex-shrink-0">
+        <button id="lang-toggle-btn" class="h-11 px-3 rounded-full bg-surface-container-low flex items-center justify-center font-label-sm text-label-sm text-on-surface font-semibold hover:bg-surface-container transition-all" onclick="toggleLanguage()">
+          <span class="text-secondary font-bold" id="lang-curr">മല</span>
+          <span class="text-outline-variant px-0.5">|</span>
+          <span class="text-on-surface-variant" id="lang-alt">ENG</span>
+        </button>
+        <a aria-label="Quick Call" class="w-11 h-11 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container" href="tel:+919447012345">
+          <span class="material-symbols-outlined text-[20px]">call</span>
+        </a>
+        <a aria-label="WhatsApp Enquiry" class="relative w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center hover:bg-tertiary-container" href="https://wa.me/919447012345" target="_blank">
+          <span class="material-symbols-outlined text-[20px]">chat</span>
+          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container ring-2 ring-surface animate-pulse"></span>
+        </a>
+        <a href="login.html" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-on-primary hover:bg-primary-container">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex flex-col relative w-full pt-28 pb-24 bg-surface min-h-screen max-w-5xl mx-auto">
+    <div class="flex flex-col w-full">
+
+      <!-- Hub intro -->
+      <div class="px-margin pt-space-xs pb-space-sm flex flex-col gap-space-xs">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-space-xs">
+            <span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+            <span class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-bold">
+              സേവനങ്ങളുടെ കലവറ • Services Hub
+            </span>
+          </div>
+          <span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold" id="active-count-badge">
+            48 Active Services
+          </span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">
+          Select an authorized citizen digital service to get guided submission and receipt tracking.
+        </p>
+      </div>
+
+      <!-- Sticky Search & Filter Chips (From Stitch Screen ab05ce3501724307a0c85f7dc00af14d) -->
+      <div class="sticky top-20 z-30 px-margin pb-space-xs bg-surface/95 backdrop-blur-md flex flex-col gap-space-sm pt-2">
+        <div class="relative w-full">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+            <span class="material-symbols-outlined text-[20px]">search</span>
+          </div>
+          <input class="w-full h-12 pl-11 pr-10 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-md font-body-md shadow-sm border border-outline-variant/30 focus:outline-none focus:bg-surface-container-low transition-all" id="service-search" placeholder="Search across 45+ digital services... (e.g. Income, PAN, PSC, Ration)" type="search"/>
+          <button aria-label="Clear Search" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-outline hover:text-on-surface hidden" id="clear-search">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-margin px-margin">
+          <button class="category-chip active-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-category="all">
+            <span>All</span>
+            <span class="px-1.5 py-0.2 rounded-full bg-surface-container-lowest/20 font-label-sm text-label-sm">48</span>
+          </button>
+          <button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-category="certificates">
+            <span>Certificates</span>
+            <span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">12</span>
+          </button>
+          <button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-category="passport">
+            <span>Passport</span>
+            <span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">4</span>
+          </button>
+          <button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-category="pan">
+            <span>PAN Services</span>
+            <span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">6</span>
+          </button>
+          <button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-category="ration">
+            <span>Ration Card</span>
+            <span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">5</span>
+          </button>
+          <button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-category="job">
+            <span>Job &amp; PSC</span>
+            <span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">11</span>
+          </button>
+          <button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-category="print">
+            <span>Print/Scan</span>
+            <span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">10</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 100% Transparent Fee Guarantee Banner -->
+      <div class="px-margin my-space-sm">
+        <div class="p-space-md rounded-xl bg-surface-container flex items-start gap-space-sm shadow-sm border border-outline-variant/30">
+          <div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center flex-shrink-0 shadow-sm">
+            <span class="material-symbols-outlined text-[24px]">verified_user</span>
+          </div>
+          <div class="flex flex-col gap-0.5 flex-1 min-w-0">
+            <div class="flex items-center gap-1.5">
+              <span class="font-label-lg text-label-lg text-primary font-bold">100% Transparent Fee Guarantee</span>
+              <span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-tertiary text-on-tertiary">നീതിയുക്ത നിരക്ക്</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+              Clear upfront assistance fees. All official government portal receipts provided directly to your phone via WhatsApp and SMS.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Grid (Pre-rendered matching Stitch screen) -->
+      <div class="px-margin flex flex-col gap-space-md" id="services-grid">
+        
+        <!-- Card 1: Income Certificate -->
+        <div class="service-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm relative overflow-hidden" data-category="certificates" data-keywords="income certificate edistrict revenue varumanam വരുമാനം സർട്ടിഫിക്കറ്റ്">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-start gap-space-sm min-w-0 flex-1">
+              <div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[26px]">account_balance</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <span class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Income Certificate</span>
+                  <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Most Requested</span>
+                </div>
+                <span class="font-label-md text-label-md text-secondary font-medium">വരുമാന സർട്ടിഫിക്കറ്റ് (e-District Kerala)</span>
+                <div class="flex items-center gap-2 mt-1">
+                  <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[14px] text-tertiary">schedule</span> 3-5 Working Days
+                  </span>
+                  <span class="text-outline-variant">•</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">3 Docs Required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Assistance Fee</span>
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">₹165 <span class="font-label-sm text-label-sm text-outline font-normal">(Govt ₹15 + Nexa ₹150)</span></span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a aria-label="WhatsApp quick help" class="w-11 h-11 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20need%20help%20with%20e-District%20Income%20Certificate" target="_blank">
+                <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+              </a>
+              <a href="service-details.html?id=income-certificate" class="h-11 px-4 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform">
+                <span>Apply Now</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: New PAN Card -->
+        <div class="service-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm relative overflow-hidden" data-category="pan" data-keywords="pan card uti nsdl e-pan instant pan പുതിയ പാൻ കാർഡ് tax">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-start gap-space-sm min-w-0 flex-1">
+              <div class="w-12 h-12 rounded-xl bg-secondary-fixed text-secondary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[26px]">badge</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">New PAN Card</span>
+                <span class="font-label-md text-label-md text-secondary font-medium">പുതിയ പാൻ കാർഡ് (Instant e-PAN &amp; Physical)</span>
+                <div class="flex items-center gap-2 mt-1">
+                  <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[14px] text-tertiary">bolt</span> 7-10 Days Dispatch
+                  </span>
+                  <span class="text-outline-variant">•</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Aadhaar Linked</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm text-on-surface-variant">All-Inclusive Fee</span>
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">₹220 <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">(Govt Fee included)</span></span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a aria-label="WhatsApp quick help" class="w-11 h-11 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20want%20to%20apply%20for%20a%20New%20PAN%20Card" target="_blank">
+                <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+              </a>
+              <a href="service-details.html?id=pan-new" class="h-11 px-4 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform">
+                <span>Apply Now</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Fresh Passport Assistance -->
+        <div class="service-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm relative overflow-hidden" data-category="passport" data-keywords="passport seva kendra psk appointment slot fresh passport പാസ്‌പോർട്ട്">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-start gap-space-sm min-w-0 flex-1">
+              <div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[26px]">travel_explore</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <span class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Fresh Passport Assistance</span>
+                  <span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">Priority Slot</span>
+                </div>
+                <span class="font-label-md text-label-md text-secondary font-medium">പാസ്‌പോർട്ട് അപേക്ഷ &amp; അപ്പോയിന്റ്മെന്റ്</span>
+                <div class="flex items-center gap-2 mt-1">
+                  <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[14px] text-tertiary">check_circle</span> 24h Slot Booking
+                  </span>
+                  <span class="text-outline-variant">•</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Annexures Included</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Consultation &amp; Filing</span>
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">₹1,850 <span class="font-label-sm text-label-sm text-outline font-normal">(Govt ₹1500 + ₹350)</span></span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a aria-label="WhatsApp quick help" class="w-11 h-11 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20need%20Passport%20appointment%20assistance" target="_blank">
+                <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+              </a>
+              <a href="service-details.html?id=passport-fresh" class="h-11 px-4 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[18px]">info</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Ration Card Modifications -->
+        <div class="service-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm relative overflow-hidden" data-category="ration" data-keywords="ration card civil supplies member addition deletion kalyanam food security റേഷൻ കാർഡ്">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-start gap-space-sm min-w-0 flex-1">
+              <div class="w-12 h-12 rounded-xl bg-primary-fixed-dim text-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[26px]">groups</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Ration Card Modifications</span>
+                <span class="font-label-md text-label-md text-secondary font-medium">റേഷൻ കാർഡ് അംഗങ്ങളെ ചേർക്കൽ / തിരുത്തൽ</span>
+                <div class="flex items-center gap-2 mt-1">
+                  <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[14px] text-tertiary">hourglass_bottom</span> 5 Days Approval
+                  </span>
+                  <span class="text-outline-variant">•</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Civil Supplies Kerala</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Desk Assistance</span>
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">₹180</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a aria-label="WhatsApp quick help" class="w-11 h-11 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20need%20Ration%20Card%20corrections" target="_blank">
+                <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+              </a>
+              <a href="service-details.html?id=ration-card-service" class="h-11 px-4 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform">
+                <span>Apply Now</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Kerala PSC One-Time Registration -->
+        <div class="service-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm relative overflow-hidden" data-category="job" data-keywords="psc kerala psc thulasi one time registration otr profile update തൊഴിൽ പരീക്ഷ">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-start gap-space-sm min-w-0 flex-1">
+              <div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[26px]">school</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Kerala PSC One-Time Registration</span>
+                <span class="font-label-md text-label-md text-secondary font-medium">പി.എസ്.സി ഒ.ടി.ആർ &amp; പ്രൊഫൈൽ അപ്ഡേറ്റ്</span>
+                <div class="flex items-center gap-2 mt-1">
+                  <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[14px] text-tertiary">bolt</span> Immediate Submission
+                  </span>
+                  <span class="text-outline-variant">•</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Photo/Sign Resize</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Filing &amp; Verification</span>
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">₹100</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a aria-label="WhatsApp quick help" class="w-11 h-11 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20need%20PSC%20Thulasi%20Registration" target="_blank">
+                <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+              </a>
+              <a href="service-details.html?id=psc-registration" class="h-11 px-4 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform">
+                <span>Apply Now</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Jeevan Pramaan Life Certificate -->
+        <div class="service-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm relative overflow-hidden" data-category="certificates" data-keywords="life certificate jeevan pramaan digital pension mustering പെൻഷൻ ജീവൻ പ്രമാൺ">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-start gap-space-sm min-w-0 flex-1">
+              <div class="w-12 h-12 rounded-xl bg-tertiary-fixed-dim text-tertiary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[26px]">fingerprint</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <span class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Digital Life Certificate</span>
+                  <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Doorstep Available</span>
+                </div>
+                <span class="font-label-md text-label-md text-secondary font-medium">ജീവൻ പ്രമാൺ (Jeevan Pramaan for Pensioners)</span>
+                <div class="flex items-center gap-2 mt-1">
+                  <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[14px] text-tertiary">check_circle</span> Instant Biometric
+                  </span>
+                  <span class="text-outline-variant">•</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">SMS Confirmation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Biometric Generation</span>
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">₹80</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a aria-label="WhatsApp quick help" class="w-11 h-11 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20need%20Jeevan%20Pramaan%20Life%20Certificate" target="_blank">
+                <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+              </a>
+              <a href="service-details.html?id=jeevan-pramaan" class="h-11 px-4 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform">
+                <span>Book Slot</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bottom Navigation Bar (Matching Stitch shell) -->
+  <nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)] border-t border-outline-variant/30">
+    <div class="h-16 px-space-sm max-w-md mx-auto flex items-center justify-around">
+      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="index.html">
+        <span class="material-symbols-outlined text-[22px]">cottage</span>
+        <span class="font-label-sm text-label-sm mt-0.5">Home</span>
+      </a>
+      <a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors text-secondary font-bold" data-path="all-services" href="services.html">
+        <span class="material-symbols-outlined text-[22px]">apps</span>
+        <span class="font-label-sm text-label-sm mt-0.5">സേവനങ്ങൾ</span>
+      </a>
+      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-status" href="track.html">
+        <span class="material-symbols-outlined text-[22px]">published_with_changes</span>
+        <span class="font-label-sm text-label-sm mt-0.5">Status</span>
+      </a>
+      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-contact" href="contact.html">
+        <span class="material-symbols-outlined text-[22px]">support_agent</span>
+        <span class="font-label-sm text-label-sm mt-0.5">Help</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Interactive Search & Filter Script -->
+  <script>
+    const searchInput = document.getElementById('service-search');
+    const clearBtn = document.getElementById('clear-search');
+    const cards = document.querySelectorAll('.service-card');
+    const chips = document.querySelectorAll('.category-chip');
+
+    let currentCategory = 'all';
+
+    function filterServices() {
+      const q = (searchInput.value || '').toLowerCase().trim();
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+        const text = card.innerText.toLowerCase();
+
+        const matchCat = (currentCategory === 'all') || (cat === currentCategory);
+        const matchQuery = !q || text.includes(q) || keywords.includes(q);
+
+        if (matchCat && matchQuery) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (clearBtn) {
+        if (q.length > 0) clearBtn.classList.remove('hidden');
+        else clearBtn.classList.add('hidden');
+      }
+    }
+
+    if (searchInput) searchInput.addEventListener('input', filterServices);
+    if (clearBtn) clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      clearBtn.classList.add('hidden');
+      filterServices();
+      searchInput.focus();
+    });
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary', 'active-chip');
+          c.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        chip.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        chip.classList.add('bg-primary', 'text-on-primary', 'active-chip');
+
+        currentCategory = chip.getAttribute('data-category');
+        filterServices();
+      });
+    });
+
+    // Language Toggle
+    let currentLang = localStorage.getItem('nexa_lang') || 'ml';
+    function toggleLanguage() {
+      currentLang = currentLang === 'ml' ? 'en' : 'ml';
+      localStorage.setItem('nexa_lang', currentLang);
+      const curr = document.getElementById('lang-curr');
+      const alt = document.getElementById('lang-alt');
+      if (currentLang === 'en') {
+        curr.innerText = 'ENG';
+        alt.innerText = 'മല';
+      } else {
+        curr.innerText = 'മല';
+        alt.innerText = 'ENG';
+      }
+    }
+  </script>
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>

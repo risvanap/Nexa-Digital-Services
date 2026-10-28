@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <meta name="shell-type" content="mobile_tab"/>
+  <title>About Nexa Digital Services | സ്വതന്ത്ര ഡിജിറ്റൽ സേവന കേന്ദ്രം</title>
+  <meta name="description" content="About Nexa Digital Services - independent citizen facilitation center bridging Kerala citizens with fast, transparent online portal access since 2018."/>
+
+  <!-- PWA & Favicon Meta -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#01284B"/>
+
+  <!-- Fonts & Icons matching Google Stitch Design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    body { font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif; min-height: max(884px, 100dvh); }
+    @keyframes whatsappPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .whatsapp-pulse { animation: whatsappPulse 2s infinite; }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#d3e4ff",
+            "secondary-container": "#356ee7",
+            "tertiary-container": "#00453d",
+            "primary": "#01284b",
+            "secondary": "#0453cd",
+            "tertiary-fixed": "#8ff4e3",
+            "tertiary": "#002d27",
+            "secondary-fixed": "#dae2ff",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#50b8a8",
+            "surface": "#f9f9ff",
+            "on-secondary-fixed": "#001848",
+            "outline": "#73777f",
+            "on-tertiary-fixed-variant": "#005047",
+            "background": "#f9f9ff",
+            "surface-tint": "#426086",
+            "on-primary-fixed": "#001c38",
+            "on-primary-container": "#8ba9d3",
+            "surface-container-low": "#f0f3ff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#aac9f4",
+            "secondary-fixed-dim": "#b2c5ff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#29486d",
+            "on-surface-variant": "#43474e",
+            "on-surface": "#0e1c2f",
+            "on-tertiary-fixed": "#00201c",
+            "surface-bright": "#f9f9ff",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#ebf1ff",
+            "primary-container": "#1e3e62",
+            "surface-container-high": "#dee8ff",
+            "tertiary-fixed-dim": "#72d8c8",
+            "surface-dim": "#cddbf5",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#243145",
+            "on-secondary-container": "#fefcff",
+            "inverse-primary": "#aac9f4",
+            "on-background": "#0e1c2f",
+            "surface-container": "#e7eeff",
+            "outline-variant": "#c3c6cf",
+            "on-secondary-fixed-variant": "#0040a2",
+            "surface-variant": "#d6e3fe",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#d6e3fe"
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          spacing: { "gutter-desktop": "1.5rem", "margin": "1rem", "margin-desktop": "3rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-tablet": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-tablet": "1.25rem", "gutter": "1rem" },
+          fontFamily: {
+            "body-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"]
+          },
+          fontSize: {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "800"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "headline-xl-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "800"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+    <div class="bg-surface-container-high px-margin py-1 text-center flex items-center justify-center gap-space-xs">
+      <span class="material-symbols-outlined text-secondary text-[14px]">verified</span>
+      <span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">
+        An independent citizen digital services center • Kerala
+      </span>
+    </div>
+
+    <div class="h-20 px-margin max-w-5xl mx-auto flex items-center justify-between gap-space-sm">
+      <a href="index.html" class="flex items-center gap-space-sm min-w-0 flex-1">
+        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary flex-shrink-0 shadow-xs">
+          <span class="material-symbols-outlined text-[24px]">account_balance</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Nexa Services</span>
+          <span class="font-label-sm text-label-sm text-secondary font-medium tracking-tight truncate leading-tight">ഞങ്ങളെക്കുറിച്ച് • About</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-2 mr-4">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Home</a>
+        <a href="services.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">സേവനങ്ങൾ</a>
+        <a href="about.html" class="px-3 py-1.5 rounded-lg font-bold text-xs bg-primary text-on-primary">About</a>
+        <a href="contact.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Contact</a>
+        <a href="track.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Status</a>
+      </nav>
+
+      <div class="flex items-center gap-space-xs flex-shrink-0">
+        <a aria-label="Quick Call" class="w-11 h-11 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container" href="tel:+919447012345">
+          <span class="material-symbols-outlined text-[20px]">call</span>
+        </a>
+        <a aria-label="WhatsApp Enquiry" class="relative w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center hover:bg-tertiary-container" href="https://wa.me/919447012345" target="_blank">
+          <span class="material-symbols-outlined text-[20px]">chat</span>
+          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container ring-2 ring-surface animate-pulse"></span>
+        </a>
+        <a href="login.html" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-on-primary">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex flex-col relative w-full pt-28 pb-24 bg-surface min-h-screen max-w-4xl mx-auto">
+    <div class="flex flex-col w-full pb-8">
+
+      <!-- About Nexa Digital Section (From Stitch Screen 6b5f6d74f7b64350a0dc3fb101988a39) -->
+      <div class="px-margin pt-2 pb-4 flex flex-col gap-space-sm">
+        <div class="bg-surface-container-low rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm">
+            <div class="w-12 h-12 rounded-lg bg-primary flex items-center justify-center flex-shrink-0 text-on-primary">
+              <span class="material-symbols-outlined text-[26px]">account_balance</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">About Nexa Digital</span>
+              <span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide">നെക്സ ഡിജിറ്റൽ സർവീസസ്</span>
+            </div>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            Bridging Kerala citizens with fast, transparent digital access since 2018. We simplify essential government and civilian online procedures with dedicated human touch.
+          </p>
+
+          <div class="bg-surface-container rounded-lg p-space-sm flex items-start gap-space-xs border border-outline-variant/30">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5 flex-shrink-0">verified_user</span>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+              <span class="font-bold text-on-surface">Citizen Credo:</span> Independent facilitation free of bureaucratic delays, zero hidden charges, and patient Malayalam-first support for senior citizens and youth alike.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-space-xs pt-1">
+            <div class="bg-surface-container-lowest rounded-lg p-3 flex flex-col items-center text-center shadow-sm border border-outline-variant/20">
+              <span class="font-headline-sm text-headline-sm text-secondary font-extrabold leading-none">6+</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant mt-1 leading-tight">Years Active</span>
+            </div>
+            <div class="bg-surface-container-lowest rounded-lg p-3 flex flex-col items-center text-center shadow-sm border border-outline-variant/20">
+              <span class="font-headline-sm text-headline-sm text-secondary font-extrabold leading-none">42k+</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant mt-1 leading-tight">Citizens Served</span>
+            </div>
+            <div class="bg-surface-container-lowest rounded-lg p-3 flex flex-col items-center text-center shadow-sm border border-outline-variant/20">
+              <span class="font-headline-sm text-headline-sm text-secondary font-extrabold leading-none">100%</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant mt-1 leading-tight">Fee Clarity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instant Support Desks -->
+      <div class="px-margin py-2 flex flex-col gap-space-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-primary font-bold">Instant Support Desks</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">നേരിട്ട് ബന്ധപ്പെടാം</span>
+          </div>
+          <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-semibold flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span> Open Now
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+          <a class="bg-tertiary text-on-tertiary rounded-xl p-space-sm flex flex-col justify-between shadow-sm active:scale-[0.98] transition-transform" href="https://wa.me/919447012345?text=Hello%20Nexa%20Services,%20I%20need%20assistance" target="_blank">
+            <div class="flex items-center justify-between w-full">
+              <div class="w-9 h-9 rounded-full bg-tertiary-container flex items-center justify-center">
+                <span class="material-symbols-outlined text-on-tertiary-container text-[20px]">chat</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-tertiary-fixed font-bold tracking-wider uppercase">WhatsApp</span>
+            </div>
+            <div class="mt-3 flex flex-col">
+              <span class="font-label-lg text-label-lg font-bold leading-tight">+91 94470 12345</span>
+              <span class="font-label-sm text-label-sm text-tertiary-fixed-dim leading-tight mt-0.5">സഹായ വാട്സാപ്പ്</span>
+            </div>
+          </a>
+
+          <a class="bg-secondary text-on-secondary rounded-xl p-space-sm flex flex-col justify-between shadow-sm active:scale-[0.98] transition-transform" href="tel:+914842987654">
+            <div class="flex items-center justify-between w-full">
+              <div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center">
+                <span class="material-symbols-outlined text-on-secondary-container text-[20px]">call</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-secondary-fixed font-bold tracking-wider uppercase">Direct Call</span>
+            </div>
+            <div class="mt-3 flex flex-col">
+              <span class="font-label-lg text-label-lg font-bold leading-tight">0484 2987654</span>
+              <span class="font-label-sm text-label-sm text-secondary-fixed-dim leading-tight mt-0.5">വിളിച്ചു ചോദിക്കാം</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex items-center justify-between gap-space-sm">
+          <div class="flex items-center gap-space-sm min-w-0">
+            <div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-symbols-outlined text-[20px]">mail</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Official Electronic Mail</span>
+              <span class="font-label-lg text-label-lg text-primary font-bold truncate">help@nexadigital.in</span>
+            </div>
+          </div>
+          <a class="bg-surface-container-high text-primary font-label-sm text-label-sm px-3 py-2 rounded-lg font-bold hover:bg-surface-variant flex items-center gap-1 flex-shrink-0" href="mailto:help@nexadigital.in">
+            Email <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Statutory Citizen Notice Box -->
+      <div class="px-margin py-3">
+        <div class="bg-surface-container rounded-xl p-space-md flex flex-col gap-2 border border-outline-variant/30">
+          <div class="flex items-center gap-2 text-primary font-bold font-label-lg text-label-lg">
+            <span class="material-symbols-outlined text-outline text-[20px]">info</span>
+            <span>Statutory Citizen Notice &amp; Transparency Declaration</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            <strong>English:</strong> Nexa Digital Services is an authorized privately operated citizen facilitation center helping common people with digital internet access, document scanning, translation, and application formatting. We do not represent any government department or Ministry. Official statutory application fees are paid directly to designated state and central portals.
+          </p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            <strong>മലയാളം:</strong> നെക്സ ഡിജിറ്റൽ സർവീസസ് ഒരു സ്വകാര്യ ഓൺലൈൻ സേവന സഹായ കേന്ദ്രമാണ്. സർക്കാർ അപേക്ഷകൾ സമർപ്പിക്കുന്നതിനും സ്കാനിംഗ്, ഫോർമാറ്റിംഗ് തുടങ്ങിയ സാങ്കേതിക സഹായങ്ങൾക്കുമായി മാത്രം സർവീസ് ചാർജ് ഈടാക്കുന്നു. സർക്കാർ നിശ്ചയിച്ച ഫീസുകൾ അതത് പോർട്ടലുകളിലേക്ക് നേരിട്ട് കൈമാറപ്പെടുന്നു.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)] border-t border-outline-variant/30">
+    <div class="h-16 px-space-sm max-w-md mx-auto flex items-center justify-around">
+      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="index.html">
+        <span class="material-symbols-outlined text-[22px]">cottage</span>
+        <span class="font-label-sm text-label-sm mt-0.5">Home</span>
+      </a>
+      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="all-services" href="services.html">
+        <span class="material-symbols-outlined text-[22px]">apps</span>
+        <span class="font-label-sm text-label-sm mt-0.5">സേവനങ്ങൾ</span>
+      </a>
+      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-status" href="track.html">
+        <span class="material-symbols-outlined text-[22px]">published_with_changes</span>
+        <span class="font-label-sm text-label-sm mt-0.5">Status</span>
+      </a>
+      <a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors text-secondary font-bold" data-path="help-contact" href="contact.html">
+        <span class="material-symbols-outlined text-[22px]">support_agent</span>
+        <span class="font-label-sm text-label-sm mt-0.5">Help</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>

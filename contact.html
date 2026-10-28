@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <meta name="shell-type" content="mobile_tab"/>
+  <title>Contact & Branches | Nexa Digital Citizen Services</title>
+  <meta name="description" content="Contact Nexa Digital Services centers in Ernakulam and Palakkad. Direct phone helplines, WhatsApp desk, and callback requests."/>
+
+  <!-- PWA & Favicon Meta -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#01284B"/>
+
+  <!-- Fonts & Icons matching Google Stitch Design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <style>
+    @layer base {
+      html, body { width: 100%; margin: 0; padding: 0; }
+      body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    body { font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif; min-height: max(884px, 100dvh); }
+    @keyframes whatsappPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .whatsapp-pulse { animation: whatsappPulse 2s infinite; }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#d3e4ff",
+            "secondary-container": "#356ee7",
+            "tertiary-container": "#00453d",
+            "primary": "#01284b",
+            "secondary": "#0453cd",
+            "tertiary-fixed": "#8ff4e3",
+            "tertiary": "#002d27",
+            "secondary-fixed": "#dae2ff",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#50b8a8",
+            "surface": "#f9f9ff",
+            "on-secondary-fixed": "#001848",
+            "outline": "#73777f",
+            "on-tertiary-fixed-variant": "#005047",
+            "background": "#f9f9ff",
+            "surface-tint": "#426086",
+            "on-primary-fixed": "#001c38",
+            "on-primary-container": "#8ba9d3",
+            "surface-container-low": "#f0f3ff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#aac9f4",
+            "secondary-fixed-dim": "#b2c5ff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#29486d",
+            "on-surface-variant": "#43474e",
+            "on-surface": "#0e1c2f",
+            "on-tertiary-fixed": "#00201c",
+            "surface-bright": "#f9f9ff",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#ebf1ff",
+            "primary-container": "#1e3e62",
+            "surface-container-high": "#dee8ff",
+            "tertiary-fixed-dim": "#72d8c8",
+            "surface-dim": "#cddbf5",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#243145",
+            "on-secondary-container": "#fefcff",
+            "inverse-primary": "#aac9f4",
+            "on-background": "#0e1c2f",
+            "surface-container": "#e7eeff",
+            "outline-variant": "#c3c6cf",
+            "on-secondary-fixed-variant": "#0040a2",
+            "surface-variant": "#d6e3fe",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#d6e3fe"
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          spacing: { "gutter-desktop": "1.5rem", "margin": "1rem", "margin-desktop": "3rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-tablet": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-tablet": "1.25rem", "gutter": "1rem" },
+          fontFamily: {
+            "body-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"]
+          },
+          fontSize: {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "800"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "headline-xl-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "800"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+    <div class="bg-surface-container-high px-margin py-1 text-center flex items-center justify-center gap-space-xs">
+      <span class="material-symbols-outlined text-secondary text-[14px]">verified</span>
+      <span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">
+        An independent citizen digital services center • Kerala
+      </span>
+    </div>
+
+    <div class="h-20 px-margin max-w-5xl mx-auto flex items-center justify-between gap-space-sm">
+      <a href="index.html" class="flex items-center gap-space-sm min-w-0 flex-1">
+        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary flex-shrink-0 shadow-xs">
+          <span class="material-symbols-outlined text-[24px]">account_balance</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Nexa Services</span>
+          <span class="font-label-sm text-label-sm text-secondary font-medium tracking-tight truncate leading-tight">ബന്ധപ്പെടുക • Help & Contact</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-2 mr-4">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Home</a>
+        <a href="services.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">സേവനങ്ങൾ</a>
+        <a href="about.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">About</a>
+        <a href="contact.html" class="px-3 py-1.5 rounded-lg font-bold text-xs bg-primary text-on-primary">Contact</a>
+        <a href="track.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Status</a>
+      </nav>
+
+      <div class="flex items-center gap-space-xs flex-shrink-0">
+        <a aria-label="Quick Call" class="w-11 h-11 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container" href="tel:+919447012345">
+          <span class="material-symbols-outlined text-[20px]">call</span>
+        </a>
+        <a aria-label="WhatsApp Enquiry" class="relative w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center hover:bg-tertiary-container" href="https://wa.me/919447012345" target="_blank">
+          <span class="material-symbols-outlined text-[20px]">chat</span>
+          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container ring-2 ring-surface animate-pulse"></span>
+        </a>
+        <a href="login.html" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-on-primary">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content (Matching Stitch Screen 6b5f6d74f7b64350a0dc3fb101988a39) -->
+  <main class="flex flex-col relative w-full pt-28 pb-24 bg-surface min-h-screen max-w-4xl mx-auto">
+    <div class="flex flex-col w-full pb-8">
+
+      <!-- Physical Centers & Hours with Branch Switcher -->
+      <div class="px-margin py-3 flex flex-col gap-space-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-primary font-bold">Physical Centers &amp; Hours</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">ഞങ്ങളുടെ സേവന കേന്ദ്രങ്ങൾ നേരിട്ട് സന്ദർശിക്കാം</span>
+          </div>
+        </div>
+
+        <div class="flex bg-surface-container rounded-lg p-0.5 border border-outline-variant/30" id="branch-switch-tabs">
+          <button class="flex-1 py-1.5 px-3 rounded font-label-md text-label-md font-bold text-on-secondary bg-secondary shadow-sm transition-all" id="tab-btn-kakkanad" onclick="switchBranch('kakkanad')" type="button">
+            Kakkanad (Ernakulam)
+          </button>
+          <button class="flex-1 py-1.5 px-3 rounded font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface transition-all" id="tab-btn-palakkad" onclick="switchBranch('palakkad')" type="button">
+            Palakkad Junction
+          </button>
+        </div>
+
+        <!-- Kakkanad Panel -->
+        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm" id="branch-panel-kakkanad">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex flex-col">
+              <span class="font-label-lg text-label-lg text-primary font-bold">Kakkanad Main Facilitation Center</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Near Civil Station Road, Kakkanad, Ernakulam, Kerala - 682030</span>
+            </div>
+            <span class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm rounded font-bold flex-shrink-0">HQ Branch</span>
+          </div>
+
+          <div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5 border border-outline-variant/20">
+            <div class="flex items-center justify-between text-body-sm font-body-sm">
+              <span class="text-on-surface-variant flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span> Mon - Sat:
+              </span>
+              <span class="font-bold text-on-surface">8:30 AM – 7:30 PM</span>
+            </div>
+            <div class="flex items-center justify-between text-body-sm font-body-sm">
+              <span class="text-on-surface-variant flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px] text-tertiary">emergency</span> Sunday (Emergency):
+              </span>
+              <span class="font-bold text-on-surface">10:00 AM – 2:00 PM</span>
+            </div>
+          </div>
+
+          <div class="relative w-full h-40 rounded-lg overflow-hidden shadow-sm border border-outline-variant/30">
+            <div class="w-full h-full bg-surface-container-high flex flex-col items-center justify-center p-4 text-center">
+              <span class="material-symbols-outlined text-secondary text-[36px] mb-1">distance</span>
+              <span class="font-label-lg text-label-lg text-primary font-bold">Kakkanad Hub Location</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">300m from Civil Station Gate 2</span>
+            </div>
+          </div>
+
+          <a class="w-full h-11 bg-primary text-on-primary rounded-lg flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold shadow-sm active:scale-[0.98] transition-transform" href="https://maps.google.com/?q=Civil+Station+Kakkanad+Ernakulam" target="_blank">
+            <span class="material-symbols-outlined text-[18px]">directions</span>
+            Get Directions to Kakkanad Center
+          </a>
+        </div>
+
+        <!-- Palakkad Panel -->
+        <div class="hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm" id="branch-panel-palakkad">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex flex-col">
+              <span class="font-label-lg text-label-lg text-primary font-bold">Palakkad Stadium Facilitation Desk</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Stadium Junction, Near Municipal Bus Stand, Palakkad - 678001</span>
+            </div>
+            <span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-label-sm font-label-sm rounded font-bold flex-shrink-0">Branch 2</span>
+          </div>
+
+          <div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5 border border-outline-variant/20">
+            <div class="flex items-center justify-between text-body-sm font-body-sm">
+              <span class="text-on-surface-variant flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span> Mon - Sat:
+              </span>
+              <span class="font-bold text-on-surface">9:00 AM – 7:00 PM</span>
+            </div>
+            <div class="flex items-center justify-between text-body-sm font-body-sm">
+              <span class="text-on-surface-variant flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px] text-outline">event_busy</span> Sunday:
+              </span>
+              <span class="font-semibold text-on-surface-variant">Closed</span>
+            </div>
+          </div>
+
+          <div class="relative w-full h-40 rounded-lg overflow-hidden shadow-sm border border-outline-variant/30">
+            <div class="w-full h-full bg-surface-container-high flex flex-col items-center justify-center p-4 text-center">
+              <span class="material-symbols-outlined text-secondary text-[36px] mb-1">location_on</span>
+              <span class="font-label-lg text-label-lg text-primary font-bold">Palakkad Desk Location</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Opposite Stadium Shopping Complex</span>
+            </div>
+          </div>
+
+          <a class="w-full h-11 bg-primary text-on-primary rounded-lg flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold shadow-sm active:scale-[0.98] transition-transform" href="https://maps.google.com/?q=Stadium+Junction+Palakkad" target="_blank">
+            <span class="material-symbols-outlined text-[18px]">directions</span>
+            Get Directions to Palakkad Center
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Citizen Callback Form -->
+      <div class="px-margin py-3 flex flex-col gap-space-sm">
+        <div class="bg-surface-container-low rounded-xl p-space-md shadow-sm border border-outline-variant/30 flex flex-col gap-space-sm">
+          <div class="flex flex-col">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-[22px]">contact_phone</span>
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">Quick Citizen Callback</span>
+            </div>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">വിവരങ്ങൾക്കായി തിരിച്ചുവിളിക്കാൻ അപേക്ഷിക്കുക</span>
+          </div>
+
+          <form class="flex flex-col gap-space-sm" id="contact-callback-form" onsubmit="event.preventDefault(); handleCallbackSubmit();">
+            <div class="flex flex-col gap-1">
+              <label class="font-label-md text-label-md text-primary font-semibold flex justify-between" for="citizen-name">
+                <span>Applicant / Citizen Name</span>
+                <span class="text-on-surface-variant font-normal">പേര്</span>
+              </label>
+              <input class="h-12 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none border border-outline-variant/30 shadow-sm" id="citizen-name" placeholder="e.g. Suresh Kumar" required type="text"/>
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <label class="font-label-md text-label-md text-primary font-semibold flex justify-between" for="citizen-phone">
+                <span>Mobile Phone (10 digits)</span>
+                <span class="text-on-surface-variant font-normal">ഫോൺ നമ്പർ</span>
+              </label>
+              <div class="flex items-center rounded-lg bg-surface-container-lowest shadow-sm overflow-hidden border border-outline-variant/30">
+                <span class="px-3 text-on-surface-variant font-label-md text-label-md font-bold bg-surface-container">+91</span>
+                <input class="h-12 px-3 flex-1 bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" id="citizen-phone" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="98765 43210" required type="tel"/>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <label class="font-label-md text-label-md text-primary font-semibold flex justify-between" for="service-category">
+                <span>Assistance Type / Service Required</span>
+                <span class="text-on-surface-variant font-normal">ആവശ്യമായ സേവനം</span>
+              </label>
+              <div class="relative bg-surface-container-lowest rounded-lg shadow-sm border border-outline-variant/30">
+                <select class="w-full h-12 px-3 appearance-none bg-transparent text-on-surface font-body-md text-body-md focus:outline-none pr-8" id="service-category" required>
+                  <option disabled selected value="">Select a Service category...</option>
+                  <option value="Certificates">Revenue &amp; e-District Certificates (വരുമാനം, ജാതി സർട്ടിഫിക്കറ്റ്)</option>
+                  <option value="Passport">Passport Seva Online &amp; Slot Booking (പാസ്പോർട്ട് സേവനങ്ങൾ)</option>
+                  <option value="PAN">PAN Card New / Correction / e-KYC (പാൻ കാർഡ്)</option>
+                  <option value="Ration">Civil Supplies &amp; Ration Card (റേഷൻ കാർഡ്)</option>
+                  <option value="Jobs">Kerala PSC OTR &amp; Job Applications (പി.എസ്.സി)</option>
+                  <option value="Printing">Legal Document Printing &amp; Scanning (പ്രിന്റിംഗ്)</option>
+                  <option value="Other">General Civic Inquiry / Other (മറ്റുള്ളവ)</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-2.5 top-3.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <label class="font-label-md text-label-md text-primary font-semibold flex justify-between" for="citizen-message">
+                <span>Clarification Note (Optional)</span>
+                <span class="text-on-surface-variant font-normal">സന്ദേശം</span>
+              </label>
+              <textarea class="p-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none shadow-sm border border-outline-variant/30" id="citizen-message" placeholder="Mention urgency, urgent appointment date, or document doubts..." rows="2"></textarea>
+            </div>
+
+            <div class="pt-1 flex flex-col gap-2">
+              <button class="h-12 bg-secondary text-on-secondary rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" id="submit-btn" type="submit">
+                <span class="material-symbols-outlined text-[20px]">ring_volume</span>
+                <span>Request Immediate Callback</span>
+              </button>
+              <span class="text-center font-label-sm text-label-sm text-on-surface-variant">Response guaranteed within 15 minutes during office hours.</span>
+            </div>
+          </form>
+
+          <div class="hidden bg-tertiary-fixed rounded-lg p-space-sm flex items-start gap-space-xs text-on-tertiary-fixed border border-tertiary" id="callback-success">
+            <span class="material-symbols-outlined text-tertiary text-[20px] flex-shrink-0 mt-0.5">check_circle</span>
+            <div class="flex flex-col">
+              <span class="font-label-lg text-label-lg font-bold">Callback Scheduled! / അപേക്ഷ ലഭിച്ചു</span>
+              <span class="font-body-sm text-body-sm leading-tight mt-0.5">Our facilitation executive will dial your phone number shortly or message you via WhatsApp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)] border-t border-outline-variant/30">
+    <div class="h-16 px-space-sm max-w-md mx-auto flex items-center justify-around">
+      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="index.html">
+        <span class="material-symbols-outlined text-[22px]">cottage</span>
+        <span class="font-label-sm text-label-sm mt-0.5">Home</span>
+      </a>
+      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="all-services" href="services.html">
+        <span class="material-symbols-outlined text-[22px]">apps</span>
+        <span class="font-label-sm text-label-sm mt-0.5">സേവനങ്ങൾ</span>
+      </a>
+      <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-status" href="track.html">
+        <span class="material-symbols-outlined text-[22px]">published_with_changes</span>
+        <span class="font-label-sm text-label-sm mt-0.5">Status</span>
+      </a>
+      <a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors text-secondary font-bold" data-path="help-contact" href="contact.html">
+        <span class="material-symbols-outlined text-[22px]">support_agent</span>
+        <span class="font-label-sm text-label-sm mt-0.5">Help</span>
+      </a>
+    </div>
+  </nav>
+
+  <script>
+    function switchBranch(branch) {
+      const kakkanadPanel = document.getElementById('branch-panel-kakkanad');
+      const palakkadPanel = document.getElementById('branch-panel-palakkad');
+      const btnKakkanad = document.getElementById('tab-btn-kakkanad');
+      const btnPalakkad = document.getElementById('tab-btn-palakkad');
+
+      if (branch === 'kakkanad') {
+        kakkanadPanel.classList.remove('hidden');
+        palakkadPanel.classList.add('hidden');
+        btnKakkanad.className = 'flex-1 py-1.5 px-3 rounded font-label-md text-label-md font-bold text-on-secondary bg-secondary shadow-sm transition-all';
+        btnPalakkad.className = 'flex-1 py-1.5 px-3 rounded font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface transition-all';
+      } else {
+        palakkadPanel.classList.remove('hidden');
+        kakkanadPanel.classList.add('hidden');
+        btnPalakkad.className = 'flex-1 py-1.5 px-3 rounded font-label-md text-label-md font-bold text-on-secondary bg-secondary shadow-sm transition-all';
+        btnKakkanad.className = 'flex-1 py-1.5 px-3 rounded font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface transition-all';
+      }
+    }
+
+    function handleCallbackSubmit() {
+      const form = document.getElementById('contact-callback-form');
+      const successBlock = document.getElementById('callback-success');
+      const submitBtn = document.getElementById('submit-btn');
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-75');
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Submitting...';
+
+      setTimeout(function() {
+        form.classList.add('hidden');
+        successBlock.classList.remove('hidden');
+      }, 700);
+    }
+  </script>
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>

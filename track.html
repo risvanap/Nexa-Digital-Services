@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <title>Track Application & Staff Portal | Nexa Digital Services Kerala</title>
+  <meta name="description" content="Track your Kerala e-District, PAN, Passport, or Ration card application status online using your Nexa reference number or mobile number."/>
+
+  <!-- PWA & Favicon Meta -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#01284B"/>
+
+  <!-- Fonts & Icons matching Google Stitch Design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Malayalam:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN with full Stitch Design Tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#d3e4ff",
+            "secondary-container": "#356ee7",
+            "tertiary-container": "#00453d",
+            "primary": "#01284b",
+            "secondary": "#0453cd",
+            "tertiary-fixed": "#8ff4e3",
+            "tertiary": "#002d27",
+            "secondary-fixed": "#dae2ff",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#50b8a8",
+            "surface": "#f9f9ff",
+            "on-secondary-fixed": "#001848",
+            "outline": "#73777f",
+            "on-tertiary-fixed-variant": "#005047",
+            "background": "#f9f9ff",
+            "surface-tint": "#426086",
+            "on-primary-fixed": "#001c38",
+            "on-primary-container": "#8ba9d3",
+            "surface-container-low": "#f0f3ff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#aac9f4",
+            "secondary-fixed-dim": "#b2c5ff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#29486d",
+            "on-surface-variant": "#43474e",
+            "on-surface": "#0e1c2f",
+            "on-tertiary-fixed": "#00201c",
+            "surface-bright": "#f9f9ff",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#ebf1ff",
+            "primary-container": "#1e3e62",
+            "surface-container-high": "#dee8ff",
+            "tertiary-fixed-dim": "#72d8c8",
+            "surface-dim": "#cddbf5",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#243145",
+            "on-secondary-container": "#fefcff",
+            "inverse-primary": "#aac9f4",
+            "on-background": "#0e1c2f",
+            "surface-container": "#e7eeff",
+            "outline-variant": "#c3c6cf",
+            "on-secondary-fixed-variant": "#0040a2",
+            "surface-variant": "#d6e3fe",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#d6e3fe"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "margin-desktop": "3rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "margin-tablet": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter-tablet": "1.25rem",
+            "gutter": "1rem"
+          },
+          fontFamily: {
+            "body-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-xl-mobile": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "Noto Sans Malayalam", "sans-serif"]
+          },
+          fontSize: {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "800"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "headline-xl-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "800"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+  <!-- Sticky Top Header (Pre-rendered Stitch Header) -->
+  <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+    <div class="bg-surface-container-high px-margin py-1 text-center flex items-center justify-center gap-space-xs">
+      <span class="material-symbols-outlined text-secondary text-[14px]">verified</span>
+      <span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">
+        An independent citizen digital services center • Kerala
+      </span>
+    </div>
+
+    <div class="h-20 px-margin max-w-5xl mx-auto flex items-center justify-between gap-space-sm">
+      <a href="index.html" class="flex items-center gap-space-sm min-w-0 flex-1">
+        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary flex-shrink-0 shadow-xs">
+          <span class="material-symbols-outlined text-[24px]">account_balance</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Nexa Services</span>
+          <span class="font-label-sm text-label-sm text-secondary font-medium tracking-tight truncate leading-tight">സ്റ്റാറ്റസ് • Track Status</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-2 mr-4">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Home</a>
+        <a href="services.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">സേവനങ്ങൾ</a>
+        <a href="about.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">About</a>
+        <a href="contact.html" class="px-3 py-1.5 rounded-lg font-semibold text-xs text-on-surface hover:text-secondary">Contact</a>
+        <a href="track.html" class="px-3 py-1.5 rounded-lg font-bold text-xs bg-primary text-on-primary">Status</a>
+      </nav>
+
+      <div class="flex items-center gap-space-xs flex-shrink-0">
+        <button id="lang-toggle-btn" class="h-11 px-3 rounded-full bg-surface-container-low flex items-center justify-center font-label-sm text-label-sm text-on-surface font-semibold hover:bg-surface-container transition-all" onclick="toggleLanguage()">
+          <span class="text-secondary font-bold" id="lang-curr">മല</span>
+          <span class="text-outline-variant px-0.5">|</span>
+          <span class="text-on-surface-variant" id="lang-alt">ENG</span>
+        </button>
+
+        <a aria-label="Quick Call" class="w-11 h-11 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-colors" href="tel:+919447012345" title="Call Us: +91 94470 12345">
+          <span class="material-symbols-outlined text-[20px]">call</span>
+        </a>
+
+        <a aria-label="WhatsApp Enquiry" class="relative w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center hover:bg-tertiary-container transition-colors" href="https://wa.me/919447012345?text=Hello%20Nexa%20Services,%20I%20want%20to%20check%20my%20application%20status" target="_blank" rel="noopener noreferrer" title="WhatsApp Status Help">
+          <span class="material-symbols-outlined text-[20px]">chat</span>
+          <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container ring-2 ring-surface animate-pulse"></span>
+        </a>
+
+        <a href="login.html" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-on-primary hover:bg-primary-container" title="Staff Login">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex flex-col relative w-full pt-28 pb-24 bg-surface min-h-screen max-w-5xl mx-auto">
+    <div class="flex flex-col w-full">
+
+      <!-- Top Mode Switcher Bar -->
+      <section class="px-margin pt-space-xs pb-space-sm">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm bg-surface-container-lowest p-space-md rounded-2xl border border-outline-variant/30 shadow-xs">
+          <div>
+            <div class="flex items-center gap-space-xs">
+              <span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+              <span class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider">
+                Live Portal • തത്സമയ സ്റ്റാറ്റസ്
+              </span>
+            </div>
+            <h1 class="font-headline-md text-headline-md font-bold text-primary mt-0.5">
+              അപേക്ഷയുടെ പുരോഗതി (Track Status)
+            </h1>
+          </div>
+
+          <div class="flex bg-surface-container rounded-xl p-1 shadow-xs border border-outline-variant/30 self-stretch sm:self-auto">
+            <button id="view-citizen-tab" class="flex-1 sm:flex-none py-2 px-4 rounded-lg font-bold text-xs text-on-secondary bg-secondary shadow-xs transition-all" onclick="showTab('citizen')">
+              Citizen Tracker (പൗരന്മാർക്ക്)
+            </button>
+            <button id="view-operator-tab" class="flex-1 sm:flex-none py-2 px-4 rounded-lg font-semibold text-xs text-on-surface-variant hover:text-on-surface transition-all" onclick="showTab('operator')">
+              Staff / Operator View
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 1. CITIZEN TRACKER VIEW ================= -->
+      <div id="citizen-tracker-view" class="flex flex-col gap-space-md">
+
+        <!-- Search Input Card -->
+        <section class="px-margin">
+          <div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-2xl border border-outline-variant/40 shadow-xs flex flex-col gap-space-sm">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-11 h-11 rounded-xl bg-surface-container-high text-secondary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[24px]">search_check</span>
+              </div>
+              <div>
+                <h2 class="font-headline-sm text-headline-sm font-bold text-primary">
+                  Check Application Status Online
+                </h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  നിങ്ങളുടെ Nexa Reference ID അല്ലെങ്കിൽ രജിസ്റ്റർ ചെയ്ത മൊബൈൽ നമ്പർ നൽകുക.
+                </p>
+              </div>
+            </div>
+
+            <form id="track-form" class="flex flex-col sm:flex-row gap-space-sm pt-2" onsubmit="event.preventDefault(); handleTrackSubmit();">
+              <div class="relative flex-1">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-outline text-[20px]">badge</span>
+                <input 
+                  type="text" 
+                  id="track-query" 
+                  placeholder="e.g. KL-REV-2026-8942 or 9876543210" 
+                  value="KL-REV-2026-8942"
+                  required 
+                  class="w-full h-12 pl-11 pr-4 rounded-xl bg-surface-container-low text-on-surface text-sm border border-outline-variant/40 focus:border-secondary focus:outline-none"
+                />
+              </div>
+              <button type="submit" class="h-12 px-6 rounded-xl bg-secondary hover:bg-primary text-on-secondary font-bold text-sm flex items-center justify-center gap-2 shadow-xs transition-all active:scale-[0.98]">
+                <span class="material-symbols-outlined text-[18px]">verified</span>
+                <span>പരിശോധിക്കുക (Check)</span>
+              </button>
+            </form>
+
+            <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-secondary text-[16px]">info</span>
+              <span>Sample reference numbers: <strong>KL-REV-2026-8942</strong> (Income) or <strong>PAN-99214</strong></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Live Status Result Card -->
+        <section class="px-margin" id="tracker-result-card">
+          <div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-2xl border border-outline-variant/40 shadow-sm flex flex-col gap-space-md">
+            
+            <div class="flex items-start justify-between gap-4 pb-4 border-b border-surface-container">
+              <div class="flex flex-col">
+                <span class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider">Application Reference</span>
+                <span class="font-headline-md text-headline-md font-extrabold text-primary" id="res-ref-no">KL-REV-2026-8942</span>
+                <span class="font-body-md text-body-md font-bold text-on-surface mt-0.5" id="res-service-name">Income Certificate (വരുമാന സർട്ടിഫിക്കറ്റ്)</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" id="res-citizen-name">Applicant: Suresh Kumar K. (Kakkanad, Ernakulam)</span>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-secondary-fixed text-primary text-xs font-bold" id="res-status-badge">
+                Portal Processing
+              </span>
+            </div>
+
+            <!-- 4-Stage Stepper Rail -->
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-sm text-label-sm font-bold text-on-surface-variant uppercase tracking-wider">Live Milestone Progress</span>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-space-xs pt-1">
+                <!-- Step 1: Received -->
+                <div class="p-3 rounded-xl bg-surface-container-low border border-tertiary/30 flex flex-col gap-1">
+                  <div class="flex items-center justify-between">
+                    <span class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary text-xs font-bold flex items-center justify-center">✓</span>
+                    <span class="text-[10px] text-tertiary font-bold">COMPLETED</span>
+                  </div>
+                  <span class="text-xs font-bold text-primary">Application Received</span>
+                  <span class="text-[11px] text-on-surface-variant">Documents validated</span>
+                </div>
+
+                <!-- Step 2: Desk Scrutiny -->
+                <div class="p-3 rounded-xl bg-surface-container-low border border-tertiary/30 flex flex-col gap-1">
+                  <div class="flex items-center justify-between">
+                    <span class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary text-xs font-bold flex items-center justify-center">✓</span>
+                    <span class="text-[10px] text-tertiary font-bold">COMPLETED</span>
+                  </div>
+                  <span class="text-xs font-bold text-primary">Documents Verified</span>
+                  <span class="text-[11px] text-on-surface-variant">Fee challan settled</span>
+                </div>
+
+                <!-- Step 3: Submitted to Portal (Current active) -->
+                <div class="p-3 rounded-xl bg-surface-container border-2 border-secondary flex flex-col gap-1 shadow-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-xs font-bold flex items-center justify-center animate-pulse">3</span>
+                    <span class="text-[10px] text-secondary font-bold">IN PROGRESS</span>
+                  </div>
+                  <span class="text-xs font-bold text-primary">Submitted to Portal</span>
+                  <span class="text-[11px] text-secondary font-medium">Village Office field report</span>
+                </div>
+
+                <!-- Step 4: Final Ready -->
+                <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col gap-1 opacity-60">
+                  <div class="flex items-center justify-between">
+                    <span class="w-6 h-6 rounded-full bg-surface-container-high text-outline text-xs font-bold flex items-center justify-center">4</span>
+                    <span class="text-[10px] text-outline font-bold">PENDING</span>
+                  </div>
+                  <span class="text-xs font-bold text-outline">Certificate Ready</span>
+                  <span class="text-[11px] text-outline">SMS & WhatsApp alert</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Details & WhatsApp Help action -->
+            <div class="p-4 rounded-xl bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+              <div class="flex flex-col">
+                <span class="font-bold text-primary text-sm">Estimated Completion Date: Tomorrow, 4:00 PM</span>
+                <span class="text-on-surface-variant">Issuing Portal: Kerala e-District Revenue Department</span>
+              </div>
+
+              <a 
+                href="https://wa.me/919447012345?text=Hello%20Nexa,%20I%20am%20inquiring%20about%20my%20application:%20KL-REV-2026-8942" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="h-10 px-4 rounded-lg bg-tertiary text-on-tertiary font-bold flex items-center gap-1.5 shadow-xs flex-shrink-0 hover:bg-tertiary-container"
+              >
+                <span class="material-symbols-outlined text-[16px] text-tertiary-fixed">chat</span>
+                <span>വാട്സാപ്പ് അന്വേഷണം (WhatsApp)</span>
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ================= 2. STAFF / OPERATOR VIEW (Matching Stitch Screen 54be753a0d1447909dee1d24c88348f6) ================= -->
+      <div id="operator-view" class="hidden flex-col gap-space-sm">
+
+        <!-- Admin Header Strip -->
+        <div class="px-margin pt-space-xs pb-space-sm flex flex-col gap-space-sm">
+          <div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm border border-outline-variant/30">
+            <div class="flex items-center justify-between gap-space-sm">
+              <div class="flex items-center gap-space-sm min-w-0">
+                <div class="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-on-primary flex-shrink-0 font-headline-sm text-headline-sm font-bold shadow-xs">
+                  SK
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-primary font-bold truncate">Shaji K.</span>
+                    <span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-1.5 py-0.5 rounded-full font-semibold">ADMIN</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Center Manager • Kakkanad Branch (സെന്റർ മാനേജർ)
+                  </p>
+                </div>
+              </div>
+              <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary flex-shrink-0 shadow-sm active:scale-95 transition-transform" onclick="openBroadcastModal()" title="Broadcast Message">
+                <span class="material-symbols-outlined text-[20px]">campaign</span>
+              </button>
+            </div>
+
+            <!-- Center Operational Status Toggle Bar -->
+            <div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-between">
+              <div class="flex items-center gap-space-xs">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-on-tertiary-container opacity-75" id="statusPulse"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary-container" id="statusDot"></span>
+                </span>
+                <div class="flex flex-col">
+                  <span class="font-label-lg text-label-lg font-bold text-primary" id="statusLabel">Center Open (Accepting Enquiries)</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">കൗണ്ടർ തുറന്നിരിക്കുന്നു • Kakkanad Hub</span>
+                </div>
+              </div>
+              <button class="px-space-sm py-1 rounded-full bg-tertiary text-on-tertiary font-label-md text-label-md font-semibold active:opacity-80 transition-opacity" id="toggleCenterStatus" onclick="toggleCenterStatusFn()">
+                Active
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI Metrics 2x2 Grid -->
+        <div class="px-margin py-space-xs">
+          <div class="flex items-center justify-between mb-space-xs">
+            <div class="flex flex-col">
+              <h2 class="font-headline-sm text-headline-sm font-bold text-primary">Today's Summary</h2>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">ഇന്നത്തെ കണക്കുകൾ (Real-time)</span>
+            </div>
+            <span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary-fixed px-2 py-0.5 rounded-full">Updated Just Now</span>
+          </div>
+          <div class="grid grid-cols-2 gap-space-sm">
+            <!-- Metric 1: Today's Enquiries -->
+            <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between border border-outline-variant/30">
+              <div class="flex items-center justify-between">
+                <span class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-[18px]">forum</span>
+                </span>
+                <span class="font-label-sm text-label-sm text-tertiary font-bold flex items-center">
+                  <span class="material-symbols-outlined text-[14px]">arrow_upward</span>14%
+                </span>
+              </div>
+              <div class="mt-space-sm">
+                <span class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-primary block leading-none">28</span>
+                <span class="font-label-sm text-label-sm text-on-surface font-semibold block mt-1">Today's Enquiries</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant block">ഇന്നത്തെ അന്വേഷണങ്ങൾ</span>
+              </div>
+            </div>
+
+            <!-- Metric 2: Pending Docs -->
+            <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between border border-outline-variant/30">
+              <div class="flex items-center justify-between">
+                <span class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined text-[18px]">pending_actions</span>
+                </span>
+                <span class="font-label-sm text-label-sm text-error font-bold px-1.5 py-0.5 bg-error-container text-on-error-container rounded">Needs Action</span>
+              </div>
+              <div class="mt-space-sm">
+                <span class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-secondary block leading-none">09</span>
+                <span class="font-label-sm text-label-sm text-on-surface font-semibold block mt-1">Pending Verification</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant block">രേഖകൾ പരിശോധിക്കണം</span>
+              </div>
+            </div>
+
+            <!-- Metric 3: Completed Services -->
+            <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between border border-outline-variant/30">
+              <div class="flex items-center justify-between">
+                <span class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+                  <span class="material-symbols-outlined text-[18px]">task_alt</span>
+                </span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">68% Success</span>
+              </div>
+              <div class="mt-space-sm">
+                <span class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-tertiary block leading-none">19</span>
+                <span class="font-label-sm text-label-sm text-on-surface font-semibold block mt-1">Completed Services</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant block">പൂർത്തിയായവ</span>
+              </div>
+            </div>
+
+            <!-- Metric 4: Total Revenue -->
+            <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between border border-outline-variant/30">
+              <div class="flex items-center justify-between">
+                <span class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined text-[18px]">currency_rupee</span>
+                </span>
+                <span class="font-label-sm text-label-sm text-secondary font-bold">Cash/UPI</span>
+              </div>
+              <div class="mt-space-sm">
+                <span class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-primary block leading-none">₹4,850</span>
+                <span class="font-label-sm text-label-sm text-on-surface font-semibold block mt-1">Total Collected</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant block">ഇന്നത്തെ ഫീസ് ശേഖരം</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Admin Command Shortcuts -->
+        <div class="px-margin pt-space-sm pb-space-xs">
+          <div class="flex gap-space-sm overflow-x-auto pb-1 no-scrollbar">
+            <button class="flex-shrink-0 px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary flex items-center gap-space-xs shadow-sm active:scale-95 transition-transform" onclick="alert('Pricing config loaded: Government fee ₹100, Center service fee ₹65.')">
+              <span class="material-symbols-outlined text-[18px] text-secondary">price_change</span>
+              <span class="font-label-lg text-label-lg font-bold">Manage Fees</span>
+            </button>
+            <button class="flex-shrink-0 px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary flex items-center gap-space-xs shadow-sm active:scale-95 transition-transform" onclick="window.print()">
+              <span class="material-symbols-outlined text-[18px] text-primary">download</span>
+              <span class="font-label-lg text-label-lg font-bold">Export Daily PDF</span>
+            </button>
+            <a href="services.html" class="flex-shrink-0 px-space-md py-space-sm rounded-lg bg-secondary text-on-secondary flex items-center gap-space-xs shadow-sm active:scale-95 transition-transform">
+              <span class="material-symbols-outlined text-[18px]">add_circle</span>
+              <span class="font-label-lg text-label-lg font-bold">New Offer</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Live Customer Enquiry Records Header & Interactive Filter Bar -->
+        <div class="px-margin pt-space-sm pb-space-xs">
+          <div class="flex items-center justify-between mb-space-sm">
+            <div class="flex flex-col">
+              <div class="flex items-center gap-space-xs">
+                <h2 class="font-headline-sm text-headline-sm font-bold text-primary">Customer Enquiries</h2>
+                <span class="bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold">28 Total</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">തത്സമയ അപേക്ഷാ ലിസ്റ്റ് (Real-time Records)</span>
+            </div>
+            <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant active:rotate-180 transition-transform" onclick="refreshList()">
+              <span class="material-symbols-outlined text-[18px]">refresh</span>
+            </button>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="flex gap-space-xs overflow-x-auto pb-1 no-scrollbar" id="statusFilterPills">
+            <button class="filter-tab px-space-md py-1.5 rounded-full font-label-md text-label-md font-bold bg-primary text-on-primary whitespace-nowrap shadow-sm" onclick="filterEnquiries('all', this)">
+              All (28)
+            </button>
+            <button class="filter-tab px-space-md py-1.5 rounded-full font-label-md text-label-md font-bold bg-surface-container text-on-surface-variant whitespace-nowrap" onclick="filterEnquiries('new', this)">
+              New (11)
+            </button>
+            <button class="filter-tab px-space-md py-1.5 rounded-full font-label-md text-label-md font-bold bg-surface-container text-on-surface-variant whitespace-nowrap" onclick="filterEnquiries('in-progress', this)">
+              In Progress (13)
+            </button>
+            <button class="filter-tab px-space-md py-1.5 rounded-full font-label-md text-label-md font-bold bg-surface-container text-on-surface-variant whitespace-nowrap" onclick="filterEnquiries('ready', this)">
+              Ready for Delivery (4)
+            </button>
+          </div>
+        </div>
+
+        <!-- Enquiry Records List -->
+        <div class="px-margin py-space-xs flex flex-col gap-space-sm" id="recordsContainer">
+
+          <!-- Record 1: Ananya Ramesh -->
+          <div class="enquiry-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm border border-outline-variant/30" data-cat="new">
+            <div class="flex items-start justify-between gap-space-sm">
+              <div class="flex items-start gap-space-sm min-w-0">
+                <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-headline-sm text-headline-sm font-bold flex-shrink-0">
+                  AR
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Ananya Ramesh</span>
+                    <span class="bg-tertiary-fixed text-tertiary px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase flex items-center gap-0.5">
+                      <span class="material-symbols-outlined text-[12px]">chat</span> WhatsApp
+                    </span>
+                  </div>
+                  <span class="font-label-lg text-label-lg font-semibold text-secondary truncate">Income Certificate (വരുമാന സർട്ടിഫിക്കറ്റ്)</span>
+                  <div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+                    <span>Ref: #NX-2841</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-0.5 text-error font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">schedule</span> 12 mins ago
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span class="px-2 py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex-shrink-0 text-center">
+                Docs Pending
+              </span>
+            </div>
+
+            <!-- Detail notes preview -->
+            <div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-0.5">
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Remarks / കുറിപ്പ്:</span>
+              <p class="font-body-sm text-body-sm text-on-surface font-normal">
+                Needs Ration Card Front & Back + Salary Slip from employer.
+              </p>
+            </div>
+
+            <!-- Action Footer -->
+            <div class="flex items-center gap-space-xs pt-1">
+              <a class="flex-1 h-10 rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md font-bold flex items-center justify-center gap-space-xs hover:bg-tertiary-container" href="https://wa.me/919447012345?text=Hello%20Ananya,%20Nexa%20Digital%20Services%20here%20regarding%20your%20Income%20Certificate%20application" target="_blank">
+                <span class="material-symbols-outlined text-[18px]">chat</span>
+                <span>Open WhatsApp Chat</span>
+              </a>
+              <button class="h-10 px-space-md rounded-lg bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1 hover:bg-surface-container-high" onclick="openStatusModal('Ananya Ramesh', 'Income Certificate', 'NX-2841', 'Docs Pending')">
+                <span class="material-symbols-outlined text-[18px]">edit_note</span>
+                <span>Update</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Record 2: Muhammed Faisal -->
+          <div class="enquiry-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm border border-outline-variant/30" data-cat="in-progress">
+            <div class="flex items-start justify-between gap-space-sm">
+              <div class="flex items-start gap-space-sm min-w-0">
+                <div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary font-headline-sm text-headline-sm font-bold flex-shrink-0">
+                  MF
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Muhammed Faisal</span>
+                    <span class="bg-surface-container text-on-surface px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase">
+                      Walk-in
+                    </span>
+                  </div>
+                  <span class="font-label-lg text-label-lg font-semibold text-secondary truncate">Fresh Passport Application (പാസ്‌പോർട്ട്)</span>
+                  <div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+                    <span>Ref: #NX-2839</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-0.5 font-medium">
+                      <span class="material-symbols-outlined text-[13px]">schedule</span> 45 mins ago
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span class="px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex-shrink-0 text-center">
+                Slot Booked
+              </span>
+            </div>
+
+            <div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+              <div class="flex items-center gap-space-xs">
+                <span class="material-symbols-outlined text-secondary text-[18px]">event</span>
+                <span class="font-body-sm text-body-sm text-on-surface font-semibold">PSK Aluva Appointment confirmed • 10:15 AM</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-tertiary font-bold">₹1,850 Paid</span>
+            </div>
+
+            <div class="flex items-center gap-space-xs pt-1">
+              <a class="flex-1 h-10 rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md font-bold flex items-center justify-center gap-space-xs hover:bg-tertiary-container" href="https://wa.me/919447012345?text=Hello%20Faisal,%20your%20Passport%20appointment%20is%20booked" target="_blank">
+                <span class="material-symbols-outlined text-[18px]">chat</span>
+                <span>Send Appointment Slip</span>
+              </a>
+              <button class="h-10 px-space-md rounded-lg bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1 hover:bg-surface-container-high" onclick="openStatusModal('Muhammed Faisal', 'Fresh Passport', 'NX-2839', 'Slot Booked')">
+                <span class="material-symbols-outlined text-[18px]">edit_note</span>
+                <span>Update</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Record 3: Biju Varghese -->
+          <div class="enquiry-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm border border-outline-variant/30" data-cat="ready">
+            <div class="flex items-start justify-between gap-space-sm">
+              <div class="flex items-start gap-space-sm min-w-0">
+                <div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary font-headline-sm text-headline-sm font-bold flex-shrink-0">
+                  BV
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Biju Varghese</span>
+                    <span class="bg-primary-fixed text-primary px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase">
+                      e-District
+                    </span>
+                  </div>
+                  <span class="font-label-lg text-label-lg font-semibold text-secondary truncate">Caste Certificate (ജാതി സർട്ടിഫിക്കറ്റ്)</span>
+                  <div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+                    <span>Ref: #NX-2820</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-0.5 text-tertiary font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">check_circle</span> Approved
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span class="px-2 py-1 rounded bg-tertiary text-on-tertiary font-label-sm text-label-sm font-bold flex-shrink-0 text-center">
+                Ready for Delivery
+              </span>
+            </div>
+
+            <div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+              <span class="font-body-sm text-body-sm text-on-surface">Digitally signed PDF generated with QR code verification</span>
+              <span class="font-label-sm text-label-sm text-secondary font-bold">Delivered on WhatsApp</span>
+            </div>
+
+            <div class="flex items-center gap-space-xs pt-1">
+              <a class="flex-1 h-10 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-bold flex items-center justify-center gap-space-xs hover:bg-primary" href="https://wa.me/919447012345?text=Hello%20Biju,%20your%20Caste%20Certificate%20is%20ready" target="_blank">
+                <span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+                <span>Send Certificate via WhatsApp</span>
+              </a>
+              <button class="h-10 px-space-md rounded-lg bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1 hover:bg-surface-container-high" onclick="openStatusModal('Biju Varghese', 'Caste Certificate', 'NX-2820', 'Ready for Delivery')">
+                <span class="material-symbols-outlined text-[18px]">edit_note</span>
+                <span>Update</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Status Update Modal -->
+  <div id="statusModal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fade-in">
+    <div class="bg-surface-container-lowest w-full max-w-md rounded-t-2xl sm:rounded-2xl p-6 shadow-xl flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Update Application Stage</h3>
+        <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeStatusModal()">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="bg-surface-container-low p-3 rounded-xl flex flex-col">
+        <span class="font-bold text-primary text-sm" id="modalApplicantName">Applicant</span>
+        <span class="text-xs text-on-surface-variant" id="modalServiceRef">Service & Ref</span>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-bold text-on-surface-variant uppercase">Select New Stage</label>
+        <select id="stageSelect" class="h-11 px-3 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm font-medium text-on-surface">
+          <option value="Docs Pending">Docs Pending (രേഖകൾ അടിയന്തിരം)</option>
+          <option value="In Verification">In Verification (പരിശോധനയിൽ)</option>
+          <option value="Submitted to Govt Portal">Submitted to Govt Portal (സർക്കാർ പോർട്ടലിൽ സമർപ്പിച്ചു)</option>
+          <option value="Ready for Delivery">Ready for Delivery (സർട്ടിഫിക്കറ്റ് തയ്യാർ)</option>
+        </select>
+      </div>
+
+      <div class="flex items-center gap-3 pt-2">
+        <button class="flex-1 h-11 rounded-xl bg-surface-container text-on-surface font-bold text-sm" onclick="closeStatusModal()">Cancel</button>
+        <button class="flex-1 h-11 rounded-xl bg-secondary text-on-secondary font-bold text-sm" onclick="saveStatusUpdate()">Save Stage</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Broadcast Announcement Modal -->
+  <div id="broadcastModal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fade-in">
+    <div class="bg-surface-container-lowest w-full max-w-md rounded-t-2xl sm:rounded-2xl p-6 shadow-xl flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Citizen Broadcast Banner</h3>
+        <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" onclick="closeBroadcastModal()">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <p class="text-xs text-on-surface-variant">Update the top alert message visible to all citizens visiting the website.</p>
+      <textarea id="broadcastInput" class="w-full h-24 p-3 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm text-on-surface resize-none" placeholder="e.g. Server maintenance on Kerala e-District portal today between 2 PM - 4 PM."></textarea>
+      <div class="flex items-center gap-3 pt-2">
+        <button class="flex-1 h-11 rounded-xl bg-surface-container text-on-surface font-bold text-sm" onclick="closeBroadcastModal()">Cancel</button>
+        <button class="flex-1 h-11 rounded-xl bg-secondary text-on-secondary font-bold text-sm" onclick="saveBroadcast()">Publish Alert</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Nav (Pre-rendered Stitch navigation) -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_14px_rgba(1,40,75,0.08)] border-t border-outline-variant/40">
+    <div class="h-16 px-2 flex items-center justify-around">
+      <a href="index.html" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface">
+        <span class="material-symbols-outlined text-[22px]">cottage</span>
+        <span class="font-label-sm text-label-sm mt-0.5 text-[11px] leading-tight">ഹോം</span>
+      </a>
+      <a href="services.html" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface">
+        <span class="material-symbols-outlined text-[22px]">apps</span>
+        <span class="font-label-sm text-label-sm mt-0.5 text-[11px] leading-tight">സേവനങ്ങൾ</span>
+      </a>
+      <a href="track.html" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-secondary font-bold">
+        <span class="material-symbols-outlined text-[22px]">published_with_changes</span>
+        <span class="font-label-sm text-label-sm mt-0.5 text-[11px] leading-tight">സ്റ്റാറ്റസ്</span>
+      </a>
+      <a href="about.html" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface">
+        <span class="material-symbols-outlined text-[22px]">info</span>
+        <span class="font-label-sm text-label-sm mt-0.5 text-[11px] leading-tight">വിവരങ്ങൾ</span>
+      </a>
+      <a href="contact.html" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface">
+        <span class="material-symbols-outlined text-[22px]">support_agent</span>
+        <span class="font-label-sm text-label-sm mt-0.5 text-[11px] leading-tight">സഹായം</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Comprehensive Footer -->
+  <footer class="bg-primary text-on-primary mt-12 pt-12 pb-24 md:pb-12 border-t border-primary-container">
+    <div class="max-w-5xl mx-auto px-margin flex flex-col gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center font-bold">
+              <span class="material-symbols-outlined text-[18px]">account_balance</span>
+            </div>
+            <span class="font-headline-sm text-headline-sm font-bold text-on-primary">Nexa Digital Services</span>
+          </div>
+          <p class="text-xs text-on-primary-container leading-relaxed">
+            Independent Citizen Facilitation & e-Governance Assistance Center. Assisting citizens with fast, transparent online government filings.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-2 text-xs">
+          <span class="font-bold text-on-primary uppercase tracking-wider">Direct Branches</span>
+          <p class="text-on-primary-container"><strong>Kakkanad Main:</strong> Civil Station Road, Kakkanad, Ernakulam - 682030</p>
+          <p class="text-on-primary-container"><strong>Palakkad Hub:</strong> Opp. Town Railway Gate, Palakkad - 678001</p>
+          <p class="text-on-primary-container">Mon – Sat: 8:30 AM – 7:30 PM | Sun: 9:30 AM – 1:30 PM</p>
+        </div>
+
+        <div class="flex flex-col gap-2 text-xs">
+          <span class="font-bold text-on-primary uppercase tracking-wider">Quick Links</span>
+          <div class="flex flex-wrap gap-2">
+            <a href="services.html" class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-secondary">All 50+ Services</a>
+            <a href="service-details.html?id=income-cert" class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-secondary">Income Certificate</a>
+            <a href="service-details.html?id=fresh-pan" class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-secondary">Instant PAN</a>
+            <a href="contact.html" class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-secondary">Physical Center Map</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-primary-container/60 pt-4 flex flex-col sm:flex-row items-center justify-between text-[11px] text-on-primary-container gap-2">
+        <span>© 2026 Nexa Digital Services Kerala. All citizen rights reserved.</span>
+        <span class="bg-surface-container/10 px-2 py-0.5 rounded text-[10px]">Independent Akshaya/CSC-style kiosk • Not a govt agency</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/services-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/components.js"></script>
+
+  <script>
+    // Tab switching between Citizen Tracker & Operator View
+    function showTab(tab) {
+      const citizenView = document.getElementById('citizen-tracker-view');
+      const operatorView = document.getElementById('operator-view');
+      const citizenBtn = document.getElementById('view-citizen-tab');
+      const operatorBtn = document.getElementById('view-operator-tab');
+
+      if (tab === 'citizen') {
+        citizenView.classList.remove('hidden');
+        operatorView.classList.add('hidden');
+        citizenBtn.className = 'flex-1 sm:flex-none py-2 px-4 rounded-lg font-bold text-xs text-on-secondary bg-secondary shadow-xs transition-all';
+        operatorBtn.className = 'flex-1 sm:flex-none py-2 px-4 rounded-lg font-semibold text-xs text-on-surface-variant hover:text-on-surface transition-all';
+      } else {
+        operatorView.classList.remove('hidden');
+        citizenView.classList.add('hidden');
+        operatorBtn.className = 'flex-1 sm:flex-none py-2 px-4 rounded-lg font-bold text-xs text-on-secondary bg-secondary shadow-xs transition-all';
+        citizenBtn.className = 'flex-1 sm:flex-none py-2 px-4 rounded-lg font-semibold text-xs text-on-surface-variant hover:text-on-surface transition-all';
+      }
+    }
+
+    // Citizen status search
+    function handleTrackSubmit() {
+      const query = document.getElementById('track-query').value.trim();
+      const card = document.getElementById('tracker-result-card');
+      const refNo = document.getElementById('res-ref-no');
+
+      if (query) {
+        refNo.innerText = query.toUpperCase();
+        card.classList.remove('hidden');
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    // Filter Operator Enquiries
+    function filterEnquiries(category, btnElement) {
+      const buttons = document.querySelectorAll('#statusFilterPills .filter-tab');
+      buttons.forEach(b => {
+        b.className = 'filter-tab px-space-md py-1.5 rounded-full font-label-md text-label-md font-bold bg-surface-container text-on-surface-variant whitespace-nowrap';
+      });
+      btnElement.className = 'filter-tab px-space-md py-1.5 rounded-full font-label-md text-label-md font-bold bg-primary text-on-primary whitespace-nowrap shadow-sm';
+
+      const cards = document.querySelectorAll('#recordsContainer .enquiry-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Toggle Center Operational Status
+    let isOpen = true;
+    function toggleCenterStatusFn() {
+      isOpen = !isOpen;
+      const btn = document.getElementById('toggleCenterStatus');
+      const label = document.getElementById('statusLabel');
+      const pulse = document.getElementById('statusPulse');
+      const dot = document.getElementById('statusDot');
+
+      if (isOpen) {
+        btn.innerText = 'Active';
+        btn.className = 'px-space-sm py-1 rounded-full bg-tertiary text-on-tertiary font-label-md text-label-md font-semibold active:opacity-80 transition-opacity';
+        label.innerText = 'Center Open (Accepting Enquiries)';
+        pulse.classList.remove('hidden');
+        dot.className = 'relative inline-flex rounded-full h-3 w-3 bg-tertiary-container';
+      } else {
+        btn.innerText = 'Offline';
+        btn.className = 'px-space-sm py-1 rounded-full bg-outline text-surface font-label-md text-label-md font-semibold active:opacity-80 transition-opacity';
+        label.innerText = 'Center Closed (Counter Resumes 8:30 AM)';
+        pulse.classList.add('hidden');
+        dot.className = 'relative inline-flex rounded-full h-3 w-3 bg-outline';
+      }
+    }
+
+    function refreshList() {
+      const container = document.getElementById('recordsContainer');
+      container.style.opacity = '0.5';
+      setTimeout(() => {
+        container.style.opacity = '1';
+      }, 300);
+    }
+
+    // Modal Handlers
+    function openStatusModal(name, service, ref, stage) {
+      document.getElementById('modalApplicantName').innerText = name;
+      document.getElementById('modalServiceRef').innerText = `${service} • Ref: #${ref}`;
+      document.getElementById('statusModal').classList.remove('hidden');
+    }
+
+    function closeStatusModal() {
+      document.getElementById('statusModal').classList.add('hidden');
+    }
+
+    function saveStatusUpdate() {
+      const stage = document.getElementById('stageSelect').value;
+      alert(`Application updated successfully to "${stage}". WhatsApp alert queued for applicant.`);
+      closeStatusModal();
+    }
+
+    function openBroadcastModal() {
+      document.getElementById('broadcastModal').classList.remove('hidden');
+    }
+
+    function closeBroadcastModal() {
+      document.getElementById('broadcastModal').classList.add('hidden');
+    }
+
+    function saveBroadcast() {
+      const msg = document.getElementById('broadcastInput').value;
+      if (msg.trim()) {
+        alert(`Announcement published: "${msg}"`);
+      }
+      closeBroadcastModal();
+    }
+
+    function toggleLanguage() {
+      if (window.i18n) {
+        window.i18n.toggleLang();
+      }
+    }
+  </script>
+</body>
+</html>

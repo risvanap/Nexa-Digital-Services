@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="nexaGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#01284B"/>
+      <stop offset="100%" stop-color="#1E3E62"/>
+    </linearGradient>
+    <filter id="shadow512" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#01284B" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- App Icon Background -->
+  <rect width="512" height="512" rx="112" fill="url(#nexaGrad512)"/>
+  
+  <!-- Outer Gold/Cyan Ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#8FF4E3" stroke-width="10" stroke-opacity="0.4" stroke-dasharray="32 16"/>
+  
+  <!-- Digital Emblem / Temple Kiosk Geometry -->
+  <g filter="url(#shadow512)">
+    <!-- Base Platform -->
+    <rect x="136" y="356" width="240" height="32" rx="16" fill="#DAE2FF"/>
+    <rect x="164" y="328" width="184" height="22" rx="10" fill="#DAE2FF"/>
+    
+    <!-- 4 Pillars -->
+    <rect x="160" y="210" width="28" height="114" rx="10" fill="#DAE2FF"/>
+    <rect x="214" y="210" width="28" height="114" rx="10" fill="#DAE2FF"/>
+    <rect x="270" y="210" width="28" height="114" rx="10" fill="#DAE2FF"/>
+    <rect x="324" y="210" width="28" height="114" rx="10" fill="#DAE2FF"/>
+    
+    <!-- Pediment Arch / Roof -->
+    <path d="M136 200L256 112L376 200Z" fill="#356EE7"/>
+    <path d="M164 194L256 128L348 194Z" fill="#8FF4E3"/>
+    
+    <!-- Center Citizen Seal Point -->
+    <circle cx="256" cy="166" r="16" fill="#01284B"/>
+    <circle cx="256" cy="264" r="22" fill="#8FF4E3"/>
+  </g>
+</svg>
