@@ -75,6 +75,20 @@ window.NEXA_CONFIG = {
     lunchBreak: "No break (Continuous counter service)"
   },
 
+  // Master Service Fees Schedule (Govt statutory fee + Center consultation fee)
+  fees: {
+    "income-certificate": { govtFee: 25, serviceFee: 30, totalFee: 55, labelEn: "Income Certificate", labelMl: "വരുമാന സർട്ടിഫിക്കറ്റ്" },
+    "caste-certificate": { govtFee: 25, serviceFee: 30, totalFee: 55, labelEn: "Caste Certificate", labelMl: "ജാതി സർട്ടിഫിക്കറ്റ്" },
+    "pan-new": { govtFee: 107, serviceFee: 60, totalFee: 167, labelEn: "New PAN Card", labelMl: "പുതിയ പാൻ കാർഡ്" },
+    "pan-correction": { govtFee: 107, serviceFee: 80, totalFee: 187, labelEn: "PAN Correction", labelMl: "പാൻ തിരുത്തൽ" },
+    "passport-fresh": { govtFee: 1500, serviceFee: 150, totalFee: 1650, labelEn: "Fresh Passport Slot", labelMl: "പാസ്‌പോർട്ട് സ്ലോട്ട്" },
+    "ration-card-service": { govtFee: 0, serviceFee: 50, totalFee: 50, labelEn: "Ration Card Addition", labelMl: "റേഷൻ കാർഡ് തിരുത്തൽ" },
+    "psc-registration": { govtFee: 0, serviceFee: 40, totalFee: 40, labelEn: "Kerala PSC OTR", labelMl: "PSC രജിസ്ട്രേഷൻ" },
+    "jeevan-pramaan": { govtFee: 0, serviceFee: 30, totalFee: 30, labelEn: "Digital Life Certificate", labelMl: "ജീവൻ പ്രമാൺ" },
+    "vahan-road-tax": { govtFee: 0, serviceFee: 40, totalFee: 40, labelEn: "Road Tax Payment", labelMl: "വാഹന നികുതി" },
+    "printing-scanning": { govtFee: 0, serviceFee: 10, totalFee: 10, labelEn: "Printing & Scanning", labelMl: "പ്രിന്റിംഗ് & സ്കാനിംഗ്" }
+  },
+
   // Payment UPI / Counter Instructions
   payment: {
     upiId: "nexaservices@upi",
@@ -87,3 +101,4 @@ window.NEXA_CONFIG = {
     textMl: "നെക്സ ഡിജിറ്റൽ സർവീസസ് എന്നത് സർക്കാർ സേവനങ്ങൾ പൊതുജനങ്ങൾക്ക് വേഗത്തിൽ ലഭ്യമാക്കുന്ന ഒരു സ്വതന്ത്ര പൗര സേവന കേന്ദ്രമാണ് (Akshaya/CSC ശൈലി). ഞങ്ങൾ സർക്കാർ വകുപ്പല്ല."
   }
 };
+
