@@ -37,6 +37,7 @@ function renderHeader(activePage = 'home') {
   const navLinks = [
     { id: 'home', href: 'index.html', labelEn: 'Home', labelMl: 'ഹോം' },
     { id: 'services', href: 'services.html', labelEn: 'Services', labelMl: 'സേവനങ്ങൾ' },
+    { id: 'chat', href: 'chatbot.html', labelEn: 'NEXA AI Desk', labelMl: 'NEXA AI' },
     { id: 'about', href: 'about.html', labelEn: 'About Us', labelMl: 'ഞങ്ങളെക്കുറിച്ച്' },
     { id: 'contact', href: 'contact.html', labelEn: 'Contact', labelMl: 'ബന്ധപ്പെടുക' },
     { id: 'track', href: 'track.html', labelEn: 'Track Status', labelMl: 'സ്റ്റാറ്റസ്' }
@@ -295,10 +296,10 @@ function renderFooter() {
               <span>${isMl ? 'നേരിട്ട് വിളിക്കാം' : 'Direct Support'}</span>
             </h4>
             <div class="flex flex-col gap-2.5">
-              <a href="https://wa.me/919447012345" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-gradient-to-r from-[#00453d] to-[#002d27] hover:brightness-110 text-white flex items-center gap-3 transition-all border border-emerald-500/20 shadow-xs">
+              <a href="https://wa.me/918086380373" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-gradient-to-r from-[#00453d] to-[#002d27] hover:brightness-110 text-white flex items-center gap-3 transition-all border border-emerald-500/20 shadow-xs">
                 <span class="material-symbols-outlined text-emerald-400 text-[24px]">chat</span>
                 <div class="flex flex-col leading-tight">
-                  <span class="font-label-lg text-label-lg font-bold">+91 94470 12345</span>
+                  <span class="font-label-lg text-label-lg font-bold">+91 8086380373</span>
                   <span class="font-label-sm text-label-sm text-emerald-200">WhatsApp Helpdesk</span>
                 </div>
               </a>
@@ -341,12 +342,16 @@ function renderFooter() {
           <div>
             © 2026 Nexa Digital Services. All rights reserved. Independent Citizen Service Kiosk.
           </div>
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-4 flex-wrap justify-center">
             <a href="about.html" class="hover:text-white transition-colors">About Us</a>
             <span>•</span>
             <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
             <span>•</span>
             <a href="track.html" class="hover:text-white transition-colors">Track Status</a>
+            <span>•</span>
+            <a href="chatbot.html" class="hover:text-white transition-colors font-bold text-emerald-300">NEXA AI Desk</a>
+            <span>•</span>
+            <a href="admin.html" class="hover:text-white transition-colors text-blue-200">Admin Portal</a>
           </div>
         </div>
       </div>
@@ -366,7 +371,7 @@ function renderFloatingWhatsApp() {
   btn.target = '_blank';
   btn.rel = 'noopener noreferrer';
   btn.setAttribute('aria-label', 'Chat with Nexa WhatsApp Desk');
-  btn.className = 'fixed right-4 bottom-20 md:bottom-8 z-40 bg-[#128C7E] hover:bg-[#075E54] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all duration-300 active:scale-95 group whatsapp-pulse hover:shadow-[0_8px_25px_rgba(37,211,102,0.4)]';
+  btn.className = 'fixed left-4 bottom-20 md:bottom-8 z-40 bg-[#128C7E] hover:bg-[#075E54] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all duration-300 active:scale-95 group whatsapp-pulse hover:shadow-[0_8px_25px_rgba(37,211,102,0.4)]';
 
   btn.innerHTML = `
     <div class="relative flex items-center justify-center">
@@ -461,9 +466,31 @@ function getWhatsAppUrl(msg = "Hello Nexa Services, I need assistance with citiz
   return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(msg)}`;
 }
 
+/**
+ * Auto-inject NEXA AI Assistant Widget across all pages
+ */
+function loadNexaAiChatbotWidget() {
+  if (document.getElementById('nexa-chatbot-widget-script')) return;
+
+  if (!document.getElementById('nexa-chatbot-widget-css')) {
+    const css = document.createElement('link');
+    css.id = 'nexa-chatbot-widget-css';
+    css.rel = 'stylesheet';
+    css.href = 'dist-client/nexa-chatbot.css';
+    document.head.appendChild(css);
+  }
+
+  const script = document.createElement('script');
+  script.id = 'nexa-chatbot-widget-script';
+  script.type = 'module';
+  script.src = 'dist-client/nexa-chatbot.js';
+  document.body.appendChild(script);
+}
+
 // Automatically initialize components on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   renderFloatingWhatsApp();
+  loadNexaAiChatbotWidget();
   initScrollReveal();
 
   const activePage = document.body.getAttribute('data-page') || 'home';

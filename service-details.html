@@ -113,7 +113,7 @@
         ഔദ്യോഗിക ചലാൻ രസീത് സഹിതം
       </span>
     </div>
-    
+
     <div class="h-16 px-4 md:px-8 max-w-5xl mx-auto flex items-center justify-between gap-4">
       <div class="flex items-center gap-3 min-w-0">
         <button aria-label="Go Back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-all active:scale-95" onclick="window.location.href='services.html'">
@@ -126,10 +126,10 @@
       </div>
 
       <div class="flex items-center gap-2 flex-shrink-0">
-        <a aria-label="Quick Call" class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all shadow-xs border border-outline-variant/30" href="tel:+919447012345" title="Call Us: +91 94470 12345">
+        <a aria-label="Quick Call" class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all shadow-xs border border-outline-variant/30" href="tel:+918086380373" title="Call Us: +91 8086380373">
           <span class="material-symbols-outlined text-[20px]">call</span>
         </a>
-        <a aria-label="WhatsApp Enquiry" class="relative w-10 h-10 rounded-full bg-gradient-to-tr from-[#002d27] to-[#0453cd] text-white flex items-center justify-center hover:opacity-95 active:scale-95 transition-all shadow-xs" href="https://wa.me/919447012345" target="_blank" title="WhatsApp Enquiry (+91 94470 12345)">
+        <a aria-label="WhatsApp Enquiry" class="relative w-10 h-10 rounded-full bg-gradient-to-tr from-[#002d27] to-[#0453cd] text-white flex items-center justify-center hover:opacity-95 active:scale-95 transition-all shadow-xs" href="https://wa.me/918086380373" target="_blank" title="WhatsApp Enquiry (+91 8086380373)">
           <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
           <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#25d366] ring-2 ring-surface animate-pulse"></span>
         </a>
@@ -448,7 +448,7 @@
     <div class="max-w-md mx-auto flex flex-col gap-2 pb-2">
       <div class="flex items-center gap-2.5">
         <!-- Prominent WhatsApp Trigger -->
-        <a id="btn-wa-apply" class="flex-1 h-12 rounded-xl btn-whatsapp-pill flex items-center justify-center gap-2 px-3 transition-all" href="https://wa.me/919447012345?text=Hi%20Nexa,%20I%20want%20to%20apply%20for%20an%20Income%20Certificate%20(e-District%20Kerala)" target="_blank">
+        <a id="btn-wa-apply" class="flex-1 h-12 rounded-xl btn-whatsapp-pill flex items-center justify-center gap-2 px-3 transition-all" href="https://wa.me/918086380373?text=Hi%20Nexa,%20I%20want%20to%20apply%20for%20an%20Income%20Certificate%20(e-District%20Kerala)" target="_blank">
           <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
           <div class="flex flex-col text-left leading-none">
             <span class="font-label-lg text-label-lg font-bold">Apply via WhatsApp</span>
@@ -463,7 +463,7 @@
         </button>
 
         <!-- Direct Tap-to-Call Desk Phone -->
-        <a aria-label="Call Service Desk" class="w-12 h-12 rounded-xl bg-surface-container text-primary flex items-center justify-center hover:bg-surface-container-high active:scale-95 flex-shrink-0 transition-all border border-outline-variant/30" href="tel:+919447012345">
+        <a aria-label="Call Service Desk" class="w-12 h-12 rounded-xl bg-surface-container text-primary flex items-center justify-center hover:bg-surface-container-high active:scale-95 flex-shrink-0 transition-all border border-outline-variant/30" href="tel:+918086380373">
           <span class="material-symbols-outlined text-[22px]">call</span>
         </a>
       </div>
@@ -534,7 +534,7 @@
           document.getElementById('serv-body').innerText = s.issuingBodyEn;
           document.getElementById('serv-validity').innerText = s.validityEn;
 
-          const waUrl = `https://wa.me/919447012345?text=Hello%20Nexa,%20I%20want%20to%20apply%20for%20${encodeURIComponent(s.titleEn)}%20(${encodeURIComponent(s.titleMl)})%20Total%20Fee:%20₹${s.totalFee}`;
+          const waUrl = `https://wa.me/918086380373?text=Hello%20Nexa,%20I%20want%20to%20apply%20for%20${encodeURIComponent(s.titleEn)}%20(${encodeURIComponent(s.titleMl)})%20Total%20Fee:%20₹${s.totalFee}`;
           document.getElementById('btn-wa-apply').href = waUrl;
         }
       }
@@ -607,7 +607,7 @@
     if (submitBtn && uploadSheet) {
       submitBtn.addEventListener('click', () => {
         const sTitle = document.getElementById('serv-title-en').innerText;
-        const phone = (window.NEXA_CONFIG && window.NEXA_CONFIG.contact) ? window.NEXA_CONFIG.contact.whatsappNumber : '919447012345';
+        const phone = (window.NEXA_CONFIG && window.NEXA_CONFIG.contact) ? window.NEXA_CONFIG.contact.whatsappNumber : '918086380373';
         window.open(`https://wa.me/${phone}?text=Hello%20Nexa,%20I%20have%20uploaded%20my%20documents%20for:%20${encodeURIComponent(sTitle)}. Please review.`, '_blank');
         uploadSheet.classList.add('hidden');
         uploadSheet.classList.remove('flex');

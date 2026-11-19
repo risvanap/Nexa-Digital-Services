@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "build": "npm --prefix client run build",
+    "test": "node test-system.js"
   },
   "keywords": [
     "akshaya",
@@ -17,6 +19,13 @@
     "stitch"
   ],
   "author": "Nexa Digital Services",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.1",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.5",
+    "openai": "^7.60.0"
+  }
 }
-

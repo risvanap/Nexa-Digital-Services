@@ -4,12 +4,12 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
   <title>Operator Sign In | Nexa Digital Citizen Services</title>
-  
+
   <!-- PWA & Favicon Meta -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="manifest" href="manifest.json"/>
   <meta name="theme-color" content="#01284B"/>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -112,7 +112,7 @@
   <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
   <main class="w-full max-w-md mx-auto space-y-5 relative z-10">
-    
+
     <!-- Top Identity Branding -->
     <div class="flex flex-col items-center text-center space-y-2">
       <div class="h-16 flex items-center justify-center">
@@ -204,7 +204,7 @@
             <input checked id="rememberTerminal" type="checkbox" class="w-4 h-4 rounded text-secondary focus:ring-0 accent-secondary cursor-pointer"/>
             <span class="font-body-sm text-body-sm text-on-surface-variant select-none">Remember terminal</span>
           </label>
-          <a class="font-label-md text-label-md text-secondary hover:underline font-bold" href="https://wa.me/919447012345?text=Forgot%20Operator%20Password%20Help" target="_blank">
+          <a class="font-label-md text-label-md text-secondary hover:underline font-bold" href="https://wa.me/918086380373?text=Forgot%20Operator%20Password%20Help" target="_blank">
             Forgot Key?
           </a>
         </div>
@@ -266,7 +266,7 @@
     }
 
     function triggerWhatsAppOtp() {
-      const phone = (window.NEXA_CONFIG && window.NEXA_CONFIG.contact) ? window.NEXA_CONFIG.contact.whatsappNumber : '919447012345';
+      const phone = (window.NEXA_CONFIG && window.NEXA_CONFIG.contact) ? window.NEXA_CONFIG.contact.whatsappNumber : '918086380373';
       window.open(`https://wa.me/${phone}?text=Requesting%20Admin%20Console%20OTP%20Verification`, '_blank');
     }
 
@@ -274,7 +274,7 @@
       const btn = document.getElementById('submitBtn');
       btn.disabled = true;
       btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Signing In...';
-      
+
       setTimeout(() => {
         window.location.href = 'track.html';
       }, 700);

@@ -18,16 +18,16 @@ window.NEXA_CONFIG = {
   // Contact Desks
   contact: {
     // Primary WhatsApp Business Number (Digits only with country code, no + or spaces)
-    whatsappNumber: "919447012345",
-    whatsappDisplay: "+91 94470 12345",
+    whatsappNumber: "918086380373",
+    whatsappDisplay: "+91 8086380373",
     
     // Primary Calling Number
-    phoneCalling: "+919447012345",
-    phoneDisplay: "+91 94470 12345",
+    phoneCalling: "+918086380373",
+    phoneDisplay: "+91 8086380373",
 
     // Alternate Support Desk Number
-    altPhoneCalling: "+914842421234",
-    altPhoneDisplay: "0484 242 1234",
+    altPhoneCalling: "+918086380373",
+    altPhoneDisplay: "+91 8086380373",
 
     // Email
     email: "helpdesk@nexadigitalservices.in",
